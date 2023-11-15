@@ -16,14 +16,11 @@ function Login() {
               left:"0",
               objectFit: "cover",
               transform: "trasnlete(-100%, -100%)",
-              zIndex:"-1"
-
+              zIndex:"-1",
             }}
             >
-
             </video>
 
-    
           <img
             className="mx-auto h-20 w-auto"
             src={LogoSMA}
@@ -34,15 +31,16 @@ function Login() {
             <br />
             SMAN 1 JASINGA
           </h2>
+          <h2 className="mt-4 text-center text-1xl font-bold leading-1 tracking-tight text-white">Admin</h2>
           
         </div>
-
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          
+        <div className="mt-1 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <div className="flex items-center justify-between"> 
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
-                Email address
+              <label htmlFor="email" className="block text-sm font-medium leading-2 text-white">
+                Nama Pengguna
               </label>
               </div>
               <div className="mt-2">
@@ -60,11 +58,11 @@ function Login() {
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
-                  Password
+                  Kata Sandi
                 </label>
                 <div className="text-sm">
                   <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                    Forgot password?
+                    Lupa Kata sandi?
                   </a>
                 </div>
               </div>
