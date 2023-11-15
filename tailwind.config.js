@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'green': '#8AA57C',
+        'green2': '#657864',
+        'putih': '#D9D9D9'
+      },
+      fontFamily: {
+        'quatro': ['Quattrocento'],
+        'numans': ['Numans'],
+        'poppins': ['Poppins']
+      },
+    },
   },
   plugins: [],
 }
