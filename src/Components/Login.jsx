@@ -7,30 +7,44 @@ function Login() {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <div className='baground'>
-          <div className='bg-overlay'>
-            <video src={VideoBG} autoPlay loop muted className='video-bg'/>
+            <video  src={VideoBG} autoPlay loop muted
+            style={{
+              position: "absolute",
+              width: "100%",
+              height:"100%",
+              top:"0",
+              left:"0",
+              objectFit: "cover",
+              transform: "trasnlete(-100%, -100%)",
+              zIndex:"-1"
 
-          </div>
-          </div>
+            }}
+            >
+
+            </video>
+
+    
           <img
             className="mx-auto h-20 w-auto"
             src={LogoSMA}
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-white">
             PERPUSTAKAAN
             <br />
             SMAN 1 JASINGA
           </h2>
+          
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <div className="flex items-center justify-between"> 
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
                 Email address
               </label>
+              </div>
               <div className="mt-2">
                 <input
                   id="email"
@@ -45,7 +59,7 @@ function Login() {
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
                   Password
                 </label>
                 <div className="text-sm">
