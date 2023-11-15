@@ -33,11 +33,11 @@ function Login() {
             <br />
             SMAN 1 JASINGA
           </h2>
-          
+          <p className="mt-2 text-center text-1xl font-bold leading-2 tracking-tight text-white">Admin</p>
         </div>
         
         <card>
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <div className="flex items-center justify-between"> 
