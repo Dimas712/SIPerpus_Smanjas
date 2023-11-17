@@ -1,8 +1,8 @@
-import React from 'react';
-import LogoSMA from '../assets/LogoSMA.svg'
-import VideoBG from '../assets/VideoSMA.mp4'
+import React from 'react'
+import '../assets/LogoSMA.svg'
+import '../assets/VideoSMA.mp4'
 
-function LoginAdmin() {
+const LoginSiswa = () => {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -16,7 +16,6 @@ function LoginAdmin() {
               objectFit: "cover",
               transform: "trasnlete(-100%, -100%)",
               zIndex:"-1"
-
             }}
             >
             </video>
@@ -32,7 +31,7 @@ function LoginAdmin() {
             <br />
             SMAN 1 JASINGA
           </h2>
-          <p className="mt-2 text-center text-1xl font-bold leading-2 tracking-tight text-white">Admin</p>
+          <p className="mt-2 text-center text-1xl font-bold leading-2 tracking-tight text-white">Siswa</p>
         </div>
         
         <card>
@@ -93,7 +92,7 @@ function LoginAdmin() {
         </card>
       </div>
       
-  );
-};
+  )
+}
 
-export default LoginAdmin;
+export default LoginSiswa
