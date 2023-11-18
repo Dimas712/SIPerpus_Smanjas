@@ -1,8 +1,8 @@
 import React from 'react'
-import '../assets/LogoSMA.svg'
-import '../assets/VideoSMA.mp4'
+import LogoSMA from '../assets/LogoSMA.svg'
+import VideoSMA from '../assets/VideoSMA.mp4'
 
-const LoginSiswa = () => {
+function LoginSiswa()  {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -92,7 +92,7 @@ const LoginSiswa = () => {
         </card>
       </div>
       
-  )
-}
+  );
+};
 
-export default LoginSiswa
+export default LoginSiswa;
