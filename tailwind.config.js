@@ -10,6 +10,7 @@ export default {
         'green': '#8AA57C',
         'green2': '#657864',
         'green3': '#414d40',
+        'green4': '#485C3E',
         'putih': '#D9D9D9'
       },
       fontFamily: {

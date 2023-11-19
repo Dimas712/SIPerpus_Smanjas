@@ -8,7 +8,9 @@ import LoginSiswa from './Components/LoginSiswa'
 
 function App () {
   return (
+   <>
    <LoginAdmin/>
+   </>
   )
 }
 
