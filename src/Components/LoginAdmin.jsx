@@ -26,7 +26,7 @@ function LoginAdmin() {
             src={LogoSMA}
             alt="Your Company"
           />
-          <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+          <h2 className="mt-2 text-center text-2xl font-bold leading-8 tracking-tight text-white">
             PERPUSTAKAAN
             <br />
             SMAN 1 JASINGA
@@ -35,12 +35,12 @@ function LoginAdmin() {
         </div>
         
         <card>
-        <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <div className="flex items-center justify-between"> 
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
-                Email address
+                Nama Pengguna
               </label>
               </div>
               <div className="mt-2">
@@ -58,11 +58,11 @@ function LoginAdmin() {
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
-                  Password
+                  Kata Sandi
                 </label>
                 <div className="text-sm">
                   <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                    Forgot password?
+                    Lupa Kata sandi?
                   </a>
                 </div>
               </div>

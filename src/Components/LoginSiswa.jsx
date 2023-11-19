@@ -35,12 +35,12 @@ function LoginSiswa()  {
         </div>
         
         <card>
-        <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <div className="flex items-center justify-between"> 
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
-                Email address
+                Nama Pengguna
               </label>
               </div>
               <div className="mt-2">
@@ -58,11 +58,11 @@ function LoginSiswa()  {
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
-                  Password
+                  Kata Sandi
                 </label>
                 <div className="text-sm">
                   <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                    Forgot password?
+                    Lupa kata sandi?
                   </a>
                 </div>
               </div>
@@ -81,7 +81,7 @@ function LoginSiswa()  {
             <div classname="Tombol">
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-darkgreen-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkgreen-600"
+                className="flex w-full justify-center rounded-md bg-green4 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkgreen-600"
               >
                 Masuk
               </button>
