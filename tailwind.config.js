@@ -11,7 +11,11 @@ export default {
         'green2': '#657864',
         'green3': '#414d40',
         'green4': '#485C3E',
-        'putih': '#D9D9D9'
+        'putih': '#D9D9D9',
+        'footer': '#BFC7BB',
+        'icons': '#000000',
+        'bgds': '#D0DDCA'
+        
       },
       fontFamily: {
         'quatro': ['Quattrocento'],

@@ -4,8 +4,6 @@ import LoginAdmin from './Components/LoginAdmin'
 import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar'
 import LoginSiswa from './Components/LoginSiswa'
-import Footer from './Components/Footer'
-import Homepage from './Components/Homepage'
 
 
 function App () {

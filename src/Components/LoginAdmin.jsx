@@ -22,7 +22,7 @@ function LoginAdmin() {
 
 
           <img
-            className="mx-auto h-10 w-auto"
+            className="mx-auto h-20 w-auto"
             src={LogoSMA}
             alt="Your Company"
           />
