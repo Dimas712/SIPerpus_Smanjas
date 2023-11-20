@@ -70,7 +70,7 @@ const ProfilSiswa = () => {
             </div>
 
             <div className='absolute bottom-0 right-0 mb-4 mr-4'>
-              <button className='bg-blue-500 hover:bg-blue-800 text-white px-4 py-2 rounded-md'>Edit</button>
+              <button className='bg-green hover:bg-green2 text-white px-4 py-2 rounded-md'>Edit</button>
             </div>
 
           </div>
