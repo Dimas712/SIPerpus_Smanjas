@@ -7,6 +7,7 @@ import LoginSiswa from './Components/LoginSiswa'
 import Halamanuser from './Components/Halamanuser'
 import ProfilSiswa from './Components/ProfilSiswa'
 import Homepage from './Components/Homepage'
+import Form from './Components/Form'
 
 
 function App () {
