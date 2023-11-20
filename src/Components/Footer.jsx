@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa6';
+
 const Footer = () => {
     return(
         <footer className='flex flex-row justify-between bg-footer h-10 items-center px-10'>
