@@ -15,11 +15,11 @@ const Navbar = () => {
       <div className="lg:flex-shrink-0 lg:text-center">
         <p className='text-4xl font-quatro pl-4 drop-shadow-md'>SMAN 1 JASINGA</p>
       </div>
-      <div className='lg:flex lg:space-x-20 lg:text-xl drop-shadow-md mt-4 lg:mt-0'>
-        <a href="" className="mr-4 active:text-black">Beranda</a>
-        <a href="" className="mr-4 active:text-black">Profil</a>
-        <a href="" className="mr-4 active:text-black">Tata Tertib</a>
-        <a href=""className='active:text-black' >Buku</a>
+      <div className='lg:flex lg:space-x-14 lg:text-xl drop-shadow-md mt-4 lg:mt-0 '>
+        <a href="" className="flex items-center justify-center h-10 w-28 mr-4 rounded-full hover:bg-green2 active:text-black">Beranda</a>
+        <a href="" className="flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 mr-4 active:text-black">Profil</a>
+        <a href="" className="flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full mr-4 active:text-black">Tata Tertib</a>
+        <a href=""className='flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full active:text-black' >Buku</a>
       </div>
       <div className={`flex items-center justify-center lg:justify-end relative mt-4 lg:mt-0 ${isMasukClicked ? 'bg-green2' : 'hover:bg-green2'} shadow-md rounded-lg mr-3`}>
         <div className='text-2xl w-32 rounded-md relative cursor-pointer font-poppins bg-green-200 flex items-center justify-center'>
