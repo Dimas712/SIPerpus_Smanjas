@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { ArrowLeftCircleIcon, MagnifyingGlassIcon, ArrowDownTrayIcon,ArrowUpTrayIcon, UserIcon} from '@heroicons/react/24/outline'
 import LogoSMA from '../assets/LogoSMA.svg'
+import Foto3x4 from '../assets/foto3x4.jpg'
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
 
   return (
     <div className='flex'>
-      <div className={`bg-green2 text-white h-screen ${open ? "w-1/5" : "w-16"} duration-300 relative p-4 `}>
+      <div className={`bg-green2 text-white ${open ? "w-72" : "w-16"} duration-300 relative p-4 `}>
         <div>
           <ArrowLeftCircleIcon className={`h-10 w-10 -right-5 absolute cursor-pointer ${!open && "rotate-180"}`} stroke='#657864' fill='white' onClick={() => setOpen (!open)} />
         </div>
         <div className='mt-6 flex justify-center static'>
           <img
-              className={`h-28 w-28 rounded-full ${open ? "" : "w-0"}`}
-              src={LogoSMA}
-              alt="Your Company"
+              className={` rounded-full ${open ? "w-32" : "hidden"} ${open ? "h-32" : "hidden"}`}
+              src={Foto3x4}
+              alt="foto siswa"
             />
         </div>
         <div className='static mt-5 flex justify-center text-center' style={{ minHeight: open ? '' : '30px' }}>
@@ -39,7 +40,7 @@ const Sidebar = () => {
               <ArrowUpTrayIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Data Pengembalian</p>
             </li>
-            <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} `}>
               <UserIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Profil</p>
             </li>

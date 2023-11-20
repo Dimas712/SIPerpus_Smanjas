@@ -13,4 +13,4 @@ const Halamanuser = () => {
   )
 }
 
-export default Halamanuser
+export default Halamanuser;

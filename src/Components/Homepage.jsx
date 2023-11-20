@@ -9,6 +9,7 @@ import {MdNoFood} from 'react-icons/md';
 import {FaPhoneSlash} from 'react-icons/fa6';
 import {GiNightSleep} from 'react-icons/gi';
 import {RiSpeakFill} from 'react-icons/ri';
+import Footer from "./Footer";
 
 
 const Homepage = () =>{
@@ -91,9 +92,8 @@ const Homepage = () =>{
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default Homepage
+export default Homepage;

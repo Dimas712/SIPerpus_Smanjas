@@ -20,7 +20,8 @@ export default {
       fontFamily: {
         'quatro': ['Quattrocento'],
         'numans': ['Numans'],
-        'poppins': ['Poppins']
+        'poppins': ['Poppins'],
+        'noto' : ['Noto Serif Kannada']
       },
     },
   },
