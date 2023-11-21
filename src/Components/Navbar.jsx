@@ -16,7 +16,7 @@ const Navbar = () => {
         <p className='text-4xl font-quatro pl-4 drop-shadow-md'>SMAN 1 JASINGA</p>
       </div>
       <div className='lg:flex lg:space-x-14 lg:text-xl drop-shadow-md mt-4 lg:mt-0 '>
-        <a href="" className="flex items-center justify-center h-10 w-28 mr-4 rounded-full hover:bg-green2 active:text-black">Beranda</a>
+        <Link to="/" className="flex items-center justify-center h-10 w-28 mr-4 rounded-full hover:bg-green2 active:text-black">Beranda</Link>
         <a href="" className="flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 mr-4 active:text-black">Profil</a>
         <a href="" className="flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full mr-4 active:text-black">Tata Tertib</a>
         <a href=""className='flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full active:text-black' >Buku</a>
