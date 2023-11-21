@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+    .icons-color{
+        @apply w-6 h-6 md:w-8 md:h-8;
+    }
+    .button-layout{
+        @apply flex flex-row border-solid border-2 rounded-full  bg-white h-11 px-10 py-2 gap-4 shadow-inner md:h-12 md:py-2;
+    }
+    .cards-img{
+        @apply aspect-square rounded-lg shadow-xl;
+    }
+    .form-coun{
+        @apply flex flex-col pl-10 pr-28 py-5;
+    }
+    .form-label{
+        @apply py-2 text-base font-bold;
+    }
+    .form-input{
+        @apply flex flex-row border-solid border-2 border-black bg-white h-10 px-2 py-2 gap-2 shadow-inner md:h-12 md:py-2
+    }
+}

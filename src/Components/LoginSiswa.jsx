@@ -1,8 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import LogoSMA from '../assets/LogoSMA.svg'
 import VideoSMA from '../assets/VideoSMA.mp4'
+import VideoBG from '../assets/VideoSMA.mp4'
 
 function LoginSiswa()  {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+
+    navigate('/profil');
+  };
+
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -80,7 +89,8 @@ function LoginSiswa()  {
 
             <div classname="Tombol">
               <button
-                type="submit"
+              onClick={handleLogin}
+                type="button"
                 className="flex w-full justify-center rounded-md bg-green4 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-darkgreen-600"
               >
                 Masuk
