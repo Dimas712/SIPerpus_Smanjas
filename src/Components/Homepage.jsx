@@ -9,12 +9,17 @@ import {MdNoFood} from 'react-icons/md';
 import {FaPhoneSlash} from 'react-icons/fa6';
 import {GiNightSleep} from 'react-icons/gi';
 import {RiSpeakFill} from 'react-icons/ri';
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 
 const Homepage = () =>{
     return(
-        <div className="">
+        <div>
+            {/* Navbar */}
+            <div className="z-50 relative">
+            <Navbar />
+            </div>
             {/* Header Homepage */}
             <div className="relative">
                 <img
@@ -22,8 +27,11 @@ const Homepage = () =>{
                 src={Banner}
                 alt="Benner Perpustakaan"
                 />
-                <div className="flex mx-auto w-full absolute inset-0 mt-24 justify-center md:items-center md:mb-42 md:ml-2">
-                    <h3 className="text-white text-2xl font-bold md:text-5xl">PERPUSTAKAAN SMAN 1 JASINGA</h3>
+                <div className="flex flex-col items-center justify-center absolute inset-0 mt-24 justify-center md:items-center md:mb-42 md:ml-2 tracking-wider z-0">
+                    <p className="text-white font-bold md:text-7xl text-center">
+                        <span className="block">PERPUSTAKAAN</span> 
+                        <span className="block mt-8">SMAN 1 JASINGA</span>
+                    </p>
                 </div>
             </div>
 
@@ -92,8 +100,9 @@ const Homepage = () =>{
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
 
-export default Homepage;
+export default Homepage

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LogoSMA from '../assets/LogoSMA.svg'
 import VideoBG from '../assets/VideoSMA.mp4'
 

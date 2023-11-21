@@ -30,9 +30,9 @@ const Navbar = () => {
             </svg>
           </div>
           {isDropdownOpen && (
-            <div className='absolute top-full right-0 left-0 mt-3 bg-white bg-opacity-75'>
-              <a href="#" className='block text-center py-2 text-xl hover:text-zinc-600 duration-300 active:text-black'>Admin</a>
-              <a href="#" className='block text-center py-2 text-xl hover:text-zinc-600 active:text-black'>Siswa</a>
+            <div className='absolute top-full right-0 left-0 mt-3 font-semibold'>
+              <Link to="/admin" className='block text-center py-2 text-xl   duration-300 active:text-black rounded-2xl bg-putih bg-opacity-40'>Admin</Link>
+              <Link to="/siswa" className='block mt-2 text-center py-2 text-xl active:text-black rounded-2xl bg-putih bg-opacity-40'>Siswa</Link>
             </div>
           )}
         </div>

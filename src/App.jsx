@@ -1,20 +1,25 @@
 import React from 'react'
-import { BrowserRouter as Router,Routes, Route, Link, BrowserRouter } from 'react-router-dom'
-import LoginAdmin from './Components/LoginAdmin'
-import Navbar from './Components/Navbar'
-import Sidebar from './Components/Sidebar'
-import LoginSiswa from './Components/LoginSiswa'
-import Halamanuser from './Components/Halamanuser'
-import ProfilSiswa from './Components/ProfilSiswa'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Homepage from './Components/Homepage'
-import Form from './Components/Form'
+import Navbar from './Components/Navbar'
+import LoginAdmin from './Components/LoginAdmin'
+import LoginSiswa from './Components/LoginSiswa'
+import ProfilSiswa from './Components/ProfilSiswa'
+
 
 
 function App () {
   return (
-   <>
-    <ProfilSiswa/>
-   </>
+    <div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Homepage/>}/>
+        <Route path='/admin' element={<LoginAdmin/>}/>
+        <Route path='/siswa' element={<LoginSiswa/>}/>
+        <Route path='/profil' element={<ProfilSiswa/>}/>
+      </Routes>
+    </Router>
+    </div>
   )
 }
 
