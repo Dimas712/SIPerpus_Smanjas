@@ -8,12 +8,13 @@ import Halamanuser from './Components/Halamanuser'
 import ProfilSiswa from './Components/ProfilSiswa'
 import Homepage from './Components/Homepage'
 import Form from './Components/Form'
+import Card from './Components/Cards'
 
 
 function App () {
   return (
    <>
-    <ProfilSiswa/>
+    <Card/>
    </>
   )
 }
