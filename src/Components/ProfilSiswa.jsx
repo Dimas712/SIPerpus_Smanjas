@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import {UserCircleIcon} from '@heroicons/react/24/outline'
@@ -7,6 +7,13 @@ import Foto3x4 from '../assets/foto3x4.jpg'
 import Footer from './Footer';
  
 const ProfilSiswa = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+
+    navigate('/editsiswa');
+  };
+
   return (
     <div>
       <Navbar />
@@ -16,7 +23,7 @@ const ProfilSiswa = () => {
           <div className='relative'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <UserCircleIcon className='h-10 w-10' color='white'/>
-              <p className='text-slate-50 font-noto font-semibold text-3xl'>Pembaruan Profil</p>
+              <p className='text-slate-50 font-noto font-semibold text-3xl'>Profil</p>
             </div>
             <div className='mt-20 flex flex-col md:flex-row'>
                 <img
@@ -42,14 +49,14 @@ const ProfilSiswa = () => {
                             <span className='ml-4'>infinitelearning</span>
                         </li>
                         <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Tanggal Lahir</span>
-                            <span>:</span>
-                            <span className='ml-4'>27 Juni 1945</span>
-                        </li>
-                        <li className='mb-1.5'>
                             <span style={{ minWidth: '120px', display: 'inline-block' }}>Tempat Lahir</span>
                             <span>:</span>
                             <span className='ml-4'>Bogor</span>
+                        </li>
+                        <li className='mb-1.5'>
+                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Tanggal Lahir</span>
+                            <span>:</span>
+                            <span className='ml-4'>27 Juni 1945</span>
                         </li>
                         <li className='mb-1.5'>
                             <span style={{ minWidth: '120px', display: 'inline-block' }}>No Telepon</span>
@@ -71,7 +78,10 @@ const ProfilSiswa = () => {
             </div>
 
             <div className='absolute bottom-0 right-0 mb-4 mr-4'>
-              <button className='bg-green hover:bg-green2 text-white px-4 py-2 rounded-md'>Edit</button>
+              <button
+              type='button'
+              onClick={handleLogin}
+              className='bg-green hover:bg-green2 text-white px-4 py-2 rounded-md'>Edit</button>
             </div>
 
           </div>
