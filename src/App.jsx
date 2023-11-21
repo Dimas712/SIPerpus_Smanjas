@@ -6,7 +6,6 @@ import LoginAdmin from './Components/LoginAdmin'
 import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
 
-
 function App () {
   return (
     <div>
