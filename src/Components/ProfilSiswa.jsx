@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
@@ -6,10 +6,12 @@ import {UserCircleIcon} from '@heroicons/react/24/outline'
 import Foto3x4 from '../assets/foto3x4.jpg'
 import Footer from './Footer';
  
-const ProfilSiswa = () => {
+const ProfilSiswa = ({ setLoggedIn }) => {
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = ( ) => {
+
+    setLoggedIn(false);
 
     navigate('/editsiswa');
   };
