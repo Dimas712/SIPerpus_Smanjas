@@ -23,7 +23,7 @@ const Homepage = () =>{
             {/* Header Homepage */}
             <div className="relative">
                 <img
-                className="mx-auto w-full  md:max-w-screen-2xl sm:max-xl:w-full "
+                className="mx-auto w-full  md:max-w-screen sm:max-xl:w-full "
                 src={Banner}
                 alt="Benner Perpustakaan"
                 />
