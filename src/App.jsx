@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Homepage from './Components/Homepage'
 import Navbar from './Components/Navbar'
@@ -7,9 +7,12 @@ import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
 import EditProfilSiswa from './Components/EditProfilSiswa'
 import PeminjamanSiswa from './Components/peminjamansiswa'
+import Pengembaliansiswa from './Components/Pengembaliansiswa'
 import Detailbuku from './Components/Detailbuku'
 
 function App () {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  
   return (
     <div>
     <Router>
@@ -20,6 +23,7 @@ function App () {
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
         <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
+        <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
         <Route path='/detailbuku' element={<Detailbuku/>}/>
       </Routes>
     </Router>
@@ -27,4 +31,4 @@ function App () {
   )
 }
 
-export default App
+export default App;

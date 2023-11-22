@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import {ArrowDownTrayIcon} from '@heroicons/react/24/outline'
+import {ArrowUpTrayIcon} from '@heroicons/react/24/outline'
 import Footer from './Footer';
-import Noveldilan from '../assets/Noveldilan.jpg'
-import Kimia from '../assets/kimia.jpeg'
+import Pancasila from '../assets/pancasila.jpg'
+import Matematika from '../assets/matematika.png'
 
-const PeminjamanSiswa = () => {
+const Pengembaliansiswa = () => {
   return (
     <div>
       <Navbar />
@@ -15,23 +15,23 @@ const PeminjamanSiswa = () => {
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
           <div className='relative h-full'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
-              <ArrowDownTrayIcon className='h-10 w-10' color='white'/>
-              <p className='text-white font-noto font-semibold text-3xl '>Data Peminjaman Buku</p>
+              <ArrowUpTrayIcon className='h-10 w-10' color='white'/>
+              <p className='text-white font-noto font-semibold text-3xl '>Data Pengembalian Buku</p>
             </div>
             
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
                <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto drop-shadow-lg'>
-                    <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent cursor-pointer'>
+                    <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent'>
                         <img
                         className='w-46 h-48'
-                        src={Noveldilan} 
+                        src={Pancasila} 
                         alt="" />
                         
                         <ul className='text-base'>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>ISSBN</span>
                               <span>:</span>
-                              <span className='ml-4'>20056</span>
+                              <span className='ml-4'>20054</span>
                           </li>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Nama</span>
@@ -41,7 +41,7 @@ const PeminjamanSiswa = () => {
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Judul Buku</span>
                               <span>:</span>
-                              <span className='ml-4'>Dilan 1990</span>
+                              <span className='ml-4'>Pendidikan Pancasila Dan Kewarganegaraan</span>
                           </li>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Pengembalian</span>
@@ -56,7 +56,12 @@ const PeminjamanSiswa = () => {
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Status</span>
                               <span>:</span>
-                              <span className='ml-4'>Dipinjam</span>
+                              <span className='ml-4'>Dikembalikan</span>
+                          </li>
+                          <li className='mb-0.5'>
+                              <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Kembali</span>
+                              <span>:</span>
+                              <span className='ml-4'>20 November 2023</span>
                           </li>
                         </ul>
                     </div>
@@ -64,14 +69,14 @@ const PeminjamanSiswa = () => {
                     <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent'>
                         <img
                         className='w-46 h-48'
-                        src={Kimia} 
+                        src={Matematika} 
                         alt="" />
                         
                         <ul className='text-base'>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>ISSBN</span>
                               <span>:</span>
-                              <span className='ml-4'>20058</span>
+                              <span className='ml-4'>20053</span>
                           </li>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Nama</span>
@@ -81,22 +86,27 @@ const PeminjamanSiswa = () => {
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Judul Buku</span>
                               <span>:</span>
-                              <span className='ml-4'>Kimia</span>
+                              <span className='ml-4'>Matematika</span>
                           </li>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Pengembalian</span>
                               <span>:</span>
-                              <span className='ml-4'>6 November 2023</span>
+                              <span className='ml-4'>11 November 2023</span>
                           </li>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Peminjaman</span>
                               <span>:</span>
-                              <span className='ml-4'>18 November 2023</span>
+                              <span className='ml-4'>20 November 2023</span>
                           </li>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Status</span>
                               <span>:</span>
-                              <span className='ml-4'>Dipinjam</span>
+                              <span className='ml-4'>Dikembalikan</span>
+                          </li>
+                          <li className='mb-0.5'>
+                              <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Kembali</span>
+                              <span>:</span>
+                              <span className='ml-4'>21 November</span>
                           </li>
                         </ul>
                     </div>
@@ -113,4 +123,4 @@ const PeminjamanSiswa = () => {
   );
 };
 
-export default PeminjamanSiswa;
+export default Pengembaliansiswa;
