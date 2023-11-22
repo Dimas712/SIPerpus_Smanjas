@@ -7,6 +7,7 @@ import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
 import EditProfilSiswa from './Components/EditProfilSiswa'
 import PeminjamanSiswa from './Components/peminjamansiswa'
+import Detailbuku from './Components/Detailbuku'
 
 function App () {
   return (
@@ -19,8 +20,7 @@ function App () {
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
         <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
-         
-        
+        <Route path='/detailbuku' element={<Detailbuku/>}/>
       </Routes>
     </Router>
     </div>
