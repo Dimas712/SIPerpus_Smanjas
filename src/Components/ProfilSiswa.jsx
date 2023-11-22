@@ -19,7 +19,7 @@ const ProfilSiswa = () => {
       <Navbar />
       <div className='flex h-screen'>
         <Sidebar />
-        <div className='border-2 w-full h-screen p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
+        <div className='border-2 w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <UserCircleIcon className='h-10 w-10' color='white'/>
