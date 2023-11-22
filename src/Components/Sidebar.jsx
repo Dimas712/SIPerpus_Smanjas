@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeftCircleIcon, MagnifyingGlassIcon, ArrowDownTrayIcon,ArrowUpTrayIcon, UserIcon} from '@heroicons/react/24/outline'
 import LogoSMA from '../assets/LogoSMA.svg'
 import Foto3x4 from '../assets/foto3x4.jpg'
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -32,18 +33,18 @@ const Sidebar = () => {
               <MagnifyingGlassIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Cari Buku</p>
             </li>
-            <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <Link to="/pinjamsiswa" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
               <ArrowDownTrayIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Data Peminjaman</p>
-            </li>
+            </Link>
             <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
               <ArrowUpTrayIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Data Pengembalian</p>
             </li>
-            <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} `}>
+            <Link to="/profil" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} `}>
               <UserIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Profil</p>
-            </li>
+            </Link>
           </ul>
         </div>
       </div>   

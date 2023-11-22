@@ -6,6 +6,7 @@ import LoginAdmin from './Components/LoginAdmin'
 import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
 import EditProfilSiswa from './Components/EditProfilSiswa'
+import PeminjamanSiswa from './Components/peminjamansiswa'
 
 function App () {
   return (
@@ -17,6 +18,8 @@ function App () {
         <Route path='/siswa' element={<LoginSiswa/>}/>
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
+        <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
+         
         
       </Routes>
     </Router>
