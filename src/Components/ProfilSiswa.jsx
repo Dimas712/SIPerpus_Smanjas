@@ -23,7 +23,7 @@ const ProfilSiswa = () => {
           <div className='relative'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <UserCircleIcon className='h-10 w-10' color='white'/>
-              <p className='text-slate-50 font-noto font-semibold text-3xl'>Profil</p>
+              <p className='text-white font-noto font-semibold text-3xl'>Profil</p>
             </div>
             <div className='mt-20 flex flex-col md:flex-row'>
                 <img

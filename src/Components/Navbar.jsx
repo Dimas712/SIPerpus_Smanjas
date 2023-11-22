@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`flex flex-col lg:flex-row justify-between bg-green p-4 text-slate-50 font-medium items-center`}>
+    <div className={`flex flex-col lg:flex-row justify-between bg-green p-4 text-slate-50 font-medium items-center text-white`}>
       <div className="lg:flex-shrink-0 lg:text-center">
         <p className='text-4xl font-quatro pl-4 drop-shadow-md'>SMAN 1 JASINGA</p>
       </div>

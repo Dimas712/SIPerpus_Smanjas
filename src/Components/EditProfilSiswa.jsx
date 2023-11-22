@@ -23,7 +23,7 @@ const EditProfilSiswa = () => {
           <div className='relative h-full'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <PencilSquareIcon className='h-10 w-10' color='white'/>
-              <p className='text-slate-50 font-noto font-semibold text-3xl '>Edit Profil</p>
+              <p className='text-white font-noto font-semibold text-3xl '>Edit Profil</p>
             </div>
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
                <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
@@ -125,10 +125,10 @@ const EditProfilSiswa = () => {
 
                         <div className='h-12 w-45 space-x-7 text-base font-sans font-semibold text-white pt-7 absolute right-0 bottom-0'>
                             <button 
-                            className='rounded-full md:w-20 md:h-8 bg-red-500 hover:bg-red-700'
+                            className='rounded-md md:w-20 md:h-8 bg-red-500 hover:bg-red-700'
                             onClick={handleLogin}
                             >Kembali</button>
-                            <button className='rounded-full md:w-20 md:h-8 bg-green hover:bg-green2'>Simpan</button>
+                            <button className='rounded-md md:w-20 md:h-8 bg-green hover:bg-green2'>Simpan</button>
                         </div>
                     </form>
                 </div> 
