@@ -14,11 +14,12 @@ import {
 
 const Detailbuku = () => {
   return (
-    <div className='relative'>
+    <div className='relative '>
         <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <UserCircleIcon className='h-10 w-10' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Detail Buku</p>
         </div>
+    <div className='flex flex-col items-center justify-center'>
     <Card className="w-full max-w-[47rem] flex-row ">
       <CardHeader
         shadow={false}
@@ -31,7 +32,7 @@ const Detailbuku = () => {
           className="h-full w-full object-cover"
         />
       </CardHeader>
-      <CardBody>
+      <CardBody >
         <Typography variant="h4" color="gray" className="mb-2 uppercase">
           Novel Dilan 1990
         </Typography>
@@ -68,7 +69,7 @@ const Detailbuku = () => {
       </CardBody>
     </Card>
     <br></br>
-    <ul className='md:pl-10 font-semibold'>
+    <ul className='md:pl-10 font-semibold flex flex-col md:flex-coloumn'>
         <li className='mb-1.5'>
             <span style={{ minWidth: '120px', display: 'inline-block' }}>ISSBN</span>
             <span>:</span>
@@ -95,6 +96,7 @@ const Detailbuku = () => {
             <span className='ml-4'>2015</span>
         </li>  
         </ul>
+        </div>
     </div>
   )
 }
