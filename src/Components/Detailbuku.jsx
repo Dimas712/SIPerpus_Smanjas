@@ -15,11 +15,13 @@ import {
 const Detailbuku = () => {
   return (
     <div className='relative '>
+      <Navbar/>
         <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <UserCircleIcon className='h-10 w-10' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Detail Buku</p>
         </div>
     <div className='flex flex-col items-center justify-center'>
+    <Sidebar/>
     <Card className="w-full max-w-[47rem] flex-row ">
       <CardHeader
         shadow={false}
@@ -97,6 +99,7 @@ const Detailbuku = () => {
         </li>  
         </ul>
         </div>
+        <Footer/>
     </div>
   )
 }
