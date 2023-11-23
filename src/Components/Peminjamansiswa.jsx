@@ -20,12 +20,9 @@ const PeminjamanSiswa = () => {
             </div>
             
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
-<<<<<<< HEAD
               <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
                     <div>
-                        halo
-=======
-               <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto drop-shadow-lg'>
+                  <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto drop-shadow-lg'>
                     <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent cursor-pointer'>
                         <img
                         className='w-46 h-48'
@@ -64,9 +61,8 @@ const PeminjamanSiswa = () => {
                               <span className='ml-4'>Dipinjam</span>
                           </li>
                         </ul>
->>>>>>> 7691abcd3ffc0273a02c25461e0e8cb12c40690e
                     </div>
-
+                  </div>
                     <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent'>
                         <img
                         className='w-46 h-48'
@@ -106,15 +102,13 @@ const PeminjamanSiswa = () => {
                           </li>
                         </ul>
                     </div>
-
                 </div> 
             </div>
             </div>
         </div>
       </div>
-      <div>
-        <Footer/>
-      </div>
+    </div>
+    <Footer />
     </div>
   );
 };

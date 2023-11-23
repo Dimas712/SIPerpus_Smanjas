@@ -16,13 +16,10 @@ const EditProfilSiswa = () => {
 
 return (
     <div>
-<<<<<<< HEAD
-    <Navbar />
+        <Navbar />
     <div className='flex h-screen '>
-=======
-      <Navbar />
-      <div className='flex '>
->>>>>>> 7691abcd3ffc0273a02c25461e0e8cb12c40690e
+    <div className='flex '>
+
         <Sidebar />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
         <div className='relative h-full'>
@@ -31,7 +28,7 @@ return (
             <p className='text-white font-noto font-semibold text-3xl '>Edit Profil</p>
             </div>
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
-            <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
+                <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
                     <form className='w-4/6 space-y-8'>
                         <div className='flex flex-col'>
                             <label htmlFor="">Nama</label>
@@ -140,9 +137,10 @@ return (
             </div>
             </div>
         </div>
-    </div>
+        </div>
     <div className='relative'>
         <Footer/>
+    </div>
     </div>
     </div>
 );

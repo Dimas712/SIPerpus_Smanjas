@@ -6,17 +6,16 @@ import LoginAdmin from './Components/LoginAdmin'
 import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
 import EditProfilSiswa from './Components/EditProfilSiswa'
-<<<<<<< HEAD
-import PeminjamanSiswa from './Components/Peminjamansiswa'
-import CariBuku from './Components/CariBuku'
+import PeminjamanSiswa from './Components/PeminjamanSiswa'
+// import PeminjamanSiswa from './Components/Peminjamansiswa'
+// import PeminjamanSiswa from './Components/Peminjamansiswa'
+import CariBuku from './Components/Caribuku'
 import Form from './Components/Form'
 import Carousel from './Components/Carousel'
 import CardBook from './Components/CardBook'
-=======
-import PeminjamanSiswa from './Components/peminjamansiswa'
+// import PeminjamanSiswa from './Components/Peminjamansiswa'
 import Pengembaliansiswa from './Components/Pengembaliansiswa'
 import Detailbuku from './Components/Detailbuku'
->>>>>>> 7691abcd3ffc0273a02c25461e0e8cb12c40690e
 
 function App () {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -30,16 +29,14 @@ function App () {
         <Route path='/siswa' element={<LoginSiswa/>}/>
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
-        <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
-<<<<<<< HEAD
+        {/* <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/> */}
         <Route path='/caribuku' element={<CariBuku/>}/>
         <Route path='/formpinjambuku' element={<Form/>}/>
         <Route path='/carousel' element={<Carousel/>}/>
         <Route path='/cardbook' element={<CardBook/>}/>
-=======
         <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
         <Route path='/detailbuku' element={<Detailbuku/>}/>
->>>>>>> 7691abcd3ffc0273a02c25461e0e8cb12c40690e
+        <Route path='/peminjamansiswa' element={<PeminjamanSiswa/>}/>
       </Routes>
     </Router>
     </div>
