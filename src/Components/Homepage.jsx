@@ -27,7 +27,7 @@ const Homepage = () =>{
                 src={Banner}
                 alt="Benner Perpustakaan"
                 />
-                <div className="flex flex-col items-center justify-center absolute inset-0 mt-24 justify-center md:items-center md:mb-42 md:ml-2 tracking-wider z-0">
+                <div className="flex flex-col items-center absolute inset-0 mt-24 justify-center md:items-center md:mb-42 md:ml-2 tracking-wider z-0">
                     <p className="text-white font-bold md:text-7xl text-center">
                         <span className="block">PERPUSTAKAAN</span> 
                         <span className="block mt-8">SMAN 1 JASINGA</span>
