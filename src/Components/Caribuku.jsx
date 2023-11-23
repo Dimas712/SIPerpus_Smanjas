@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
@@ -7,9 +7,15 @@ import Carousel from "./Carousel";
 import CardBook from "./CardBook";
 
 const CariBuku = () => {
+    const [isLoggedIn, setLoggedIn] = useState(true);
+  
+    const handleLogin = ( ) => {
+    setLoggedIn(true);
+    };
+    
     return(
         <div>
-            <Navbar />
+            <Navbar isLoggedIn={isLoggedIn} />
             <div className="flex flex-row">
                 <Sidebar />
                 <div className="flex flex-col py-10 w-screen md:px-10">

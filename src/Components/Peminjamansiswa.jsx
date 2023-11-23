@@ -107,7 +107,6 @@ const PeminjamanSiswa = () => {
                           </li>
                         </ul>
                     </div>
-
                 </div> 
             </div>
             </div>

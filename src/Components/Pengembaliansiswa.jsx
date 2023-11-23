@@ -17,7 +17,7 @@ const Pengembaliansiswa = () => {
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
-      <div className='flex '>
+      <div className='flex'>
         <Sidebar />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
           <div className='relative h-full'>

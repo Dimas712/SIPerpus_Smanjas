@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
+  const [activeMenuItem, setActiveMenuItem] = useState('');
+
+  const handleMenuItemClick = (menuItem) => {
+    setActiveMenuItem(menuItem);
+  };
 
   return (
     <div className='flex'>
@@ -29,18 +34,21 @@ const Sidebar = () => {
         
         <div className='mt-8 mx-[-1rem]'>
           <ul>
-            <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <Link to="/caribuku" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
               <MagnifyingGlassIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Cari Buku</p>
-            </li>
+            </Link>
+            
             <Link to="/pinjamsiswa" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
               <ArrowDownTrayIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Data Peminjaman</p>
             </Link>
+            
             <Link to="/kembalisiswa" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
               <ArrowUpTrayIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Data Pengembalian</p>
             </Link>
+
             <Link to="/profil" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} `}>
               <UserIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Profil</p>

@@ -100,9 +100,11 @@ const Homepage = () =>{
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <div>
+                <Footer/>
+            </div>
         </div>
     )
 }
 
-export default Homepage
+export default Homepage;
