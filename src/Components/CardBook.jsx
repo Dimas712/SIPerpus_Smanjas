@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Bukuing from '../assets/Bukuing.svg'
 import Bukudilan from '../assets/Bukudilan.svg'
 import Bukupkn from '../assets/Bukupkn.svg'
@@ -84,7 +85,7 @@ const CardBook = () => {
           </div>
           <div className='px-3'>
             <a href='#' className='flex flex-row px-1 py-1 items-center justify-center border border-gray-600 rounded-md hover:bg-green'>
-              <p className='text-xs'>Selengkapnya</p>
+              <Link to='/detailbuku' className='text-xs'>Selengkapnya</Link>
               <GrFormNextLink className='ml-2' />
             </a>
           </div>
