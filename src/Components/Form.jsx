@@ -2,8 +2,10 @@ import React, {useState} from "react"
 import Sidebar from "./Sidebar";
 import { FaPlus } from "react-icons/fa6";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 const Form = () => {
+    
     const [formData, setFormData] = useState({
         noPeminjam: '',
         nama: '',
@@ -20,6 +22,7 @@ const Form = () => {
             [e.target.name]: e.target.value,
         });
     };
+    
 
     // Handle untuk mengirim formulir 
     const handleSubmit = (e) =>{
@@ -27,9 +30,18 @@ const Form = () => {
         //Melakukan sesuatu dengan data form, untuk mengirim data ke server atau validasi
         console.log('Data Formulir', formData);
     };
+    
+    const [isLoggedIn, setLoggedIn] = useState(true);
+  
+    const handleLogin = ( ) => {
+    setLoggedIn(true);
+    };
 
     return(
         <div>
+            <div>
+            <Navbar isLoggedIn={isLoggedIn} />
+            </div>
                 <div className="flex flex-row">
                 <Sidebar />
                 <div className="px-5 py-10 w-screen">
