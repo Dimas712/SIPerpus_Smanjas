@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
@@ -51,7 +52,7 @@ const Detailbuku = () => {
                 <Typography variant="h4" color="blue-gray" className="mb-2">
                   Jumlah : 30
                 </Typography>
-                <a href="#" className="inline-block">
+                <Link to='/formpinjambuku' className="inline-block">
                   <Button variant="text" className="flex items-center gap-2 bg-green2">
                     Pinjam
                     <svg
@@ -69,7 +70,7 @@ const Detailbuku = () => {
                       />
                     </svg>
                   </Button>
-                </a>
+                </Link>
               </CardBody>
             </Card>
         <br />
