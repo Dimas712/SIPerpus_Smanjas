@@ -26,7 +26,7 @@ const Detailbuku = () => {
             <p className='text-white font-noto font-semibold text-3xl'>Detail Buku</p>
           </div>
           <div className='mt-20 flex flex-col md:flex-row'>
-            <Card className="w-full max-w-[47em] flex-row mt-[-33rem]">
+            <Card className="w-full max-w-[47em] flex-row mt-[-3rem]">
               <CardHeader
                   shadow={false}
                   floated={false}
