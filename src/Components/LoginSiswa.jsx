@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import LogoSMA from '../assets/LogoSMA.svg'
 import VideoSMA from '../assets/VideoSMA.mp4'
@@ -6,9 +6,11 @@ import VideoBG from '../assets/VideoSMA.mp4'
 
 function LoginSiswa()  {
   const navigate = useNavigate();
+  const [isLoggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
 
+    setLoggedIn(true);
     navigate('/profil');
   };
 

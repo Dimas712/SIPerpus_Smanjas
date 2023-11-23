@@ -11,22 +11,21 @@ import Pengembaliansiswa from './Components/Pengembaliansiswa'
 import Detailbuku from './Components/Detailbuku'
 
 function App () {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   
   return (
     <div>
-    <Router>
-      <Routes>
-        <Route path='/' element={<Homepage/>}/>
-        <Route path='/admin' element={<LoginAdmin/>}/>
-        <Route path='/siswa' element={<LoginSiswa/>}/>
-        <Route path='/profil' element={<ProfilSiswa/>}/>
-        <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
-        <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
-        <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
-        <Route path='/detailbuku' element={<Detailbuku/>}/>
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Homepage/>}/>
+          <Route path='/admin' element={<LoginAdmin/>}/>
+          <Route path='/siswa' element={<LoginSiswa/>}/>
+          <Route path='/profil' element={<ProfilSiswa/>}/>
+          <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
+          <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
+          <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
+          <Route path='/detailbuku' element={<Detailbuku/>}/>
+        </Routes>
+      </Router>
     </div>
   )
 }

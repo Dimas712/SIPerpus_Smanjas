@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import {ArrowDownTrayIcon} from '@heroicons/react/24/outline'
 import Footer from './Footer';
 import Noveldilan from '../assets/Noveldilan.jpg'
 import Kimia from '../assets/kimia.jpeg'
+import { Link } from 'react-router-dom';
 
 const PeminjamanSiswa = () => {
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  
+  const handleLogin = ( ) => {
+    setLoggedIn(true);
+  };
+
   return (
     <div>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex '>
         <Sidebar />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
@@ -21,7 +28,7 @@ const PeminjamanSiswa = () => {
             
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
                <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto drop-shadow-lg'>
-                    <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent cursor-pointer'>
+                    <Link to="/detailbuku" className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent cursor-pointer'>
                         <img
                         className='w-46 h-48'
                         src={Noveldilan} 
@@ -59,7 +66,7 @@ const PeminjamanSiswa = () => {
                               <span className='ml-4'>Dipinjam</span>
                           </li>
                         </ul>
-                    </div>
+                    </Link>
 
                     <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent'>
                         <img

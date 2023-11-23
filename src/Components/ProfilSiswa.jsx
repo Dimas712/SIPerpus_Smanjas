@@ -6,19 +6,20 @@ import {UserCircleIcon} from '@heroicons/react/24/outline'
 import Foto3x4 from '../assets/foto3x4.jpg'
 import Footer from './Footer';
  
-const ProfilSiswa = ({ setLoggedIn }) => {
+
+const ProfilSiswa = () => {
   const navigate = useNavigate();
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  
 
   const handleLogin = ( ) => {
-
-    setLoggedIn(false);
-
+    setLoggedIn(true);
     navigate('/editsiswa');
   };
 
   return (
     <div>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex h-screen'>
         <Sidebar />
         <div className='border-2 w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
