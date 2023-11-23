@@ -5,28 +5,28 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import {PencilSquareIcon} from '@heroicons/react/24/outline'
 import Footer from './Footer';
- 
+
 const EditProfilSiswa = () => {
     const navigate = useNavigate();
 
     const handleLogin = () => {
 
     navigate('/profil');
-  };
+};
 
-  return (
+return (
     <div>
-      <Navbar />
-      <div className='flex h-screen '>
+    <Navbar />
+    <div className='flex h-screen '>
         <Sidebar />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
-          <div className='relative h-full'>
+        <div className='relative h-full'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
-              <PencilSquareIcon className='h-10 w-10' color='white'/>
-              <p className='text-white font-noto font-semibold text-3xl '>Edit Profil</p>
+            <PencilSquareIcon className='h-10 w-10' color='white'/>
+            <p className='text-white font-noto font-semibold text-3xl '>Edit Profil</p>
             </div>
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
-               <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
+            <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
                     <form className='w-4/6 space-y-8'>
                         <div className='flex flex-col'>
                             <label htmlFor="">Nama</label>
@@ -135,12 +135,12 @@ const EditProfilSiswa = () => {
             </div>
             </div>
         </div>
-      </div>
-      <div className='relative'>
-        <Footer/>
-      </div>
     </div>
-  );
+    <div className='relative'>
+        <Footer/>
+    </div>
+    </div>
+);
 };
 
 export default EditProfilSiswa;

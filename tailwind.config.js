@@ -16,7 +16,8 @@ module.exports = withMT({
         'putih': '#D9D9D9',
         'footer': '#BFC7BB',
         'icons': '#000000',
-        'bgds': '#D0DDCA'
+        'bgds': '#D0DDCA',
+        'search': '#F1F1F1'
         
       },
       fontFamily: {

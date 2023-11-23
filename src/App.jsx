@@ -6,7 +6,11 @@ import LoginAdmin from './Components/LoginAdmin'
 import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
 import EditProfilSiswa from './Components/EditProfilSiswa'
-import PeminjamanSiswa from './Components/peminjamansiswa'
+import PeminjamanSiswa from './Components/Peminjamansiswa'
+import CariBuku from './Components/CariBuku'
+import Form from './Components/Form'
+import Carousel from './Components/Carousel'
+import CardBook from './Components/CardBook'
 
 function App () {
   return (
@@ -19,8 +23,10 @@ function App () {
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
         <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
-         
-        
+        <Route path='/caribuku' element={<CariBuku/>}/>
+        <Route path='/formpinjambuku' element={<Form/>}/>
+        <Route path='/carousel' element={<Carousel/>}/>
+        <Route path='/cardbook' element={<CardBook/>}/>
       </Routes>
     </Router>
     </div>

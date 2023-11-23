@@ -17,7 +17,7 @@ const PeminjamanSiswa = () => {
               <p className='text-white font-noto font-semibold text-3xl '>Data Peminjaman Buku</p>
             </div>
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
-               <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
+              <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
                     <div>
                         halo
                     </div>
