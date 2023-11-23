@@ -11,7 +11,7 @@ function LoginSiswa()  {
   const handleLogin = () => {
 
     setLoggedIn(true);
-    navigate('/profil');
+    navigate('/caribuku');
   };
 
   return (
