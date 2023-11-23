@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import {ArrowUpTrayIcon} from '@heroicons/react/24/outline'
@@ -7,10 +7,17 @@ import Pancasila from '../assets/pancasila.jpg'
 import Matematika from '../assets/matematika.png'
 
 const Pengembaliansiswa = () => {
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  
+  const handleLogin = ( ) => {
+    setLoggedIn(true);
+  };
+
+
   return (
     <div>
-      <Navbar />
-      <div className='flex '>
+      <Navbar isLoggedIn={isLoggedIn} />
+      <div className='flex'>
         <Sidebar />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
           <div className='relative h-full'>

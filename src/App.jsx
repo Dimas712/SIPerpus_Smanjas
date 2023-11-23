@@ -15,7 +15,6 @@ import Pengembaliansiswa from './Components/Pengembaliansiswa'
 import Detailbuku from './Components/Detailbuku'
 
 function App () {
-  const [isLoggedIn, setLoggedIn] = useState(false);
   
   return (
     <div>
@@ -26,11 +25,11 @@ function App () {
         <Route path='/siswa' element={<LoginSiswa/>}/>
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
-        <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
         <Route path='/caribuku' element={<CariBuku/>}/>
         <Route path='/formpinjambuku' element={<Form/>}/>
         <Route path='/carousel' element={<Carousel/>}/>
         <Route path='/cardbook' element={<CardBook/>}/>
+        <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
         <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
         <Route path='/detailbuku' element={<Detailbuku/>}/>
       </Routes>
