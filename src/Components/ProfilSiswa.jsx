@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
@@ -6,10 +6,12 @@ import {UserCircleIcon} from '@heroicons/react/24/outline'
 import Foto3x4 from '../assets/foto3x4.jpg'
 import Footer from './Footer';
  
-const ProfilSiswa = () => {
+const ProfilSiswa = ({ setLoggedIn }) => {
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = ( ) => {
+
+    setLoggedIn(false);
 
     navigate('/editsiswa');
   };
@@ -19,7 +21,7 @@ const ProfilSiswa = () => {
       <Navbar />
       <div className='flex h-screen'>
         <Sidebar />
-        <div className='border-2 w-full h-screen p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
+        <div className='border-2 w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <UserCircleIcon className='h-10 w-10' color='white'/>

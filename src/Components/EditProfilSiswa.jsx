@@ -16,8 +16,13 @@ const EditProfilSiswa = () => {
 
 return (
     <div>
+<<<<<<< HEAD
     <Navbar />
     <div className='flex h-screen '>
+=======
+      <Navbar />
+      <div className='flex '>
+>>>>>>> 7691abcd3ffc0273a02c25461e0e8cb12c40690e
         <Sidebar />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
         <div className='relative h-full'>
