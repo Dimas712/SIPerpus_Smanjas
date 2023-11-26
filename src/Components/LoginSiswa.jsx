@@ -34,7 +34,7 @@ function LoginSiswa()  {
         </div>
         
         <card>
-        <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg object-top">
+        <div className="mt-1 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg object-top">
         <img
             className="mx-auto h-20 w-auto"
             src={LogoSMA}
