@@ -1,10 +1,12 @@
 import React from 'react'
+import Footer from './Footer';
 
 const DasboardAdmin = () => {
   return (
+    <div>
     <div className="flex justify-center items-center h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-        <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mx-auto w-85">
+        <div className="max-w-md bg-bgds shadow-lg rounded-lg overflow-hidden mx-auto w-85">
           <div className="p-4">
             <h2 className="text-xl font-semibold text-gray-800 mb-2">12</h2>
             <h2 className="text-xl font-semibold text-gray-800 mb-2">Anggota</h2>
@@ -14,7 +16,7 @@ const DasboardAdmin = () => {
           </div>
         </div>
 
-        <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mx-auto w-85">
+        <div className="max-w-md bg-bgds shadow-lg rounded-lg overflow-hidden mx-auto w-85">
           <div className="p-4">
             <h2 className="text-xl font-semibold text-gray-800 mb-2">50</h2>
             <h2 className="text-xl font-semibold text-gray-800 mb-2">Di Kembalikan</h2>
@@ -24,7 +26,7 @@ const DasboardAdmin = () => {
           </div>
         </div>
 
-        <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mx-auto w-85">
+        <div className="max-w-md bg-bgds shadow-lg rounded-lg overflow-hidden mx-auto w-85">
           <div className="p-4">
             <h2 className="text-xl font-semibold text-gray-800 mb-2">20</h2>
             <h2 className="text-xl font-semibold text-gray-800 mb-2">Di Pinjam</h2>
@@ -34,6 +36,8 @@ const DasboardAdmin = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }
