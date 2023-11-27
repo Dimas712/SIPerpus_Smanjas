@@ -13,6 +13,7 @@ import CardBook from './Components/CardBook'
 import PeminjamanSiswa from './Components/peminjamansiswa'
 import Pengembaliansiswa from './Components/Pengembaliansiswa'
 import Detailbuku from './Components/Detailbuku'
+import DasboardAdmin from './Components/DasboardAdmin'
 
 function App () {
   
@@ -32,6 +33,7 @@ function App () {
         <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
         <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
         <Route path='/detailbuku' element={<Detailbuku/>}/>
+        <Route path='/dasboard' element={<DasboardAdmin/>}/>
       </Routes>
     </Router>
     </div>
