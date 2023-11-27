@@ -11,7 +11,7 @@ function LoginSiswa()  {
   const handleLogin = () => {
 
     setLoggedIn(true);
-    navigate('/profil');
+    navigate('/caribuku');
   };
 
   return (
@@ -30,23 +30,22 @@ function LoginSiswa()  {
             }}
             >
             </video>
-
-
-          <img
+            
+        </div>
+        
+        <card>
+        <div className="mt-1 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg object-top">
+        <img
             className="mx-auto h-20 w-auto"
             src={LogoSMA}
             alt="Your Company"
           />
-          <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+        <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-white">
             PERPUSTAKAAN
             <br />
             SMAN 1 JASINGA
           </h2>
           <p className="mt-2 text-center text-1xl font-bold leading-2 tracking-tight text-white">Siswa</p>
-        </div>
-        
-        <card>
-        <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <div className="flex items-center justify-between"> 
