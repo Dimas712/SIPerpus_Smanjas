@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
-import Sidebar from './Sidebar';
-import {IdentificationIcon} from '@heroicons/react/24/outline'
+import SidebarAdmin from './SidebarAdmin';
+import {UserCircleIcon} from '@heroicons/react/24/outline'
 import Foto3x4 from '../assets/foto3x4.jpg'
 import Footer from './Footer';
  
 
-const ProfilSiswa = () => {
+const ProfilAdmin = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setLoggedIn] = useState(true);
   
@@ -21,11 +21,11 @@ const ProfilSiswa = () => {
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex h-screen'>
-        <Sidebar />
+        <SidebarAdmin />
         <div className='border-2 w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
-              <IdentificationIcon className='h-10 w-10' color='white'/>
+              <UserCircleIcon className='h-10 w-10' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Profil</p>
             </div>
             <div className='mt-20 flex flex-col md:flex-row'>
@@ -95,4 +95,4 @@ const ProfilSiswa = () => {
   );
 };
 
-export default ProfilSiswa;
+export default ProfilAdmin;

@@ -13,6 +13,7 @@ import CardBook from './Components/CardBook'
 import PeminjamanSiswa from './Components/peminjamansiswa'
 import Pengembaliansiswa from './Components/Pengembaliansiswa'
 import Detailbuku from './Components/Detailbuku'
+import ProfilAdmin from './Components/ProfilAdmin'
 
 function App () {
   
@@ -24,6 +25,7 @@ function App () {
         <Route path='/admin' element={<LoginAdmin/>}/>
         <Route path='/siswa' element={<LoginSiswa/>}/>
         <Route path='/profil' element={<ProfilSiswa/>}/>
+        <Route path='/profiladmin' element={<ProfilAdmin/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
         <Route path='/caribuku' element={<CariBuku/>}/>
         <Route path='/formpinjambuku' element={<Form/>}/>

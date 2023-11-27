@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
@@ -8,15 +8,18 @@ import Footer from './Footer';
 
 const EditProfilSiswa = () => {
     const navigate = useNavigate();
+    const [isLoggedIn, setLoggedIn] = useState(true);
+    
 
     const handleLogin = () => {
 
-    navigate('/profil');
+        setLoggedIn(true);    
+        navigate('/profil');
 };
 
 return (
     <div>
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} />
     <div>
     
     <div className='flex '>
