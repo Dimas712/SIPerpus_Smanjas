@@ -1,28 +1,41 @@
 import React from 'react'
 
 const DasboardAdmin = () => {
-    const data = [
-        { id: 1, jumlah: '312', nama: 'Anggota'},
-        { id: 2, jumlah: '321', nama: 'Dikembalikan'},
-        { id: 3, jumlah: '421', nama: 'Dipinjam'},
-        // Tambahkan data grup lain jika diperlukan
-      ];
-    const Card = ({ jumlah, nama,}) => {
-        return (
-          <div className="bg-white p-4 shadow-md rounded-md">
-            <h2 className="text-lg font-bold">{jumlah}</h2>
-            <h2 className="text-lg font-bold">{nama}</h2>
-            <button className="mt-2 bg-green-500 text-white px-4 py-2 rounded-md">
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mx-auto w-85">
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">12</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Anggota</h2>
+            <button className="bg-green text-white px-20 py-2.5 rounded-lg hover:bg-green4">
               Selengkapnya
             </button>
           </div>
-        );
-      };
-    return <div className="flex justify-center items-center h-screen gap">
-      {data.map((group) => (
-        <Card key={group.id} {...group} />
-      ))}
-    </div>;
+        </div>
+
+        <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mx-auto w-85">
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">50</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Di Kembalikan</h2>
+            <button className="bg-green text-white px-20 py-2.5 rounded-lg hover:bg-green4">
+              Selengkapnya
+            </button>
+          </div>
+        </div>
+
+        <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mx-auto w-85">
+          <div className="p-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">20</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Di Pinjam</h2>
+            <button className="bg-green text-white px-20 py-2.5 rounded-lg hover:bg-green4">
+              Selengkapnya
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default DasboardAdmin
