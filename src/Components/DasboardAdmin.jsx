@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const DasboardAdmin = () => {
   return (
@@ -42,4 +42,4 @@ const DasboardAdmin = () => {
   );
 }
 
-export default DasboardAdmin
+export default DasboardAdmin;

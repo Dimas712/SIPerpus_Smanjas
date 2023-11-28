@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
-import Sidebar from './Sidebar';
+import SidebarAdmin from './SidebarAdmin';
 import {IdentificationIcon} from '@heroicons/react/24/outline'
-import Foto3x4 from '../assets/foto3x4.jpg'
+import Admin from '../assets/admin.jpg'
 import Footer from './Footer';
  
 
-const ProfilSiswa = () => {
+const ProfilAdmin = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setLoggedIn] = useState(true);
   
 
   const handleLogin = ( ) => {
     setLoggedIn(true);
-    navigate('/editsiswa');
+    navigate('/editadmin');
   };
 
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex h-screen'>
-        <Sidebar />
+        <SidebarAdmin />
         <div className='border-2 w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
@@ -31,7 +31,7 @@ const ProfilSiswa = () => {
             <div className='mt-20 flex flex-col md:flex-row'>
                 <img
                 className='h-54 w-48 mb-4 md:mb-0 md:mr-0'
-                src={Foto3x4} 
+                src={Admin} 
                 alt="foto siswa" 
                 />
                 <div className='md:pl-20 font-semibold'>
@@ -39,43 +39,15 @@ const ProfilSiswa = () => {
                         <li className='mb-1.5'>
                             <span style={{ minWidth: '120px', display: 'inline-block' }}>Nama</span>
                             <span>:</span>
-                            <span className='ml-4'>Mumtazah</span>
+                            <span className='ml-4'>Admin</span>
                         </li>
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>NIS</span>
-                            <span>:</span>
-                            <span className='ml-4'>00001</span>
-                        </li>
+                        
                         <li className='mb-1.5'>
                             <span style={{ minWidth: '120px', display: 'inline-block' }}>Password</span>
                             <span>:</span>
                             <span className='ml-4'>infinitelearning</span>
                         </li>
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Tempat Lahir</span>
-                            <span>:</span>
-                            <span className='ml-4'>Bogor</span>
-                        </li>
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Tanggal Lahir</span>
-                            <span>:</span>
-                            <span className='ml-4'>27 Juni 1945</span>
-                        </li>
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>No Telepon</span>
-                            <span>:</span>
-                            <span className='ml-4'>08321314171</span>
-                        </li>
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Email</span>
-                            <span>:</span>
-                            <span className='ml-4'>mumum221@gmail.com</span>
-                        </li>
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Alamat</span>
-                            <span>:</span>
-                            <span className='ml-4'>Bogor</span>
-                        </li>   
+                           
                     </ul>
                 </div>
             </div>
@@ -95,4 +67,4 @@ const ProfilSiswa = () => {
   );
 };
 
-export default ProfilSiswa;
+export default ProfilAdmin;

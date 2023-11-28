@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
-import Sidebar from './Sidebar';
+import SidebarAdmin from './SidebarAdmin';
 import {PencilSquareIcon} from '@heroicons/react/24/outline'
 import Footer from './Footer';
 
-const EditProfilSiswa = () => {
+const EditAdmin = () => {
     const navigate = useNavigate();
     const [isLoggedIn, setLoggedIn] = useState(true);
     
@@ -14,7 +14,7 @@ const EditProfilSiswa = () => {
     const handleLogin = () => {
 
         setLoggedIn(true);    
-        navigate('/profil');
+        navigate('/profiladmin');
 };
 
 return (
@@ -23,16 +23,16 @@ return (
     <div>
     
     <div className='flex '>
-        <Sidebar />
+        <SidebarAdmin />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
-        <div className='relative h-full'>
+        <div className='relative h-screen'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
             <PencilSquareIcon className='h-10 w-10' color='white'/>
             <p className='text-white font-noto font-semibold text-3xl '>Edit Profil</p>
             </div>
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
                 <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
-                    <form className='w-4/6 space-y-8'>
+                    <form className='w-1/2 space-y-8'>
                         <div className='flex flex-col'>
                             <label htmlFor="">Nama</label>
                             <input
@@ -41,21 +41,6 @@ return (
                             name='nama' />
                         </div>
 
-                        <div className='flex flex-col'>
-                            <label htmlFor="">Tempat Lahir</label>
-                            <input
-                            className='rounded-lg pl-3 text-lg' 
-                            type="text"
-                            name='nama' />
-                        </div>
-
-                        <div className='flex flex-col'>
-                            <label htmlFor="">Tanggal Lahir</label>
-                            <input
-                            className='rounded-lg pl-3 text-lg' 
-                            type="date"
-                            name='nama' />
-                        </div>
 
                         <div className='flex flex-col'>
                             <label htmlFor="">Password</label>
@@ -64,10 +49,8 @@ return (
                             type="password"
                             name='nama' />
                         </div>
-                    </form>
+                    
 
-
-                    <form className='w-2/6 space-y-4' action="">
                         <div className='flex flex-col '>
                             <p>Jenis Kelamin</p>
                             <div className='text-lg'>
@@ -89,28 +72,11 @@ return (
                                 />
                                 <label htmlFor="perempuan">Perempuan</label>
                             </div>
-
                         </div>
 
-                    
-                        <div className='flex flex-col'>
-                            <label htmlFor="">No. Telepon</label>
-                            <input
-                            className='rounded-lg pl-3 text-lg' 
-                            type="number"
-                            name='nama' />
-                        </div>
-
-                        <div className='flex flex-col'>
-                            <label htmlFor="">Email</label>
-                            <input
-                            className='rounded-lg pl-3 text-lg' 
-                            type="email"
-                            name='nama' />
-                        </div>
 
                         <div>
-                        <label htmlFor="image">Profile Image</label>
+                        <label className='flex' htmlFor="image">Profile Image</label>
                             <input
                                 className='text-base mt-1 cursor-pointer'
                                 type="file"
@@ -119,14 +85,7 @@ return (
                             />
                         </div>
 
-                        <div className='flex flex-col pb-14'>
-                            <label htmlFor="">Alamat</label>
-                            <input
-                            className='flex rounded-lg  h-36 px-3 text-lg pb-24' 
-                            type="text"
-                            placeholder="Masukkan Alamatmu"
-                            name='nama'/>
-                        </div>
+                        
 
                         <div className='h-12 w-45 space-x-7 text-base font-sans font-semibold text-white pt-7 absolute right-0 bottom-0'>
                             <button 
@@ -141,12 +100,10 @@ return (
             </div>
         </div>
         </div>
-    <div className='relative'>
-        <Footer/>
-    </div>
+            <Footer/>
     </div>
     </div>
 );
 };
 
-export default EditProfilSiswa;
+export default EditAdmin;

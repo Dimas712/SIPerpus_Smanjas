@@ -28,7 +28,7 @@ const PeminjamanSiswa = () => {
             
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
                <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto drop-shadow-lg'>
-                    <Link to="/detailbuku" className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent cursor-pointer'>
+                    <Link to="/detailbuku" className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black overflow-hidden  cursor-pointer'>
                         <img
                         className='w-46 h-48'
                         src={Noveldilan} 
