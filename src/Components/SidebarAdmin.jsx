@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ArrowLeftCircleIcon, DocumentTextIcon, ArrowsRightLeftIcon, ChevronDownIcon} from '@heroicons/react/24/outline'
+import { ArrowLeftCircleIcon, DocumentTextIcon, ArrowsRightLeftIcon, ChevronDownIcon, UserIcon} from '@heroicons/react/24/outline'
 import { AiOutlineDashboard } from "react-icons/ai";
 import { RiBook2Line } from "react-icons/ri";
 import { PiStudent } from "react-icons/pi";
 import { BiCategory } from "react-icons/bi";
+import { GiBookshelf } from "react-icons/gi";
 import { TfiDownload, TfiUpload } from "react-icons/tfi";
 import LogoSMA from '../assets/LogoSMA.svg'
 import Foto3x4 from '../assets/foto3x4.jpg'
@@ -83,10 +84,10 @@ const SidebarAdmin = () => {
                 </div>
                 {dataSubMenuOpen && (               
                   <ul className={`mt-3 ${open ? "" : "hidden"}`}>
-                    <li className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+                    <Link to="/databukuadmin" className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
                       <RiBook2Line className={`mr-2 h-6 ${open ? "w-6" : "hidden"}`}/>
                       <p className={`static text-sm ${open ? "" : "hidden"}`}>Data Buku</p>
-                    </li>
+                    </Link>
 
                     <li className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
                       <BiCategory className={`mr-2 h-6 ${open ? "w-6" : "w-6"}`}/>
@@ -94,7 +95,7 @@ const SidebarAdmin = () => {
                     </li>
 
                     <li className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
-                      <RiBook2Line className={`mr-2 h-6 ${open ? "w-6" : "w-6"}`}/>
+                      <GiBookshelf className={`mr-2 h-6 ${open ? "w-6" : "w-6"}`}/>
                       <p className={`static text-sm ${open ? "" : "hidden"}`}>Rak</p>
                     </li>
                   </ul>
@@ -113,19 +114,25 @@ const SidebarAdmin = () => {
                 </div>
                 {transaksiSubMenuOpen && (               
                   <ul className={`mt-3 ${open ? "" : "hidden"}`}>
-                    <li className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+                    <Link to="/pinjamadmin" className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
                       <TfiDownload className={`mr-2 h-5 ${open ? "w-5" : "hidden"}`}/>
                       <p className={`static text-sm ${open ? "" : "hidden"}`}>Peminjaman</p>
-                    </li>
+                    </Link>
 
-                    <li className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+                    <Link to="/kembaliadmin" className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
                       <TfiUpload className={`mr-2 h-5 ${open ? "w-5" : "hidden"}`}/>
                       <p className={`static text-sm ${open ? "" : "hidden"}`}>Pengembalian</p>  
-                    </li>
+                    </Link>
                   </ul>
                 )}
-              </li>
 
+                
+              </li>
+              
+            <Link to="/profiladmin" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+              <UserIcon className={`mr-2 h-8 ${open ? "w-8" : "w-8"}`}/>
+              <p className={`static ${open ? "" : "hidden"}`}>Profil</p>
+            </Link>   
 
 
           </ul>

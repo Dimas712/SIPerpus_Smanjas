@@ -15,6 +15,10 @@ import Pengembaliansiswa from './Components/Pengembaliansiswa'
 import Detailbuku from './Components/Detailbuku'
 import ProfilAdmin from './Components/ProfilAdmin'
 import DasboardAdmin from './Components/DasboardAdmin'
+import EditAdmin from './Components/EditAdmin'
+import PeminjamanAdmin from './Components/PeminjamanAdmin'
+import PengembalianAdmin from './Components/PengembalianAdmin'
+import DataBukuAdmin from './Components/DataBukuAdmin'
 
 function App () {
   
@@ -28,14 +32,19 @@ function App () {
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/profiladmin' element={<ProfilAdmin/>}/>
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
+        <Route path='/editadmin' element={<EditAdmin/>}/>
         <Route path='/caribuku' element={<CariBuku/>}/>
         <Route path='/formpinjambuku' element={<Form/>}/>
         <Route path='/carousel' element={<Carousel/>}/>
         <Route path='/cardbook' element={<CardBook/>}/>
         <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
         <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
+        <Route path='/pinjamadmin' element={<PeminjamanAdmin/>}/>
+        <Route path='/kembaliadmin' element={<PengembalianAdmin/>}/>
         <Route path='/detailbuku' element={<Detailbuku/>}/>
-        <Route path='/dasboard' element={<DasboardAdmin/>}/>
+        <Route path='/dashboard' element={<DasboardAdmin/>}/>
+        <Route path='/databukuadmin' element={<DataBukuAdmin/>}/>
+
       </Routes>
     </Router>
     </div>

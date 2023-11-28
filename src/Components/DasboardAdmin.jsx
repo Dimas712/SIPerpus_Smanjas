@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const DasboardAdmin = () => {
     const data = [
@@ -25,4 +26,4 @@ const DasboardAdmin = () => {
     </div>;
 }
 
-export default DasboardAdmin
+export default DasboardAdmin;
