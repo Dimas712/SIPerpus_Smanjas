@@ -8,7 +8,12 @@ import Matematika from '../assets/matematika.png'
 
 const Pengembaliansiswa = () => {
   const [isLoggedIn, setLoggedIn] = useState(true);
+  const [activeMenuItem, setActiveMenuItem] = useState('kembalisiswa');
   
+  const handleOpen = () => {
+    setActiveMenuItem('kembalisiswa');
+  };
+
   const handleLogin = ( ) => {
     setLoggedIn(true);
   };
@@ -18,7 +23,7 @@ const Pengembaliansiswa = () => {
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex'>
-        <Sidebar />
+        <Sidebar activeMenuItem={activeMenuItem} onOpen={handleOpen} />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
           <div className='relative h-full'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>

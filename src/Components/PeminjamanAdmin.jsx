@@ -45,7 +45,7 @@ const PeminjamanAdmin = () => {
               <div className='relative'>
                 <input
                   type="search"
-                  className='bg-white pl-10 pr-3 h-10 hover:shadow-lg rounded-3xl bg-gray-200 shadow-black'
+                  className=' pl-10 pr-3 h-10 hover:shadow-lg rounded-3xl bg-gray-200 shadow-black'
                 />
                 <MagnifyingGlassIcon className='absolute left-3 top-3 w-4' />
               </div>

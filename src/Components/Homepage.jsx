@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Banner from '../assets/Banner.svg'
 import Fasilitas1 from '../assets/Fasilitas1.svg'
 import Fasilitas2 from '../assets/Fasilitas2.svg'
@@ -14,11 +14,16 @@ import Footer from "./Footer";
 
 
 const Homepage = () =>{
+    const [activeMenuItem, setActiveMenuItem] = useState('beranda');
+  
+    const handleOpen = () => {
+        setActiveMenuItem('beranda');
+    };
     return(
         <div>
             {/* Navbar */}
             <div className="z-50 relative">
-            <Navbar />
+            <Navbar activeMenuItem={activeMenuItem} onOpen={handleOpen} />
             </div>
             {/* Header Homepage */}
             <div className="relative">

@@ -8,6 +8,11 @@ import CardBook from "./CardBook";
 
 const CariBuku = () => {
     const [isLoggedIn, setLoggedIn] = useState(true);
+    const [activeMenuItem, setActiveMenuItem] = useState('caribuku');
+  
+    const handleOpen = () => {
+        setActiveMenuItem('caribuku');
+    };
   
     const handleLogin = ( ) => {
     setLoggedIn(true);
@@ -17,7 +22,7 @@ const CariBuku = () => {
         <div>
             <Navbar isLoggedIn={isLoggedIn} />
             <div className="flex flex-row">
-                <Sidebar />
+                <Sidebar activeMenuItem={activeMenuItem} onOpen={handleOpen} />
                 <div className="flex flex-col py-10 w-screen md:px-10">
                     {/* Sub Judul */}
                     <div className="px-5 py-5 flex justify-center">
