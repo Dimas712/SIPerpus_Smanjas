@@ -4,9 +4,8 @@ import LogoSMA from '../assets/LogoSMA.svg'
 import Foto3x4 from '../assets/foto3x4.jpg'
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar = ({ activeMenuItem }) => {
   const [open, setOpen] = useState(true);
-  const [activeMenuItem, setActiveMenuItem] = useState('');
 
   const handleMenuItemClick = (menuItem) => {
     setActiveMenuItem(menuItem);
@@ -34,22 +33,22 @@ const Sidebar = () => {
         
         <div className='mt-8 mx-[-1rem]'>
           <ul>
-            <Link to="/caribuku" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <Link to="/caribuku" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} ${activeMenuItem === 'caribuku' ? 'bg-green' : '' }`}>
               <MagnifyingGlassIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Cari Buku</p>
             </Link>
             
-            <Link to="/pinjamsiswa" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <Link to="/pinjamsiswa" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} ${activeMenuItem === 'pinjamsiswa' ? 'bg-green' : '' }`}>
               <ArrowDownTrayIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Data Peminjaman</p>
             </Link>
             
-            <Link to="/kembalisiswa" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <Link to="/kembalisiswa" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} ${activeMenuItem === 'kembalisiswa' ? 'bg-green' : '' } `}>
               <ArrowUpTrayIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
-              <p className={`static ${open ? "" : "hidden"}`}>Data Pengembalian</p>
+              <p className={`static ${open ? "" : "hidden"} $`}>Data Pengembalian</p>
             </Link>
 
-            <Link to="/profil" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} `}>
+            <Link to="/profil" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} ${activeMenuItem === 'profil' ? 'bg-green' : '' }`}>
               <UserIcon className={`mr-2 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Profil</p>
             </Link>

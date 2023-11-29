@@ -10,7 +10,11 @@ import Footer from './Footer';
 const ProfilSiswa = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setLoggedIn] = useState(true);
+  const [activeMenuItem, setActiveMenuItem] = useState('profil');
   
+  const handleOpen = () => {
+    setActiveMenuItem('profil');
+  };
 
   const handleLogin = ( ) => {
     setLoggedIn(true);
@@ -21,7 +25,7 @@ const ProfilSiswa = () => {
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex h-screen'>
-        <Sidebar />
+        <Sidebar activeMenuItem={activeMenuItem} onOpen={handleOpen} />
         <div className='border-2 w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>

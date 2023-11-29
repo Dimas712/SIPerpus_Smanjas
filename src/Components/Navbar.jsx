@@ -1,23 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({isLoggedIn}) => {
+const Navbar = ({isLoggedIn, activeMenuItem}) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMasukClicked] = useState(false);
+
+  const handleMenuItemClick = (menuItem) => {
+    setActiveMenuItem(menuItem);
+  };
+
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
   return (
-    <div className={`flex flex-col lg:flex-row justify-between bg-green p-4 text-slate-50 font-medium items-center text-white`}>
+    <div className={`flex flex-col lg:flex-row justify-between bg-green p-4 text-slate-50 font-medium items-center text-white `}>
       <div className="lg:flex-shrink-0 lg:text-center">
         <p className='text-4xl font-quatro pl-4 drop-shadow-md'>SMAN 1 JASINGA</p>
       </div>
-      <div className='lg:flex lg:text-xl drop-shadow-md mt-4 lg:mt-0  '>
-        <Link to="/" className="flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 active:text-black">Beranda</Link>
-        <a href="" className="flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 mr-4 active:text-black">Profil</a>
-        <a href="" className="flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full mr-4 active:text-black">Tata Tertib</a>
+      <div className='lg:flex lg:text-xl drop-shadow-md lg:mt-0  '>
+        <Link to="/" className={`flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 active:text-black ${activeMenuItem === 'beranda' ? 'bg-green2' : '' }`}>Beranda</Link>
+        <a href="" className="flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 active:text-black">Profil</a>
+        <a href="" className="flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full active:text-black">Tata Tertib</a>
         <a href=""className='flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full active:text-black' >Buku</a>
       </div>
       <div className={`flex items-center justify-center lg:justify-end relative mt-4 lg:mt-0 ${isMasukClicked ? 'bg-green2' : 'hover:bg-green2'} shadow-md rounded-lg mr-3`}>
