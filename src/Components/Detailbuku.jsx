@@ -18,7 +18,7 @@ const Detailbuku = () => {
             <UserCircleIcon className='h-10 w-10 text-white' />
             <p className='text-white font-noto font-semibold text-3xl'>Detail Buku</p>
           </div>
-          <div className='mt-2 flex flex-col md:flex-row'>
+          <div className='-mt-20 flex flex-col md:flex-row'>
             <div className="flex justify-center items-center h-screen drop-shadow-xl">
               <BookCard
                 title="Novel Dilan 1990"
@@ -31,7 +31,7 @@ const Detailbuku = () => {
           </div>
         </div>
         <div>
-        <ul className='md:pl-10 font-semibold flex flex-col md:flex-coloumn'>
+        <ul className='md:pl-5 font-semibold flex flex-col md:flex-coloumn'>
           <li className='mb-1.5'>
             <span style={{ minWidth: '120px', display: 'inline-block' }}>ISSBN</span>
             <span>:</span>
