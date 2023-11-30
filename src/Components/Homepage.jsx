@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import Banner from '../assets/Banner.svg'
-import Fasilitas1 from '../assets/Fasilitas1.svg'
-import Fasilitas2 from '../assets/Fasilitas2.svg'
-import Fasilitas3 from '../assets/Fasilitas3.svg'
+import Fasilitas1 from '../assets/Fasilitas01.svg'
+import Fasilitas2 from '../assets/Fasilitas02.svg'
+import Fasilitas3 from '../assets/Fasilitas03.svg'
 import Fasilitas4 from '../assets/Fasilitas4.svg'
 import Fasilitas5 from '../assets/Fasilitas5.svg'
 import {MdNoFood} from 'react-icons/md';
