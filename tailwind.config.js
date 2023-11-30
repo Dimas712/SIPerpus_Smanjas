@@ -13,6 +13,7 @@ module.exports = withMT({
         'green2': '#657864',
         'green3': '#414d40',
         'green4': '#485C3E',
+        'green5': '#3B4635',
         'putih': '#D9D9D9',
         'footer': '#BFC7BB',
         'icons': '#000000',

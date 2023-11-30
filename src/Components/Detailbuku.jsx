@@ -5,16 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
 
 const Detailbuku = () => {
- 
   return (
     <div>
           <Navbar />
@@ -26,54 +18,19 @@ const Detailbuku = () => {
             <UserCircleIcon className='h-10 w-10 text-white' />
             <p className='text-white font-noto font-semibold text-3xl'>Detail Buku</p>
           </div>
-          <div className='mt-20 flex flex-col md:flex-row'>
-          <Card className="flex w-full max-w-[47em] mt-[-3rem] space-x-4">
-  <CardHeader
-    shadow={false}
-    floated={false}
-    className="m-2 w-1/3 rounded-r-none"
-  >
-    <img
-      src="https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg"
-      alt="card-image"
-      className="h-full w-full object-cover rounded"
-    />
-  </CardHeader>
-  <CardBody className="w-2/3">
-    <Typography variant="h4" color="gray" className="mb-2 uppercase">
-                  Novel Dilan 1990
-                </Typography>
-                <Typography variant="h6" color="blue-gray" className="mb-2">
-                  Pidi Baiq
-                </Typography>
-                <Typography color="gray" className="mb-2 font-normal">
-                  Novel berjudul Dia Adalah Dilanku Tahun 1990 merupakan karya dari Pidi Baiq. Dilan Dia Adalan Dilanku menceritakan percintaan anak SMA yang cukup unik. Novel dengan tebal 348 halaman ini diterbitkan pada tahun 2014. Ada beberapa penerbit yang telah menerbitkan novel Dilan 1990, yakni penerbit Pastel Books pada 2014 dan penerbit Mizan Pustaka pada 2015. Baca selengkapnya di artikel "Sinopsis Novel 'Dilan' Dia Adalah Dilanku Tahun 1990 - Pidi Baiq"
-                </Typography>
-                <Typography variant="h4" color="blue-gray" className="mb-2">
-                  Jumlah : 30
-                </Typography>
-                <Link to='/formpinjambuku' className="inline-block">
-                  <Button variant="text" className="flex items-center gap-2 bg-green2">
-                    Pinjam
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      className="h-4 w-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                      />
-                    </svg>
-                  </Button>
-                </Link>
-  </CardBody>
-</Card>
-        <br />
+          <div className='mt-2 flex flex-col md:flex-row'>
+            <div className="flex justify-center items-center h-screen drop-shadow-xl">
+              <BookCard
+                title="Novel Dilan 1990"
+                author="Pidi Baiq"
+                description="Novel berjudul Dia Adalah Dilanku Tahun 1990 merupakan karya dari Pidi Baiq. Dilan Dia Adalan Dilanku menceritakan percintaan anak SMA yang cukup unik. Novel dengan tebal 348 halaman ini diterbitkan pada tahun 2014. 
+                Ada beberapa penerbit yang telah menerbitkan novel Dilan 1990, yakni penerbit Pastel Books pada 2014 dan penerbit Mizan Pustaka pada 2015. Baca selengkapnya di artikel Sinopsis Novel 'Dilan' Dia Adalah Dilanku Tahun 1990 - Pidi Baiq."
+                quantity={30}
+              />
+            </div>
+          </div>
+        </div>
+        <div>
         <ul className='md:pl-10 font-semibold flex flex-col md:flex-coloumn'>
           <li className='mb-1.5'>
             <span style={{ minWidth: '120px', display: 'inline-block' }}>ISSBN</span>
@@ -101,12 +58,39 @@ const Detailbuku = () => {
             <span className='ml-4'>2015</span>
           </li>
         </ul>
+        </div>
       </div>
-      
-    </div>
-    </div>
     </div>
     <Footer />
+    </div>
+  );
+};
+
+const BookCard = ({ title, author, description, quantity }) => {
+  return (
+    <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl my-4">
+      <div className="md:flex">
+        <div className="md:flex-shrink-0">
+          <img
+            className="h-full w-50 object-cover md:w-48"
+            src="https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg"
+            alt="Book Cover"
+          />
+        </div>
+        <div className="p-4">
+          <div className="uppercase tracking-wide text-3xl font-semibold italic">
+            {title}
+          </div>
+          <p className="block mt-1 text-lg leading-tight font-semibold text-black">
+            {author}
+          </p>
+          <p className="mt-2 text-gray-600 text-justify text-sm">{description}</p>
+          <p className="mt-4 font-semibold">Jumlah Buku: {quantity}</p>
+          <button className="mt-4 bg-green5 hover:bg-green2 text-white font-bold py-2 px-4 rounded-lg">
+            Pinjam
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
