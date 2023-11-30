@@ -19,6 +19,7 @@ import EditAdmin from './Components/EditAdmin'
 import PeminjamanAdmin from './Components/PeminjamanAdmin'
 import PengembalianAdmin from './Components/PengembalianAdmin'
 import DataBukuAdmin from './Components/DataBukuAdmin'
+import DataPengguna from './Components/DataPengguna'
 
 function App () {
   
@@ -44,7 +45,7 @@ function App () {
         <Route path='/detailbuku' element={<Detailbuku/>}/>
         <Route path='/dashboard' element={<DasboardAdmin/>}/>
         <Route path='/databukuadmin' element={<DataBukuAdmin/>}/>
-
+        <Route path='/datapengguna' element={<DataPengguna/>}/>
       </Routes>
     </Router>
     </div>
