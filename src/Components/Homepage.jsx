@@ -97,11 +97,11 @@ const Homepage = () =>{
                     </div>
                     <div className="button-layout">
                         <GiNightSleep className='icons-color' />
-                        <h4 className="text-lg">Dilarang Makan di Perpustakaan</h4>
+                        <h4 className="text-lg">Dilarang Tidur di Perpustakaan</h4>
                     </div>
                     <div className="button-layout">
                         <FaPhoneSlash className='icons-color' />
-                        <h4 className="text-lg">Dilarang Makan di Perpustakaan</h4>
+                        <h4 className="text-lg">Dilarang Menelepon di Perpustakaan</h4>
                     </div>
                 </div>
             </div>
