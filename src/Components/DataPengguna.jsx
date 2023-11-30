@@ -127,7 +127,7 @@ const DataPengguna = () => {
                         className='rounded-md md:w-20 md:h-8 bg-red-500 hover:bg-red-700'
                         onClick={handleLogin}
                         >Kembali</button>
-                        <button className='rounded-md md:w-20 md:h-8 bg-green hover:bg-green2'>Simpan</button>
+                        <button className='rounded-md md:w-20 md:h-8 bg-green hover:bg-green2'>Tambah</button>
                     </div>
                 </form>
             </div> 
