@@ -47,7 +47,6 @@ function App () {
         <Route path='/databukuadmin' element={<DataBukuAdmin/>}/>
         <Route path='/datapengguna' element={<DataPengguna/>}/>
         <Route path='/datapenggunalist' element={<DataPenggunaList/>}/>
-
       </Routes>
     </Router>
     </div>
