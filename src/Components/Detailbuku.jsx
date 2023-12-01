@@ -27,20 +27,20 @@ const Detailbuku = () => {
             <p className='text-white font-noto font-semibold text-3xl'>Detail Buku</p>
           </div>
           <div className='mt-20 flex flex-col md:flex-row'>
-            <Card className="w-full max-w-[47em] flex-row mt-[-3rem]">
-              <CardHeader
-                  shadow={false}
-                  floated={false}
-                  className="m-2 w-2/5 shrink-0 rounded-r-none"
-                >
-            <img
-              src="https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg"
-              alt="card-image"
-              className="h-full w-full object-cover"
-            />
-              </CardHeader>
-              <CardBody>
-                <Typography variant="h4" color="gray" className="mb-2 uppercase">
+          <Card className="flex w-full max-w-[47em] mt-[-3rem] space-x-4">
+  <CardHeader
+    shadow={false}
+    floated={false}
+    className="m-2 w-1/3 rounded-r-none"
+  >
+    <img
+      src="https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg"
+      alt="card-image"
+      className="h-full w-full object-cover rounded"
+    />
+  </CardHeader>
+  <CardBody className="w-2/3">
+    <Typography variant="h4" color="gray" className="mb-2 uppercase">
                   Novel Dilan 1990
                 </Typography>
                 <Typography variant="h6" color="blue-gray" className="mb-2">
@@ -71,8 +71,8 @@ const Detailbuku = () => {
                     </svg>
                   </Button>
                 </Link>
-              </CardBody>
-            </Card>
+  </CardBody>
+</Card>
         <br />
         <ul className='md:pl-10 font-semibold flex flex-col md:flex-coloumn'>
           <li className='mb-1.5'>
