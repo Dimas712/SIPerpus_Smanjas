@@ -62,15 +62,15 @@ const SidebarAdmin = () => {
         
         <div className='mt-8 mx-[-1rem]'>
           <ul>
-            <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <Link to="/dashboard" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
               <AiOutlineDashboard className={`mr-2 h-8 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Dashboard</p>
-            </li>
+            </Link>
             
-            <li className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+            <Link to="/datapenggunalist" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"}`}>
               <PiStudent className={`mr-2 h-8 ${open ? "w-8" : "w-8"}`}/>
               <p className={`static ${open ? "" : "hidden"}`}>Data Siswa</p>
-            </li>
+            </Link>
             
 
             
