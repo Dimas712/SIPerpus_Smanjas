@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import {PlusSmallIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { PiStudent } from "react-icons/pi";
 import Navbar from './Navbar';
 import SidebarAdmin from './SidebarAdmin';
-import { TfiDownload } from "react-icons/tfi";
 import Footer from './Footer';
 import { Checkbox } from '@material-tailwind/react';
-import { BiEdit, BiSearch } from 'react-icons/bi';
-import { FaDeleteLeft } from 'react-icons/fa6';
-import { RiDeleteBack2Fill, RiDeleteBin2Fill } from 'react-icons/ri';
+import {RiDeleteBin2Fill } from 'react-icons/ri';
  
 
 const DataPenggunaList = () => {
@@ -29,15 +27,15 @@ const DataPenggunaList = () => {
         <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative h-screen'>
             <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
-              <TfiDownload className='h-10 w-8' color='white'/>
+              <PiStudent className='h-10 w-8' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Daftar Data Pengguna</p>
             </div>
             <div className='mt-10'>
                 <div>
-                  <button className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
+                  <Link to="/datapengguna " className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
                     <PlusSmallIcon className='h-6 w-6 mr-1 text-white'/>
-                    <p className='text-white'>Tambah Peminjaman</p>
-                  </button>
+                    <p className='text-white'>Tambah Pengguna</p>
+                  </Link>
                 </div>
             </div>
 
@@ -57,69 +55,37 @@ const DataPenggunaList = () => {
                   <thead>
                     <tr className='bg-gray-200 text-left '>
                       <th><Checkbox/></th>
-                      <th className=''>No Peminjaman</th>
+                      <th className='pr-14'>NISN</th>
+                      <th>Kata Sandi</th>
                       <th className='pr-20'>Nama</th>
+                      <th>Level</th>
+                      <th>Tanggal Lahir</th>
                       <th className=''>Kelas</th>
-                      <th>Pinjam</th>
-                      <th>Kembali</th>
-                      <th>Status</th>
+                      <th>Jenis Kelamin</th>
+                      <th>Telepon</th>
+                      <th>Alamat</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td><Checkbox/></td>
-                      <td className=''>12</td>
+                      <td className=''>27371923388</td>
+                      <td className=''>27371923388</td>
                       <td className='pr-20'>Sarah</td>
-                      <td className='pr-10'>10</td>
-                      <td className=''>12-09-2023</td>
-                      <td className=''>15-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>45</td>
-                      <td className='pr-20'>Ahmad</td>
-                      <td className='pr-10'>12</td>
-                      <td className=''>12-09-2023</td>
-                      <td className=''>28-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
+                      <td>Siswa</td>
+                      <td className='pr-10'>10-08-2005</td>
+                      <td className=''>10</td>
+                      <td className=''>Perempuan</td>
+                      <td>08126436263</td>
+                      <td>Bogor</td>
+                      <td className='flex h-12 w-22 justify-center items-center'>
                         <div>
                           <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
                           </div>
                         </td>
                     </tr>
 
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>67</td>
-                      <td className='pr-20'>Iqbal</td>
-                      <td className='pr-10'>10</td>
-                      <td className=''>20-09-2023</td>
-                      <td className=''>29-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
                     
                   </tbody>  
                 </table>

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 import SidebarAdmin from './SidebarAdmin';
-import {PencilSquareIcon} from '@heroicons/react/24/outline'
 import Footer from './Footer';
 
 const DataPengguna = () => {
@@ -13,7 +12,7 @@ const DataPengguna = () => {
     const handleLogin = () => {
 
         setLoggedIn(true);    
-        navigate('/');
+        navigate('/datapenggunalist');
 };
   return (
     <div>
@@ -52,12 +51,31 @@ const DataPengguna = () => {
                     </div>
 
                     <div className='flex flex-col'>
+                        <label htmlFor="">NISN</label>
+                        <input
+                        className='rounded-lg pl-3 text-lg' 
+                        type="password"
+                        name='nama' />
+                    </div>
+
+                    <div className='flex flex-col'>
                         <label htmlFor="">Password</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
                         type="password"
                         name='nama' />
                     </div>
+
+                    <div className='flex flex-col'>
+                        <label htmlFor="level">Level</label>
+                        <select name="level" id="level" className='rounded-lg'>
+                            <option value="" disabled selected>-- Pilih Admin/Siswa --</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Siswa">Siswa</option>
+                        </select>
+                    </div>
+
+
                 </form>
 
 

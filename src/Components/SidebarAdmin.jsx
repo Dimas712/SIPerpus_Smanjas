@@ -6,8 +6,6 @@ import { PiStudent } from "react-icons/pi";
 import { BiCategory } from "react-icons/bi";
 import { GiBookshelf } from "react-icons/gi";
 import { TfiDownload, TfiUpload } from "react-icons/tfi";
-import LogoSMA from '../assets/LogoSMA.svg'
-import Foto3x4 from '../assets/foto3x4.jpg'
 import Admin from '../assets/admin.jpg'
 import { Link } from 'react-router-dom';
 
