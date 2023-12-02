@@ -21,6 +21,7 @@ import PengembalianAdmin from './Components/PengembalianAdmin'
 import DataBukuAdmin from './Components/DataBukuAdmin'
 import DataPengguna from './Components/DataPengguna'
 import DataPenggunaList from './Components/DataPenggunaList'
+import Tambahbuku from './Components/Tambahbuku'
 function App () {
   
   return (
@@ -46,7 +47,8 @@ function App () {
         <Route path='/dashboard' element={<DasboardAdmin/>}/>
         <Route path='/databukuadmin' element={<DataBukuAdmin/>}/>
         <Route path='/datapengguna' element={<DataPengguna/>}/>
-        <Route path='/datapenggunalist' element={<DataPenggunaList/>}/>
+        <Route path='/datapenggunalist' element={<DataPenggunaList/>}/>3
+        <Route path='/tambahbuku' element={<Tambahbuku/>}/>
       </Routes>
     </Router>
     </div>
