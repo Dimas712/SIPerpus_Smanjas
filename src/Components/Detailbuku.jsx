@@ -104,6 +104,7 @@ const Detailbuku = () => {
                           </div>
                         </div>
                       )}
+                      
                     </div>
                   </div>
                 </div>
