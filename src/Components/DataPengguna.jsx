@@ -13,7 +13,7 @@ const DataPengguna = () => {
     const handleLogin = () => {
 
         setLoggedIn(true);    
-        navigate('/');
+        navigate('/datapenggunalist');
 };
   return (
     <div>
@@ -58,7 +58,20 @@ const DataPengguna = () => {
                         type="password"
                         name='nama' />
                     </div>
+
+                    <div className='flex flex-col'>
+                        <label htmlFor="">Level</label>
+                        <select
+                        className='rounded-lg pl-3 text-lg' 
+                        type="text"
+                        name='nama'>
+                        <option>-- Pilih Admin/Siswa --</option>
+                        <option>Admin</option>
+                        <option>Siswa</option>
+                        </select>
+                    </div>
                 </form>
+
 
 
                 <form className='w-2/6 space-y-4' action="">
@@ -88,7 +101,7 @@ const DataPengguna = () => {
 
                 
                     <div className='flex flex-col'>
-                        <label htmlFor="">No. Telepon</label>
+                        <label htmlFor="">Telepon</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
                         type="number"

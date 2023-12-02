@@ -29,18 +29,30 @@ const Tambahbuku = () => {
                 <form className='w-4/6 space-y-8'>
                     <div className='flex flex-col'>
                         <label htmlFor="">Kategori</label>
-                        <input
+                        <select
                         className='rounded-lg pl-3 text-lg' 
                         type="text"
-                        name='nama' />
+                        name='nama'>
+                        <option>-- Pilih Kategori --</option>
+                        <option>Kelas 10</option>
+                        <option>Kelas 11</option>
+                        <option>Kelas 12</option>
+                        <option>Lainnya</option>
+                        </select>
                     </div>
 
                     <div className='flex flex-col'>
                         <label htmlFor="">Rak/Lokasi</label>
-                        <input
+                        <select
                         className='rounded-lg pl-3 text-lg' 
                         type="text"
-                        name='nama' />
+                        name='nama'>
+                        <option>-- Pilih Rak/Lokasi --</option>
+                        <option>Rak 1</option>
+                        <option>Rak 2</option>
+                        <option>Rak 3</option>
+                        <option>Rak 4</option>
+                        </select>
                     </div>
 
                     <div className='flex flex-col'>
