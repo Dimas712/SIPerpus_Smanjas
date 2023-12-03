@@ -32,7 +32,7 @@ const DataBukuAdmin = () => {
         <SidebarAdmin />
         <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative h-screen'>
-            <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
+            <div className=' bg-green3 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <RiBook2Line className='h-10 w-8' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Data Buku</p>
             </div>
