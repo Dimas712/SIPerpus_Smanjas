@@ -94,10 +94,10 @@ const SidebarAdmin = () => {
                       <p className={`static text-sm ${open ? "" : "hidden"}`}>Kategori Buku</p>  
                     </li>
 
-                    <li className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
+                    <Link to='/rakbuku' className={`flex items-center cursor-pointer py-2 mb-1 hover:bg-green2 active:bg-green3 ${open ? "px-6" : "px-3"}`}>
                       <GiBookshelf className={`mr-2 h-6 ${open ? "w-6" : "w-6"}`}/>
                       <p className={`static text-sm ${open ? "" : "hidden"}`}>Rak</p>
-                    </li>
+                    </Link>
                   </ul>
                 )}
               </li>
