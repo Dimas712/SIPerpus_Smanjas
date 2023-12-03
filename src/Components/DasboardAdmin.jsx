@@ -18,9 +18,11 @@ const DasboardAdmin = () => {
                     <div className="p-4">
                       <h2 className="text-xl font-semibold text-gray-800 mb-2">12</h2>
                       <h2 className="text-xl font-semibold text-gray-800 mb-2">Anggota</h2>
+                      <Link to='/datapenggunalist'>
                       <button className="bg-green text-white px-20 py-2.5 rounded-lg hover:bg-green4">
                         Selengkapnya
                       </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -28,9 +30,11 @@ const DasboardAdmin = () => {
                     <div className="p-4">
                       <h2 className="text-xl font-semibold text-gray-800 mb-2">50</h2>
                       <h2 className="text-xl font-semibold text-gray-800 mb-2">Di Kembalikan</h2>
+                      <Link to='/kembaliadmin'>
                       <button className="bg-green text-white px-20 py-2.5 rounded-lg hover:bg-green4">
                         Selengkapnya
                       </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -38,9 +42,11 @@ const DasboardAdmin = () => {
                     <div className="p-4">
                       <h2 className="text-xl font-semibold text-gray-800 mb-2">20</h2>
                       <h2 className="text-xl font-semibold text-gray-800 mb-2">Di Pinjam</h2>
+                      <Link to='/pinjamadmin'>
                       <button className="bg-green text-white px-20 py-2.5 rounded-lg hover:bg-green4">
                         Selengkapnya
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
