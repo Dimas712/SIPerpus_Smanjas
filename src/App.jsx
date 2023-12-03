@@ -22,6 +22,7 @@ import DataBukuAdmin from './Components/DataBukuAdmin'
 import DataPengguna from './Components/DataPengguna'
 import DataPenggunaList from './Components/DataPenggunaList'
 import Tambahbuku from './Components/Tambahbuku'
+import RakBuku from './Components/RakBuku'
 function App () {
   
   return (
@@ -49,6 +50,7 @@ function App () {
         <Route path='/datapengguna' element={<DataPengguna/>}/>
         <Route path='/datapenggunalist' element={<DataPenggunaList/>}/>3
         <Route path='/tambahbuku' element={<Tambahbuku/>}/>
+        <Route path='/rakbuku' element={<RakBuku/>}/>
       </Routes>
     </Router>
     </div>
