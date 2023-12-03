@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import LogoSMA from '../assets/LogoSMA.svg'
+import SMA from '../assets/SMA.svg'
 import VideoSMA from '../assets/VideoSMA.mp4'
 import VideoBG from '../assets/VideoSMA.mp4'
 
@@ -37,7 +37,7 @@ function LoginSiswa()  {
         <div className="mt-1 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg object-top">
         <img
             className="mx-auto h-20 w-auto"
-            src={LogoSMA}
+            src={SMA}
             alt="Your Company"
           />
         <h2 className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-white">
