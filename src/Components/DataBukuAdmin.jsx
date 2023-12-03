@@ -20,6 +20,11 @@ const DataBukuAdmin = () => {
     setLoggedIn(true);
   };
 
+  const handleTambahBukuClick = () => {
+    // Navigate to the desired page when "Tambah Buku" button is clicked
+    navigate('/tambahbuku');
+  };
+
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
@@ -33,7 +38,8 @@ const DataBukuAdmin = () => {
             </div>
             <div className='mt-10'>
                 <div>
-                  <button className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
+                  <button onClick={handleTambahBukuClick}
+                  className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
                     <PlusSmallIcon className='h-6 w-6 mr-1 text-white'/>
                     <p className='text-white'>Tambah Buku</p>
                   </button>

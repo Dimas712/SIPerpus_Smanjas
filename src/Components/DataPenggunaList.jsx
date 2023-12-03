@@ -21,6 +21,11 @@ const DataPenggunaList = () => {
     setLoggedIn(true);
   };
 
+  const handleTambahPeminjamanClick = () => {
+    // Navigate to the desired page when "Tambah Peminjaman" button is clicked
+    navigate('/datapengguna');
+  };
+
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
@@ -34,7 +39,8 @@ const DataPenggunaList = () => {
             </div>
             <div className='mt-10'>
                 <div>
-                  <button className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
+                  <button onClick={handleTambahPeminjamanClick}
+                  className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
                     <PlusSmallIcon className='h-6 w-6 mr-1 text-white'/>
                     <p className='text-white'>Tambah Peminjaman</p>
                   </button>
