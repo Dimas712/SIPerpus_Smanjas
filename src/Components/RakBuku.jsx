@@ -106,7 +106,7 @@ function TambahRak({onAddItem}){
         <div>
             <form className="flex flex-col items-center justify-center py-3" onSubmit={handleSubmit}>
             <div className="flex flex-col justify-center items-start pl-2 py-5 w-5/12 md:w-8/12 ">
-                <label className="py-2 text-base font-bold">Tambah Kategori</label>
+                <label className="py-2 text-base font-bold">Tambah Rak Buku</label>
                 <input
                 type="text"
                 name="name_rak"
