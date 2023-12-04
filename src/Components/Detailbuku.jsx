@@ -56,6 +56,7 @@ const Detailbuku = () => {
                       >
                         Pinjam
                       </button>
+                      
 
                         {/*--------------------------Pop Up--------------------------*/}
                         {showDialog && (
@@ -107,7 +108,9 @@ const Detailbuku = () => {
                       
                     </div>
                   </div>
+                  <Keterangan />
                 </div>
+                
               </div>
             </div>
           </div>
@@ -117,6 +120,39 @@ const Detailbuku = () => {
     </div>
   );
 };
+
+
+function Keterangan() {
+  return(
+    <ul className='md:pl-10 font-semibold flex-start flex-col md:flex-coloumn'>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '160px', display: 'inline-block' }}>ISSBN</span>
+            <span>:</span>
+            <span className='ml-4'>20056</span>
+          </li>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '160px', display: 'inline-block' }}>Judul Buku</span>
+            <span>:</span>
+            <span className='ml-4'>Dilan 1990</span>
+          </li>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '155px', display: 'inline-block' }}>Nama Pengarang</span>
+            <span> :</span>
+            <span className='ml-4'>Pidi Baiq</span>
+          </li>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '160px', display: 'inline-block' }}>Penerbit</span>
+            <span>:</span>
+            <span className='ml-4'>Pastel Books (Mizan Group)</span>
+          </li>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '160px', display: 'inline-block' }}>Tahun Buku</span>
+            <span>:</span>
+            <span className='ml-4'>2015</span>
+          </li>
+        </ul>
+  )
+}
 
 
 export default Detailbuku;
