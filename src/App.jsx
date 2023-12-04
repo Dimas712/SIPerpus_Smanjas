@@ -24,6 +24,7 @@ import DataPenggunaList from './Components/DataPenggunaList'
 import Tambahbuku from './Components/Tambahbuku'
 import RakBuku from './Components/RakBuku'
 import DataKategoriBuku from './Components/DataKategoriBuku'
+import Buku from './Components/Buku'
 function App () {
   
   return (
@@ -38,6 +39,7 @@ function App () {
         <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
         <Route path='/editadmin' element={<EditAdmin/>}/>
         <Route path='/caribuku' element={<CariBuku/>}/>
+        <Route path='/buku' element={<Buku/>}/>
         <Route path='/formpinjambuku' element={<Form/>}/>
         <Route path='/carousel' element={<Carousel/>}/>
         <Route path='/cardbook' element={<CardBook/>}/>
