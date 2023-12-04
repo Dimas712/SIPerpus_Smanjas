@@ -69,7 +69,7 @@ const Homepage = () =>{
             </div>
 
              {/* Profil Perpus */}
-            <div className="container mx-auto px-4 md:px-4 py-16 md:mb-10">
+            <div id="profil" className="container mx-auto px-4 md:px-4 py-16 md:mb-10">
                 <div className="flex items-center justify-center">
                     <h2 className="text-2xl font-bold md:text-4xl">Profil Perpustakaan</h2>
                     <hr className="my-20 border-t-8 border-black " />
@@ -81,7 +81,7 @@ const Homepage = () =>{
             </div>
 
             {/* Tata Tertib */}
-            <div className="container mx-auto mb-36 px-4 mb- md:px-4">
+            <div id="tatatertib" className="container mx-auto mb-36 px-4 mb- md:px-4">
                 <div className="flex items-center justify-center ">
                     <h2 className="text-2xl font-bold md:text-4xl">Tata Tertib</h2>
                     <hr className="my-20 border-t-8 border-black " />
