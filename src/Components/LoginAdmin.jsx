@@ -11,7 +11,7 @@ function LoginAdmin() {
   const handleLogin = () => {
 
     setLoggedIn(true);
-    navigate('/profiladmin');
+    navigate('/dashboard');
   };
 
 
