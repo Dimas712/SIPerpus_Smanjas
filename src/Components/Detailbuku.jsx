@@ -1,23 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
-
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 
 const Detailbuku = () => {
-  const [showDialog, setShowDialog] = useState(false);
-
-  const handleButtonClick = () => {
-    setShowDialog(true);
-  };
-
-  const handleCloseDialog = () => {
-    setShowDialog(false);
-  };
-  
-
   return (
     <div>
       <Navbar />
@@ -50,67 +38,11 @@ const Detailbuku = () => {
                         Baca selengkapnya di artikel Sinopsis Novel 'Dilan' Dia Adalah Dilanku Tahun 1990 - Pidi Baiq.
                         </p>
                       <p className='mt-4 font-semibold'>Jumlah Buku: 30</p>
-                      <button
-                        onClick={handleButtonClick}
-                        className='mt-4 bg-green5 hover:bg-green2 text-white font-bold py-2 px-4 rounded-lg'
-                      >
-                        Pinjam
-                      </button>
-                      
-
-                        {/*--------------------------Pop Up--------------------------*/}
-                        {showDialog && (
-                        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                          <div className="bg-white p-10 rounded-xl">
-                            <h2 className="text-2xl font-bold mb-4 text-center">DETAIL PEMINJAMAN</h2>
-                            <br></br>
-                            {/* Gantilah dengan data peminjaman yang sesuai */}
-                            <ul>
-                              <li className='mb-1.5'>
-                                <span style={{ minWidth: '140px', display: 'inline-block' }}>Nama Peminjam</span>
-                                <span>:</span>
-                                <span className='ml-4'>Rani</span>
-                              </li>
-                              <li className='mb-1.5'>
-                                <span style={{ minWidth: '140px', display: 'inline-block' }}>Nama Buku</span>
-                                <span>:</span>
-                                <span className='ml-4'>Dilan 1990</span>
-                              </li>
-                              <li className='mb-1.5'>
-                                <span style={{ minWidth: '140px', display: 'inline-block' }}>Tanggal Dipinjam</span>
-                                <span>:</span>
-                                <span className='ml-4'>11 November 2023</span>
-                              </li>
-                                <li className='mb-1.5'>
-                                  <span style={{ minWidth: '140px', display: 'inline-block' }}>Tanggal Kembali</span>
-                                  <span>:</span>
-                                  <span className='ml-4'>18 Oktober 2023</span>
-                                </li>
-                            </ul>
-                            <br></br>
-                            <div className="mt-4 flex justify-center gap-5">
-                              <button
-                                onClick={handleCloseDialog}
-                                className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-6 mr-2 rounded-full h-10 w-28"
-                              >
-                                Kembali
-                              </button>
-                              <button
-                                className="bg-green2 hover:bg-green5 text-white font-bold py-2 px-6 rounded-full h-10 w-28"
-                                // Tambahkan logika untuk aksi 'Pinjam' di sini
-                              >
-                                Pinjam
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      
+                      <Popup/>
                     </div>
                   </div>
                   <Keterangan />
                 </div>
-                
               </div>
             </div>
           </div>
@@ -154,5 +86,76 @@ function Keterangan() {
   )
 }
 
+function Popup() {
+  const [showDialog, setShowDialog] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setShowDialog(false);
+  };
+  return(
+    <div>
+    <button
+    onClick={handleButtonClick}
+    className='mt-4 bg-green5 hover:bg-green2 text-white font-bold py-2 px-4 rounded-lg'
+  >
+    Pinjam
+  </button>
+  
+
+    {/*--------------------------Pop Up--------------------------*/}
+    {showDialog && (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white p-10 rounded-xl">
+        <h2 className="text-2xl font-bold mb-4 text-center">DETAIL PEMINJAMAN</h2>
+        <br></br>
+        {/* Gantilah dengan data peminjaman yang sesuai */}
+        <ul>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '140px', display: 'inline-block' }}>Nama Peminjam</span>
+            <span>:</span>
+            <span className='ml-4'>Rani</span>
+          </li>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '140px', display: 'inline-block' }}>Nama Buku</span>
+            <span>:</span>
+            <span className='ml-4'>Dilan 1990</span>
+          </li>
+          <li className='mb-1.5'>
+            <span style={{ minWidth: '140px', display: 'inline-block' }}>Tanggal Dipinjam</span>
+            <span>:</span>
+            <span className='ml-4'>11 November 2023</span>
+          </li>
+            <li className='mb-1.5'>
+              <span style={{ minWidth: '140px', display: 'inline-block' }}>Tanggal Kembali</span>
+              <span>:</span>
+              <span className='ml-4'>18 Oktober 2023</span>
+            </li>
+        </ul>
+        <br></br>
+        <div className="mt-4 flex justify-center gap-5">
+          <button
+            onClick={handleCloseDialog}
+            className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-6 mr-2 rounded-full h-10 w-28"
+          >
+            Kembali
+          </button>
+          <button
+            className="bg-green2 hover:bg-green5 text-white font-bold py-2 px-6 rounded-full h-10 w-28"
+            // Tambahkan logika untuk aksi 'Pinjam' di sini
+          >
+            Pinjam
+          </button>
+        </div>
+      </div>
+    </div>
+  )}
+  </div>
+  )
+  
+}
 
 export default Detailbuku;
