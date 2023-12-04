@@ -21,9 +21,9 @@ const Detailbuku = () => {
   return (
     <div>
       <Navbar />
-      <div className='flex h-screen'>
+      <div className='flex flex-col md:flex-row min-h-screen'>
         <Sidebar />
-        <div className='border-2 w-full h-screen p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
+        <div className='border-2 w-full h-screen p-10 pl-5 md:pl-35 pr-5 md:pr-30'>
           <div className='relative'>
             <div className='bg-green2 h-12 rounded-3xl flex items-center space-x-10 md:pl-4'>
               <UserCircleIcon className='h-10 w-10 text-white' />
@@ -31,12 +31,12 @@ const Detailbuku = () => {
             </div>
 
             <div className='-mt-20 flex flex-col md:flex-row'>
-              <div className='flex justify-center items-center h-screen drop-shadow-md'>
-                <div className='max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl my-4'>
+              <div className='flex justify-center items-center h-screen drop-shadow-md mt-10'>
+                <div className='max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-5xl my-4'>
                   <div className='md:flex'>
                     <div className='md:flex-shrink-0'>
                       <img
-                        className='h-full w-50 object-cover md:w-48'
+                        className='h-full w-full md:w-48 object-cover'
                         src='https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg'
                         alt='Book Cover'
                       />
