@@ -21,8 +21,8 @@ const Navbar = ({isLoggedIn, activeMenuItem}) => {
       </div>
       <div className='lg:flex lg:text-xl drop-shadow-md lg:mt-0  '>
         <Link to="/" className={`flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 active:text-black ${activeMenuItem === 'beranda' ? 'bg-green2' : '' }`}>Beranda</Link>
-        <a href="" className="flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 active:text-black">Profil</a>
-        <a href="" className="flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full active:text-black">Tata Tertib</a>
+        <a href="#profil" className="flex items-center justify-center h-10 w-28 rounded-full hover:bg-green2 active:text-black">Profil</a>
+        <a href="#tata" className="flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full active:text-black">Tata Tertib</a>
         <a href=""className='flex items-center justify-center h-10 w-28 hover:bg-green2 rounded-full active:text-black' >Buku</a>
       </div>
       <div className={`flex items-center justify-center lg:justify-end relative mt-4 lg:mt-0 ${isMasukClicked ? 'bg-green2' : 'hover:bg-green2'} shadow-md rounded-lg mr-3`}>
