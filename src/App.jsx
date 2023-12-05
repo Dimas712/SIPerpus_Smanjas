@@ -5,7 +5,6 @@ import Navbar from './Components/Navbar'
 import LoginAdmin from './Components/LoginAdmin'
 import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
-import EditProfilSiswa from './Components/EditProfilSiswa'
 import CariBuku from './Components/CariBuku'
 import Form from './Components/Form'
 import Carousel from './Components/Carousel'
@@ -36,7 +35,6 @@ function App () {
         <Route path='/siswa' element={<LoginSiswa/>}/>
         <Route path='/profil' element={<ProfilSiswa/>}/>
         <Route path='/profiladmin' element={<ProfilAdmin/>}/>
-        <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
         <Route path='/editadmin' element={<EditAdmin/>}/>
         <Route path='/caribuku' element={<CariBuku/>}/>
         <Route path='/buku' element={<Buku/>}/>
