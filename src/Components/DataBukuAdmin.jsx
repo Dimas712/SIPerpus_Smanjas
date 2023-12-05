@@ -20,6 +20,11 @@ const DataBukuAdmin = () => {
     setLoggedIn(true);
   };
 
+  const handleTambahBukuClick = () => {
+    // Navigate to the desired page when "Tambah Buku" button is clicked
+    navigate('/tambahbuku');
+  };
+
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
@@ -27,13 +32,14 @@ const DataBukuAdmin = () => {
         <SidebarAdmin />
         <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative h-screen'>
-            <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
+            <div className=' bg-green3 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <RiBook2Line className='h-10 w-8' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Data Buku</p>
             </div>
             <div className='mt-10'>
                 <div>
-                  <button className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
+                  <button onClick={handleTambahBukuClick}
+                  className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
                     <PlusSmallIcon className='h-6 w-6 mr-1 text-white'/>
                     <p className='text-white'>Tambah Buku</p>
                   </button>

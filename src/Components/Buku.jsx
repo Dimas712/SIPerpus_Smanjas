@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
@@ -53,8 +53,12 @@ const DataBuku =[
 ]
 
 
-const CariBuku = () =>{
-    
+const Buku = ({setSearch}) =>{
+    // const handleChange =(value) => {
+    //     setSearch(value)
+    //     DataBuku(value)
+    // }
+
     return(
         <div>
             <div>
@@ -70,6 +74,7 @@ const CariBuku = () =>{
                         <Search />
                         <ButtonSearch />
                         <CarouselBook />
+                        <CardBookBuku />
                     </div>
                 </div> 
             <Footer />
@@ -77,7 +82,8 @@ const CariBuku = () =>{
     )
 }
 
-function Search (){
+function Search ({handleChange}){
+
     return(
         <div>
             <form className="flex flex-col items-center justify-center py-3 rounded-2xl ">
@@ -86,8 +92,15 @@ function Search (){
                 placeholder="Search Book...."
                 type="text"
                 name="search"
+                // value={search}
+                // onChange={(event) => handleChange(event.target.value)}
                 className="flex flex-row border-solid border-2 rounded-xl border-blue-gray-100 bg-white h-8 px-2 py-2 justify-center items-center shadow-lg md:w-8/12 md:h-10 md:py-2"
                 />
+                    {/* <button 
+                    type="submit"
+                    className="bg-green3 border-solid rounded-full text-sm px-7 py-1 font-bold text-white hover:bg-green md:mr-56">
+                        Tambah
+                    </button> */}
             </div>
         </form>
         </div>
@@ -108,15 +121,6 @@ function ButtonSearch (){
             </div>
         </div>
     )
-
-    function ButtonPilihan(){
-        return(
-            <div>
-
-            </div>
-        )
-    }
-
 }
 
 function CarouselBook (){
@@ -128,13 +132,13 @@ function CarouselBook (){
         slidesToScroll: 1
     };
     return(
-        <div className="py-10 mb-24 w-[800px] m-auto">
+        <div className="py-10 w-[800px] m-auto">
             <div className="">
             <Slider {...settings}>
                 {DataBuku.map((e) =>(
-                    <div className="flex items-center px-3 text-black rounded-xl -mt-5 shadow-lg ">
+                    <div className="flex justify-center items-center px-3 text-black rounded-xl shadow-lg ">
                         <div className="flex justify-center items-center -mb-10">
-                            <img src={e.image} alt="Gambar Buku" className="h-[450px]" />
+                            <img src={e.image} alt="Gambar Buku" className="h-[450px] " />
                         </div>
 
                         <div className="flex flex-col justify-center items-center gap-1 mb-3">
@@ -149,4 +153,26 @@ function CarouselBook (){
         </div>
     )
 }
-export default CariBuku
+
+function CardBookBuku(){
+    return(
+        <div className="py-24 w-[800px] m-auto">
+            <p className="text-lg">Pilih buku yang menarik untuk anda</p>
+            <div className="py-10 flex flex-wrap gap-5">
+            {DataBuku.map((e) =>(
+                <div className="flex flex-col justify-center items-center py-5 shadow-lg">
+                    <div>
+                        <img src={e.image} alt="Gambar Buku" className="w-[245px]" />
+                    </div>
+                    <div className="flex flex-col justify-center items-center gap-1 py-3">
+                        <p>{e.title}</p>
+                        <p>{e.kategori}</p>
+                        <button className="border border-gray-600 rounded-md hover:bg-green md:w-36">Selengkapnya</button>
+                    </div>
+                </div>
+            ))}
+            </div>
+        </div>
+    )
+}
+export default Buku

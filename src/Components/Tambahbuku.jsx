@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 import SidebarAdmin from './SidebarAdmin';
+import {PencilSquareIcon} from '@heroicons/react/24/outline'
 import Footer from './Footer';
 
-const DataPengguna = () => {
+const Tambahbuku = () => {
     const navigate = useNavigate();
     const [isLoggedIn, setLoggedIn] = useState(true);
 
     const handleLogin = () => {
 
         setLoggedIn(true);    
-        navigate('/datapenggunalist');
-        navigate('/datapenggunalist');
+        navigate('/databukuadmin');
 };
   return (
     <div>
-    <Navbar isLoggedIn={isLoggedIn} />
-<div>
+        <Navbar isLoggedIn={isLoggedIn} />
+    <div>
 
 <div className='flex '>
     <SidebarAdmin />
@@ -28,7 +28,35 @@ const DataPengguna = () => {
             <div className='static flex md:mx-8 my-10 w-full text-xl space-x-5 font-noto drop-shadow-lg '>
                 <form className='w-4/6 space-y-8'>
                     <div className='flex flex-col'>
-                        <label htmlFor="">Nama</label>
+                        <label htmlFor="">Kategori</label>
+                        <select
+                        className='rounded-lg pl-3 text-lg' 
+                        type="text"
+                        name='nama'>
+                        <option>-- Pilih Kategori --</option>
+                        <option>Kelas 10</option>
+                        <option>Kelas 11</option>
+                        <option>Kelas 12</option>
+                        <option>Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div className='flex flex-col'>
+                        <label htmlFor="">Rak/Lokasi</label>
+                        <select
+                        className='rounded-lg pl-3 text-lg' 
+                        type="text"
+                        name='nama'>
+                        <option>-- Pilih Rak/Lokasi --</option>
+                        <option>Rak 1</option>
+                        <option>Rak 2</option>
+                        <option>Rak 3</option>
+                        <option>Rak 4</option>
+                        </select>
+                    </div>
+
+                    <div className='flex flex-col'>
+                        <label htmlFor="">ISSBN</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
                         type="text"
@@ -36,7 +64,7 @@ const DataPengguna = () => {
                     </div>
 
                     <div className='flex flex-col'>
-                        <label htmlFor="">Tempat Lahir</label>
+                        <label htmlFor="">Judul Buku</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
                         type="text"
@@ -44,76 +72,43 @@ const DataPengguna = () => {
                     </div>
 
                     <div className='flex flex-col'>
-                        <label htmlFor="">Tanggal Lahir</label>
+                        <label htmlFor="">Nama Pengarang</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
-                        type="date"
+                        type="text"
                         name='nama' />
                     </div>
 
                     <div className='flex flex-col'>
-                        <label htmlFor="">NISN</label>
+                        <label htmlFor="">Nama Penerbit</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
-                        type="password"
+                        type="text"
                         name='nama' />
                     </div>
 
                     <div className='flex flex-col'>
-                        <label htmlFor="">Password</label>
+                        <label htmlFor="">Tahun Buku</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
-                        type="password"
+                        type="text"
                         name='nama' />
                     </div>
                 </form>
 
 
-
                 <form className='w-2/6 space-y-4' action="">
-                    <div className='flex flex-col '>
-                        <p>Jenis Kelamin</p>
-                        <div className='text-lg'>
-                            <input 
-                            type="radio"
-                            id='laki'
-                            value='laki'
-                            name='jenisKelamin'
-                            />
-                            <label htmlFor="laki">Laki-Laki</label>
-                        </div>
-
-                        <div className='text-lg'>
-                            <input 
-                            type="radio"
-                            id='perempuan'
-                            value='perempuan'
-                            name='jenisKelamin'
-                            />
-                            <label htmlFor="perempuan">Perempuan</label>
-                        </div>
-
-                    </div>
-
                 
                     <div className='flex flex-col'>
-                        <label htmlFor="">Telepon</label>
+                        <label htmlFor="">Jumlah Buku</label>
                         <input
                         className='rounded-lg pl-3 text-lg' 
-                        type="number"
-                        name='nama' />
-                    </div>
-
-                    <div className='flex flex-col'>
-                        <label htmlFor="">Email</label>
-                        <input
-                        className='rounded-lg pl-3 text-lg' 
-                        type="email"
+                        type="text"
                         name='nama' />
                     </div>
 
                     <div>
-                    <label htmlFor="image">Profile Image</label>
+                    <label htmlFor="image">Sampul</label>
                         <input
                             className='text-base mt-1 cursor-pointer'
                             type="file"
@@ -121,13 +116,13 @@ const DataPengguna = () => {
                             accept="image/*"
                         />
                     </div>
-
-                    <div className='flex flex-col pb-14'>
-                        <label htmlFor="">Alamat</label>
+                    
+                    <div className='mt-50 flex flex-col pb-14'>
+                        <label htmlFor="">Keterangan Lainnya</label>
                         <input
                         className='flex rounded-lg  h-36 px-3 text-lg pb-24' 
                         type="text"
-                        placeholder="Masukkan Alamatmu"
+                        placeholder="Deskripsi"
                         name='nama'/>
                     </div>
 
@@ -152,4 +147,4 @@ const DataPengguna = () => {
   )
 }
 
-export default DataPengguna;
+export default Tambahbuku

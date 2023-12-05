@@ -19,6 +19,11 @@ const DataPenggunaList = () => {
     setLoggedIn(true);
   };
 
+  const handleTambahPeminjamanClick = () => {
+    // Navigate to the desired page when "Tambah Peminjaman" button is clicked
+    navigate('/datapengguna');
+  };
+
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
@@ -33,9 +38,13 @@ const DataPenggunaList = () => {
             <div className='mt-10'>
                 <div>
                   <Link to="/datapengguna " className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
+                  <button onClick={handleTambahPeminjamanClick}
+                  className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
                     <PlusSmallIcon className='h-6 w-6 mr-1 text-white'/>
                     <p className='text-white'>Tambah Pengguna</p>
                   </Link>
+                    <p className='text-white'>Tambah Siswa</p>
+                  </button>
                 </div>
             </div>
 
@@ -55,37 +64,69 @@ const DataPenggunaList = () => {
                   <thead>
                     <tr className='bg-gray-200 text-left '>
                       <th><Checkbox/></th>
-                      <th className='pr-14'>NISN</th>
-                      <th>Kata Sandi</th>
+                      <th className=''>No Peminjaman</th>
                       <th className='pr-20'>Nama</th>
-                      <th>Level</th>
-                      <th>Tanggal Lahir</th>
                       <th className=''>Kelas</th>
-                      <th>Jenis Kelamin</th>
-                      <th>Telepon</th>
-                      <th>Alamat</th>
+                      <th>Pinjam</th>
+                      <th>Kembali</th>
+                      <th>Status</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td><Checkbox/></td>
-                      <td className=''>27371923388</td>
-                      <td className=''>27371923388</td>
+                      <td className=''>12</td>
                       <td className='pr-20'>Sarah</td>
-                      <td>Siswa</td>
-                      <td className='pr-10'>10-08-2005</td>
-                      <td className=''>10</td>
-                      <td className=''>Perempuan</td>
-                      <td>08126436263</td>
-                      <td>Bogor</td>
-                      <td className='flex h-12 w-22 justify-center items-center'>
+                      <td className='pr-10'>10</td>
+                      <td className=''>12-09-2023</td>
+                      <td className=''>15-09-2023</td>
+                      <td>Dipinjam</td>
+                      <td className='flex h-12 w-22 justify-evenly  items-center'>
+                        <div>
+                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
+                          </div>
                         <div>
                           <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
                           </div>
                         </td>
                     </tr>
 
+                    <tr>
+                      <td><Checkbox/></td>
+                      <td className=''>45</td>
+                      <td className='pr-20'>Ahmad</td>
+                      <td className='pr-10'>12</td>
+                      <td className=''>12-09-2023</td>
+                      <td className=''>28-09-2023</td>
+                      <td>Dipinjam</td>
+                      <td className='flex h-12 w-22 justify-evenly  items-center'>
+                        <div>
+                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
+                          </div>
+                        <div>
+                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
+                          </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                      <td><Checkbox/></td>
+                      <td className=''>67</td>
+                      <td className='pr-20'>Iqbal</td>
+                      <td className='pr-10'>10</td>
+                      <td className=''>20-09-2023</td>
+                      <td className=''>29-09-2023</td>
+                      <td>Dipinjam</td>
+                      <td className='flex h-12 w-22 justify-evenly  items-center'>
+                        <div>
+                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
+                          </div>
+                        <div>
+                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
+                          </div>
+                        </td>
+                    </tr>
                     
                   </tbody>  
                 </table>

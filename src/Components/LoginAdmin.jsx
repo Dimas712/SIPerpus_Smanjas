@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
-import LogoSMA from '../assets/LogoSMA.svg'
+import SMA from '../assets/SMA.svg'
 import VideoBG from '../assets/VideoSMA.mp4'
 
 function LoginAdmin() {
@@ -11,7 +11,7 @@ function LoginAdmin() {
   const handleLogin = () => {
 
     setLoggedIn(true);
-    navigate('/profiladmin');
+    navigate('/dashboard');
   };
 
 
@@ -37,7 +37,7 @@ function LoginAdmin() {
         <div className="mt-1 sm:mx-auto sm:w-full sm:max-w-sm bg-green p-10 rounded shadow-md rounded-lg">
         <img
             className="mx-auto h-20 w-auto"
-            src={LogoSMA}
+            src={SMA}
             alt="Your Company"
           />
          
