@@ -25,6 +25,7 @@ import Tambahbuku from './Components/Tambahbuku'
 import RakBuku from './Components/RakBuku'
 import DataKategoriBuku from './Components/DataKategoriBuku'
 import Buku from './Components/Buku'
+import Halbuku from './Components/halbuku'
 function App () {
   
   return (
@@ -53,6 +54,7 @@ function App () {
         <Route path='/datapenggunalist' element={<DataPenggunaList/>}/>3
         <Route path='/tambahbuku' element={<Tambahbuku/>}/>
         <Route path='/rakbuku' element={<RakBuku/>}/>
+        <Route path='/halbuku' element={<Halbuku/>}/>
         <Route path='/datakategoribuku' element={<DataKategoriBuku/>}/>
       </Routes>
     </Router>
