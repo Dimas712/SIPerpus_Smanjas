@@ -11,7 +11,7 @@ const Detailbuku = () => {
       <Navbar />
       <div className='flex flex-col md:flex-row min-h-screen'>
         <Sidebar />
-        <div className='border-2 w-full h-screen p-10 pl-5 md:pl-35 pr-5 md:pr-30'>
+        <div className='flex justify-center w-full h-screen p-10 pl-5 md:pl-35 pr-5 md:pr-30'>
           <div className='relative'>
             <div className='bg-green2 h-12 rounded-3xl flex items-center space-x-10 md:pl-4'>
               <UserCircleIcon className='h-10 w-10 text-white' />

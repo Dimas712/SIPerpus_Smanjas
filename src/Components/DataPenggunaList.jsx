@@ -26,11 +26,17 @@ const DataPenggunaList = () => {
     navigate('/datapengguna');
   };
 
+  const [activeMenuItem, setActiveMenuItem] = useState('datapenggunalist');
+  
+  const handleOpen = () => {
+    setActiveMenuItem('datapenggunalist');
+  };
+
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex'>
-        <SidebarAdmin />
+        <SidebarAdmin activeMenuItem={activeMenuItem} />
         <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative h-screen'>
             <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>

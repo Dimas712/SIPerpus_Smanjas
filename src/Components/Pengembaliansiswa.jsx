@@ -31,9 +31,9 @@ const Pengembaliansiswa = () => {
               <p className='text-white font-noto font-semibold text-3xl '>Data Pengembalian Buku</p>
             </div>
             
-            <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
+            <div className='relative flex mt-5  bg-opacity-20 rounded-2xl'>
                <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto drop-shadow-lg'>
-                    <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent'>
+                    <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-gray-300 shadow-xl overflow-hidden'>
                         <img
                         className='w-46 h-48'
                         src={Pancasila} 
@@ -78,7 +78,7 @@ const Pengembaliansiswa = () => {
                         </ul>
                     </div>
 
-                    <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent'>
+                    <div className='flex w-full items-center content-center space-x-10 rounded-3xl border border-gray-300 shadow-xl overflow-hidden'>
                         <img
                         className='w-46 h-48'
                         src={Matematika} 
