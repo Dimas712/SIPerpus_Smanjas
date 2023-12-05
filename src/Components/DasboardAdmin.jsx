@@ -11,8 +11,7 @@ const DasboardAdmin = () => {
         <div>
           <div className='flex'>
             <SidebarAdmin/>
-
-          
+            <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
               <div className="flex justify-center items-center h-screen">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                   <div className="max-w-md bg-bgds shadow-lg rounded-lg overflow-hidden mx-auto w-85">
@@ -47,8 +46,10 @@ const DasboardAdmin = () => {
                 </div>
               </div>
               </div>
-              <Footer/>
+              </div>
+              
         </div>
+        <Footer/>
     </div>
   );
 }
