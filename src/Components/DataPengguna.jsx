@@ -161,4 +161,4 @@ const DataPengguna = () => {
   )
 }
 
-export default DataPengguna
+export default DataPengguna;
