@@ -16,10 +16,10 @@ const ProfilSiswa = () => {
     setActiveMenuItem('profil');
   };
 
-  // {const handleLogin = ( ) => {
-  //   setLoggedIn(true);
-  //   navigate('/editsiswa');
-  // };}
+  const handleLogin = ( ) => {
+  setLoggedIn(true);
+  navigate('/editsiswa');
+  }
 
   return (
     <div>
@@ -84,12 +84,12 @@ const ProfilSiswa = () => {
                 </div>
             </div>
 
-            {/* {<div className='absolute bottom-0 right-0 mb-4 mr-4'>
+            <div className='absolute bottom-0 right-0 mb-4 mr-4'>
               <button
               type='button'
               onClick={handleLogin}
               className='bg-green hover:bg-green2 text-white px-4 py-2 rounded-md'>Edit</button>
-            </div>} */}
+            </div>
 
           </div>
         </div>

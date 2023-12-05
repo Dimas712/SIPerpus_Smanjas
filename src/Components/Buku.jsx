@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
@@ -167,7 +168,9 @@ function CardBookBuku(){
                     <div className="flex flex-col justify-center items-center gap-1 py-3">
                         <p>{e.title}</p>
                         <p>{e.kategori}</p>
+                        <Link to='/detailbuku'>
                         <button className="border border-gray-600 rounded-md hover:bg-green md:w-36">Selengkapnya</button>
+                        </Link>
                     </div>
                 </div>
             ))}
