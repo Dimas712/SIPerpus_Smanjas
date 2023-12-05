@@ -54,17 +54,19 @@ const DataBuku =[
 
 
 const CariBuku = () =>{
-
+    const [isLoggedIn, setLoggedIn] = useState(true);
     const [activeMenuItem, setActiveMenuItem] = useState('caribuku');
   
     const handleOpen = () => {
     setActiveMenuItem('caribuku');
   };
-    
+  const handleLogin = ( ) => {
+    setLoggedIn(true);
+  };
     return(
         <div>
             <div>
-            <Navbar />
+            <Navbar isLoggedIn={isLoggedIn} />
             </div>
                 <div className="flex flex-row">
                     <Sidebar activeMenuItem={activeMenuItem} onOpen={handleOpen} />
