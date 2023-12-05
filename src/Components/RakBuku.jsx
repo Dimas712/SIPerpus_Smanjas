@@ -41,7 +41,7 @@ function RakBuku (){
             </div>
                 <div className="flex flex-row">
                     <SidebarAdmin />
-                    <div className="px-5 py-10 w-screen">
+                    <div className="px-5 py-10 h-screen w-screen">
                         <div className="bg-green3 rounded-xl px-5 py-3">
                             <p className="text-white font-bold text-xl">Data Rak Buku</p>
                         </div>

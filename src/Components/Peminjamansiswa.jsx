@@ -31,9 +31,9 @@ const PeminjamanSiswa = () => {
               <p className='text-white font-noto font-semibold text-3xl '>Data Peminjaman Buku</p>
             </div>
             
-            <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
-               <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto drop-shadow-lg'>
-                    <Link to="/detailbuku" className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black overflow-hidden  cursor-pointer'>
+            <div className='relative flex mt-5   bg-opacity-20 rounded-2xl'>
+               <div className='static flex flex-col md:mx-8 my-10 w-full text-xl space-y-10 font-noto '>
+                    <Link to="/detailbuku" className='flex w-full items-center content-center space-x-10  rounded-3xl overflow-hidden cursor-pointer border border-gray-300  shadow-xl'>
                         <img
                         className='w-46 h-48'
                         src={Noveldilan} 
@@ -73,7 +73,7 @@ const PeminjamanSiswa = () => {
                         </ul>
                     </Link>
 
-                    <div className='flex w-full items-center content-center space-x-10  rounded-3xl border border-black border-l-transparent'>
+                    <div className='flex w-full items-center content-center space-x-10 overflow-hidden rounded-3xl border border-gray-300  shadow-xl'>
                         <img
                         className='w-46 h-48'
                         src={Kimia} 

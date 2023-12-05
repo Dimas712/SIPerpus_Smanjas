@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from 'react';
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
@@ -54,6 +54,12 @@ const DataBuku =[
 
 
 const CariBuku = () =>{
+
+    const [activeMenuItem, setActiveMenuItem] = useState('caribuku');
+  
+    const handleOpen = () => {
+    setActiveMenuItem('caribuku');
+  };
     
     return(
         <div>
@@ -61,7 +67,7 @@ const CariBuku = () =>{
             <Navbar />
             </div>
                 <div className="flex flex-row">
-                    <Sidebar />
+                    <Sidebar activeMenuItem={activeMenuItem} onOpen={handleOpen} />
                     <div className="px-5 py-10 w-full">
                         <div className="bg-green3 rounded-xl px-5 py-3">
                             <p className="text-white font-bold text-xl">Data Buku</p>
