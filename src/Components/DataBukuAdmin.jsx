@@ -9,6 +9,7 @@ import Footer from './Footer';
 import { Checkbox } from '@material-tailwind/react';
 import { BiEdit, BiSearch } from 'react-icons/bi';
 import { RiDeleteBin2Fill } from 'react-icons/ri';
+import { DaftarBuku } from './Data/DaftarBuku';
  
 
 const DataBukuAdmin = () => {
@@ -24,6 +25,8 @@ const DataBukuAdmin = () => {
     // Navigate to the desired page when "Tambah Buku" button is clicked
     navigate('/tambahbuku');
   };
+
+  const [search, setSearch] = useState('')
 
   return (
     <div>
@@ -49,6 +52,7 @@ const DataBukuAdmin = () => {
             <div className='flex justify-end items-center mt-6'>
               <div className='relative'>
                 <input
+                  onChange={(e) => setSearch(e.target.value)}
                   type="search"
                   className='pl-10 pr-3 h-10 hover:shadow-lg rounded-3xl bg-gray-200 shadow-black'
                 />
@@ -58,31 +62,35 @@ const DataBukuAdmin = () => {
 
             <div className='mt-6'>
               <div>
-                <table className='w-full'>
+                <table className='w-full table-fixed' style={{ margin: '0', padding: '0' }}>
                   <thead>
-                    <tr className='bg-gray-200 text-left '>
-                      <th><Checkbox/></th>
-                      <th className=''>ISBN</th>
-                      <th className='pr-20'>Judul Buku</th>
-                      <th className=''>Nama Penerbit</th>
-                      <th>Penerbit</th>
-                      <th>Tahun Buku</th>
-                      <th>Stok Buku</th>
-                      <th>Kelas</th>
-                      <th>Aksi</th>
+                    <tr className='bg-gray-200 text-center border'>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>ISBN</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Judul Buku</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Nama Penulis</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Penerbit</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Tahun Buku</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Stok Buku</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Kategori</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>10005</td>
-                      <td className='pr-20'>MAtematika X</td>
-                      <td className=''>Budi</td>
-                      <td className=''>Gramedia</td>
-                      <td className=''>2006</td>
-                      <td className=''>112</td>
-                      <td>10</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
+                    {/* search filter by title */}
+                    {DaftarBuku.filter((item) => {
+                      return search.toLowerCase() === ''
+                      ? item 
+                      : item.title.toLowerCase().includes(search);
+                    }).map((item) => (
+                      <tr key={item.id} className='text-center'>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.ISSBN}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.title}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.penulis}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.penerbit}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.tahun}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.stock}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.kategori}</td>
+                      <td className='flex h-12 w-22 justify-evenly  items-center' tyle={{ fontSize: '17px' }}>
                         <div>
                           <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
                           </div>
@@ -91,49 +99,7 @@ const DataBukuAdmin = () => {
                           </div>
                         </td>
                     </tr>
-
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>29076</td>
-                      <td className='pr-20'>PPKN XI</td>
-                      <td className=''>Agung</td>
-                      <td className=''>Gramedia</td>
-                      <td className=''>2010</td>
-                      <td className=''>80</td>
-                      <td>11</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>10004</td>
-                      <td className='pr-20'>Bahasa Indonesia XII</td>
-                      <td className=''>Kanjeng</td>
-                      <td className=''>Gramedia</td>
-                      <td className=''>2012</td>
-                      <td className=''>96</td>
-                      <td>12</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
-
-
-                    
-
-                    
+                    ))}
                   </tbody>  
                 </table>
               </div>
