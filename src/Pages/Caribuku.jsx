@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import Navbar from "../Components/Navbar";
+import Sidebar from "../Components/Sidebar";
+import Footer from "../Components/Footer";
 import Bukuing from '../assets/Bukuing.svg'
 import Bukudilan from '../assets/Bukudilan.svg'
 import Bukupkn from '../assets/Bukupkn.svg'

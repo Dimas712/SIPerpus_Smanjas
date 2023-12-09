@@ -1,29 +1,29 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import SidebarAdmin from "./SidebarAdmin";
-import Footer from "./Footer";
+import Navbar from "../Components/Navbar";
+import SidebarAdmin from "../Components/SidebarAdmin";
+import Footer from "../Components/Footer";
 import { MdDeleteForever } from "react-icons/md";
 
 
 // Data Dummy untuk halaman rak buku
-const DataKategori =[
+const DataRak =[
     {
         id: 1,
-        name: 'Kelas X'
+        name: 'Rak 1'
     },
     {
         id: 2,
-        name: 'Kelas XI'
+        name: 'Rak 2'
     },
     {
         id: 3,
-        name: 'Kelas XII'
+        name: 'Rak 3'
     }
 ]
 
 
-function DataKategoriBuku (){
-    const [items, setItems] = useState(DataKategori);
+function RakBuku (){
+    const [items, setItems] = useState(DataRak);
 
     function handleAddItem(item){
         setItems([...items, item]);
@@ -41,18 +41,18 @@ function DataKategoriBuku (){
             </div>
                 <div className="flex flex-row">
                     <SidebarAdmin />
-                    <div className="px-5 h-screen py-10 w-screen">
+                    <div className="px-5 py-10 h-screen w-screen">
                         <div className="bg-green3 rounded-xl px-5 py-3">
-                            <p className="text-white font-bold text-xl">Data Kategori Buku</p>
+                            <p className="text-white font-bold text-xl">Data Rak Buku</p>
                         </div>
                         {/* Form */}
-                        <TambahKategori onAddItem={handleAddItem} />
+                        <TambahRak onAddItem={handleAddItem} />
                         <form items={items} onDeleteItem={handleDeleteItem}>
                             <div className="flex flex-col items-center justify-center py-10 ">
                                 <table className="w-10/12 md:w-8/12 shadow-md rounded-xl ">
                                     <thead className="bg-blue-gray-100 h-5 md:h-10">
                                         <tr className="text-sm md:text-base">
-                                            <th>Kategori</th>
+                                            <th>Rak</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -86,7 +86,7 @@ function Item({item, onDeleteItem}){
 }
 
 
-function TambahKategori({onAddItem}){
+function TambahRak({onAddItem}){
     const [name, setName] = useState ('');
     function handleSubmit(e){
         e.preventDefault();
@@ -106,10 +106,10 @@ function TambahKategori({onAddItem}){
         <div>
             <form className="flex flex-col items-center justify-center py-3" onSubmit={handleSubmit}>
             <div className="flex flex-col justify-center items-start pl-2 py-5 w-5/12 md:w-8/12 ">
-                <label className="py-2 text-base font-bold">Tambah Kategori</label>
+                <label className="py-2 text-base font-bold">Tambah Rak Buku</label>
                 <input
                 type="text"
-                name="name_kategori"
+                name="name_rak"
                 value={name} 
                 onChange={(e) => setName(e.target.value)}
                 className="flex flex-row border-solid border-2 border-blue-gray-100 bg-white h-8 px-2 py-2 justify-center items-center md:w-8/12 md:h-10 md:py-2"
@@ -130,4 +130,4 @@ function TambahKategori({onAddItem}){
 }
 
 
-export default DataKategoriBuku
+export default RakBuku

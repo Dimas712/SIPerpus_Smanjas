@@ -9,8 +9,8 @@ import {MdNoFood} from 'react-icons/md';
 import {FaPhoneSlash} from 'react-icons/fa6';
 import {GiNightSleep} from 'react-icons/gi';
 import {RiSpeakFill} from 'react-icons/ri';
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 
 const Homepage = () =>{

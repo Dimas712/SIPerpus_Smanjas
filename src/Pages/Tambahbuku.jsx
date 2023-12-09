@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
-import Navbar from './Navbar';
-import SidebarAdmin from './SidebarAdmin';
+import Navbar from '../Components/Navbar';
+import SidebarAdmin from '../Components/SidebarAdmin';
 import {PencilSquareIcon} from '@heroicons/react/24/outline'
-import Footer from './Footer';
+import Footer from '../Components/Footer';
 
 const Tambahbuku = () => {
     const navigate = useNavigate();

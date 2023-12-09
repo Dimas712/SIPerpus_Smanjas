@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
-import Footer from './Footer';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
+import Sidebar from '../Components/Sidebar';
 
 const Detailbuku = () => {
   return (

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
-import SidebarAdmin from './SidebarAdmin';
-import Footer from './Footer';
+import Navbar from '../Components/Navbar';
+import SidebarAdmin from '../Components/SidebarAdmin';
+import Footer from '../Components/Footer';
 
 const DasboardAdmin = () => {
   const [activeMenuItem, setActiveMenuItem] = useState('dashboard');
