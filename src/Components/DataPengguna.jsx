@@ -165,7 +165,7 @@ const DataPengguna = () => {
                         onClick={handleLogin}
                         >Kembali</button>
                         <button type='submit' className='rounded-md md:w-20 md:h-8 bg-green hover:bg-green2'>Tambah</button>
-                        {/* {<p>{data.name}, {data.tempat}, {data.date}, {data.password}, {data.level}, {data.phone}, {data.email}, {data.image}, {data.alamat}</p>} */}
+                         {<p>{data.name}, {data.tempat}, {data.date}, {data.password}, {data.level}, {data.phone}, {data.email}, {data.image}, {data.alamat}</p>} */}
                     </div>
                 </form>
             </div> 
