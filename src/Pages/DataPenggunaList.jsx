@@ -51,7 +51,7 @@ const DataPenggunaList = () => {
                   <button onClick={handleTambahPeminjamanClick}
                   className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
                     <PlusSmallIcon className='h-6 w-6 mr-1 text-white'/>
-                    <p className='text-white'>Tambah Siswa</p>
+                    <p className='text-white'>Tambah Pengguna</p>
                   </button>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-export const Pengguna = [{
+export const Pengguna = [
+  {
     "id": 1,
     "no": 1,
     "name": "Sarah Wijayanto",

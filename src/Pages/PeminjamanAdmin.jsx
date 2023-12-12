@@ -10,6 +10,7 @@ import { Checkbox } from '@material-tailwind/react';
 import { BiEdit, BiSearch } from 'react-icons/bi';
 import { FaDeleteLeft } from 'react-icons/fa6';
 import { RiDeleteBack2Fill, RiDeleteBin2Fill } from 'react-icons/ri';
+import { Pinjam } from '../Components/Data/Pinjam';
  
 
 const PeminjamanAdmin = () => {
@@ -21,13 +22,14 @@ const PeminjamanAdmin = () => {
     setLoggedIn(true);
   };
 
+  const [search, setSearch] = useState('')
 
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex'>
         <SidebarAdmin />
-        <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
+        <div className=' w-full p-5 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative h-screen'>
             <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <TfiDownload className='h-10 w-8' color='white'/>
@@ -45,6 +47,7 @@ const PeminjamanAdmin = () => {
             <div className='flex justify-end items-center mt-6'>
               <div className='relative'>
                 <input
+                  onChange={(e) => setSearch(e.target.value)}
                   type="search"
                   className=' pl-10 pr-3 h-10 hover:shadow-lg rounded-3xl bg-gray-200 shadow-black'
                 />
@@ -54,29 +57,37 @@ const PeminjamanAdmin = () => {
 
             <div className='mt-6'>
               <div>
-                <table className='w-full'>
+                <table className='w-full table-fixed' style={{ margin: '0', padding: '0' }}>
                   <thead>
-                    <tr className='bg-gray-200 text-left '>
-                      <th><Checkbox/></th>
-                      <th className=''>No Peminjaman</th>
-                      <th className='pr-20'>Nama</th>
-                      <th className=''>Kelas</th>
-                      <th>Pinjam</th>
-                      <th>Kembali</th>
-                      <th>Status</th>
-                      <th>Aksi</th>
+                    <tr className='bg-gray-200 text-center border'>
+                      <th className='pr-10  border' style={{ fontSize: '15px' }}>No Peminjaman</th>
+                      <th className='pr-10  border' style={{ fontSize: '15px' }}>ID Anggota</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Nama</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Kelas</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Buku</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Pinjam</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Kembali</th>
+                      <th className='pr-8  border' style={{ fontSize: '15px' }}>Status</th>
+                      <th className='pr-10  border' style={{ fontSize: '15px' }}>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>12</td>
-                      <td className='pr-20'>Rani</td>
-                      <td className='pr-10'>10</td>
-                      <td className=''>12-09-2023</td>
-                      <td className=''>15-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
+                    {/* search filter by title */}
+                    {Pinjam.filter((item) => {
+                      return search.toLowerCase() === ''
+                      ? item
+                      : item.name.toLowerCase().includes(search);
+                     }).map((item) => (
+                      <tr key={item.id} className='text-center'>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.no}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.idpeng}</td>
+                      <td className='pr-17 text-left border' style={{ fontSize: '15px' }}>{item.name}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.kelas}</td>
+                      <td className='pr-17 text-left  border' style={{ fontSize: '15px' }}>{item.buku}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.pinjam}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.kembali}</td>
+                      <td className='pr-17  border' style={{ fontSize: '15px' }}>{item.status}</td>
+                      <td className='flex h-12 w-22 justify-evenly items-center border' style={{ fontSize: '12px' }}>
                         <div>
                           <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
                           </div>
@@ -85,68 +96,11 @@ const PeminjamanAdmin = () => {
                           </div>
                         </td>
                     </tr>
-
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>45</td>
-                      <td className='pr-20'>Ahmad</td>
-                      <td className='pr-10'>12</td>
-                      <td className=''>12-09-2023</td>
-                      <td className=''>28-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>67</td>
-                      <td className='pr-20'>Iqbal</td>
-                      <td className='pr-10'>10</td>
-                      <td className=''>20-09-2023</td>
-                      <td className=''>29-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>89</td>
-                      <td className='pr-20'>Reina</td>
-                      <td className='pr-10'>11</td>
-                      <td className=''>21-09-2023</td>
-                      <td className=''>23-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
-
-                    
+                     ))}
                   </tbody>  
                 </table>
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>

@@ -67,7 +67,7 @@
               
               <Link to="/datapenggunalist" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} ${activeMenuItem === 'datapenggunalist' ? 'bg-green' : '' }`}>
                 <PiStudent className={`mr-2 h-8 ${open ? "w-8" : "w-8"}`}/>
-                <p className={`static ${open ? "" : "hidden"}`}>Data Siswa</p>
+                <p className={`static ${open ? "" : "hidden"}`}>Data Pengguna</p>
               </Link>
               
 
