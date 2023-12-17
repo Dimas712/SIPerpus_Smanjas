@@ -5,61 +5,44 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 
-const Detailbuku = () => {
+const Detailbukuv2 = () => {
   return (
     <div className="flex flex-col">
       <Navbar />
       <div className="flex flex-col md:flex-row ">
-        <div className="hidden md:block">
+        <div className="hidden md:block h-full">
           <Sidebar />
         </div>
-        <div className="flex flex-col justify-center w-full p-10 pl-5 md:pl-35 pr-5 md:pr-30">
-          <div className="relative">
-            <div className="bg-green2 h-12 rounded-3xl flex items-center space-x-10 md:pl-4">
-              <UserCircleIcon className="h-10 w-10 text-white" />
-              <p className="text-white font-noto font-semibold text-3xl">
-                Detail Buku
-              </p>
-            </div>
-
-            <div className="-mt-20 flex flex-col md:flex-row">
-              <div className="flex justify-center items-center h-screen drop-shadow-md mt-10">
-                <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-5xl my-4">
-                  <div className="md:flex">
-                    <div className="md:flex-shrink-0">
-                      <img
-                        className="h-full w-full md:w-48 object-cover"
-                        src="https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg"
-                        alt="Book Cover"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <div className="uppercase tracking-wide text-xl font-semibold italic">
-                        Novel Dilan 1990
-                      </div>
-                      <p className="block mt-1 text-lg leading-tight font-semibold text-black">
-                        Pidi Baiq
-                      </p>
-                      <p className="mt-2 text-gray-600 text-justify text-sm">
-                        Novel berjudul Dia Adalah Dilanku Tahun 1990 merupakan
-                        karya dari Pidi Baiq. Dilan Dia Adalan Dilanku
-                        menceritakan percintaan anak SMA yang cukup unik. Novel
-                        dengan tebal 348 halaman ini diterbitkan pada tahun
-                        2014. Ada beberapa penerbit yang telah menerbitkan novel
-                        Dilan 1990, yakni penerbit Pastel Books pada 2014 dan
-                        penerbit Mizan Pustaka pada 2015. Baca selengkapnya di
-                        artikel Sinopsis Novel 'Dilan' Dia Adalah Dilanku Tahun
-                        1990 - Pidi Baiq.
-                      </p>
-                      <p className="mt-4 font-semibold">Jumlah Buku: 30</p>
-                      <Popup />
-                    </div>
-                  </div>
-                  <Keterangan />
-                </div>
-              </div>
-            </div>
+        <div className="fle flex-col m-8">
+          <div className="bg-green2 h-12 rounded-3xl flex items-center space-x-10">
+            <UserCircleIcon className="h-10 w-10 text-white mx-4" />
+            <p className="text-white font-noto font-semibold text-3xl">
+              Detail Buku
+            </p>
           </div>
+          <img
+            className="object-cover rounded-xl m-auto py-8"
+            src="https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg"
+            alt="Book Cover"
+          />
+          <div className="uppercase tracking-wide text-xl font-semibold italic">
+            Novel Dilan 1990
+          </div>
+          <p className="block mt-1 text-lg leading-tight font-semibold text-black">
+            Pidi Baiq
+          </p>
+          <p className="mt-2 text-gray-600 text-justify text-sm">
+            Novel berjudul Dia Adalah Dilanku Tahun 1990 merupakan karya dari
+            Pidi Baiq. Dilan Dia Adalan Dilanku menceritakan percintaan anak SMA
+            yang cukup unik. Novel dengan tebal 348 halaman ini diterbitkan pada
+            tahun 2014. Ada beberapa penerbit yang telah menerbitkan novel Dilan
+            1990, yakni penerbit Pastel Books pada 2014 dan penerbit Mizan
+            Pustaka pada 2015. Baca selengkapnya di artikel Sinopsis Novel
+            'Dilan' Dia Adalah Dilanku Tahun 1990 - Pidi Baiq.
+          </p>
+          <p className="mt-4 font-semibold">Jumlah Buku: 30</p>
+          <Popup />
+          <Keterangan />
         </div>
       </div>
       <Footer />
@@ -189,4 +172,4 @@ function Popup() {
   );
 }
 
-export default Detailbuku;
+export default Detailbukuv2;
