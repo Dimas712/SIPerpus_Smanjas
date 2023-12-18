@@ -3,12 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import {PlusSmallIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import Navbar from './Navbar';
 import SidebarAdmin from './SidebarAdmin';
-import { TfiDownload } from "react-icons/tfi";
 import Footer from './Footer';
-import { Checkbox } from '@material-tailwind/react';
-import { BiEdit, BiSearch } from 'react-icons/bi';
-import { FaDeleteLeft } from 'react-icons/fa6';
-import { RiDeleteBack2Fill, RiDeleteBin2Fill } from 'react-icons/ri';
+import { PiStudent } from "react-icons/pi";
+import { BiEdit } from 'react-icons/bi';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
 import axios from 'axios';
  
 
@@ -22,7 +20,7 @@ const DataPenggunaList = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:3000/auth/delete_pengguna/' +id)
+    axios.delete('http://localhost:8800/auth/delete_pengguna/' +id)
     .then(result => {
       if(result.data.Status) {
         setDatapenggunalist(prevData => prevData.filter(item => item.id !== id));
@@ -36,9 +34,8 @@ const DataPenggunaList = () => {
   }
 
   const[datapenggunalist, setDatapenggunalist] = useState([])
-
   useEffect(() => {
-  axios.get('http://localhost:3000/auth/datapenggunalist')
+  axios.get('http://localhost:8800/auth/datapenggunalist')
     .then(result => {
       console.log('API Response:', result.data); // Log the response data
       if(result.data.Status) {
@@ -57,11 +54,11 @@ const DataPenggunaList = () => {
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex'>
-        <SidebarAdmin activeMenuItem={activeMenuItem} />
-        <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
+        <SidebarAdmin activeMenuItem={activeMenuItem}  />
+        <div className=' w-full h-screen p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative h-full'>
             <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
-              <TfiDownload className='h-10 w-8' color='white'/>
+              <PiStudent className='h-10 w-8' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Daftar Data Pengguna</p>
             </div>
             <div className='mt-10'>
@@ -84,12 +81,12 @@ const DataPenggunaList = () => {
               </div>
             </div>
 
-            <div className='mt-6'>
+            <div className='mt-6 h-3/5 overflow-y-scroll'>
               <div>
               <table className='w-full'>
                   <thead>
                     <tr className='bg-gray-200 text-left '>
-                      <th><Checkbox/></th>
+                      <th className='pl-3'>No</th>
                       <th className=''>Foto</th>
                       <th className='pr-10'>Nama</th>
                       <th className='pr-10'>NISN</th>
@@ -100,31 +97,33 @@ const DataPenggunaList = () => {
                     </tr>
                   </thead>
                   <tbody>
-                      {datapenggunalist.map((e, index) => (
-                        <tr key={index} className='border-b border-gray-300'>
-                          <td><Checkbox/></td>
-                          <td>{e.image && (
-                            <img src={`http://localhost:3000/Images/` + e.image} className='w-10 h-10 rounded-full' />
-                          )}
-                          </td>
-                          <td className='pr-20'>{e.nama}</td>
-                          <td className='pr-10'>{e.nisn}</td>
-                          <td className='pr-2'>{e.password}</td>
-                          <td className='pr-2'>{e.jenis_kelamin}</td>
-                          <td>{e.level}</td>
-                          <td className='flex h-12 w-22 justify-evenly items-center'>
-                            <Link to={`/editdatapengguna/` + e.id}>
-                              <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                            </Link>
-                            <div>
-                              <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'
-                              onClick={() => handleDelete(e.id)}/>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-  
+                    {datapenggunalist.map((e, index) => (
+                      <tr key={index} className='border-b border-gray-300'>
+                        <td className='pl-4'>{index + 1}</td>
+                        <td>
+                          <img
+                            src={`http://localhost:8800/Images/${e.image}`}
+                            className='w-10 h-10 rounded-full'
+                            alt={`Profile of ${e.nama}`}
+                          />
+                        </td>
+                        <td className='pr-20'>{e.nama}</td>
+                        <td className='pr-10'>{e.nisn}</td>
+                        <td className='pr-2'>{e.password}</td>
+                        <td className='pr-2'>{e.jenis_kelamin}</td>
+                        <td>{e.level}</td>
+                        <td className='flex h-12 w-22 space-x-1  items-center'>
+                          <Link to={`/editdatapengguna/` + e.id}>
+                            <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
+                          </Link>
+                          <div>
+                            <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer' onClick={() => handleDelete(e.id)}/>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+
                 </table>
               </div>
             </div>   

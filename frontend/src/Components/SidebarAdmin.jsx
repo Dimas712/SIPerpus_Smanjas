@@ -40,7 +40,7 @@
 
     return (
       <div className='flex'>
-        <div className={`bg-green2 text-white ${open ? "w-72" : "w-16"} h-screen duration-300 relative p-4`}>
+        <div className={`bg-green2 text-white ${open ? "w-72" : "w-16"} h-screen duration-300 relative p-4 rounded-r-2xl`}>
           <div>
             <ArrowLeftCircleIcon className={`h-10 w-10 -right-5 absolute cursor-pointer ${!open && "rotate-180"}`} stroke='#657864' fill='white' onClick={() => setOpen (!open)} />
           </div>

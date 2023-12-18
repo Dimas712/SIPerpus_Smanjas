@@ -8,8 +8,7 @@ import { TfiDownload } from "react-icons/tfi";
 import Footer from './Footer';
 import { Checkbox } from '@material-tailwind/react';
 import { BiEdit, BiSearch } from 'react-icons/bi';
-import { FaDeleteLeft } from 'react-icons/fa6';
-import { RiDeleteBack2Fill, RiDeleteBin2Fill } from 'react-icons/ri';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
  
 
 const PeminjamanAdmin = () => {
@@ -28,20 +27,11 @@ const PeminjamanAdmin = () => {
       <div className='flex'>
         <SidebarAdmin />
         <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
-          <div className='relative h-screen'>
+          <div className='relative'>
             <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <TfiDownload className='h-10 w-8' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl'>Data Peminjaman Buku Siswa</p>
             </div>
-            <div className='mt-10'>
-                <div>
-                  <button className='flex flex-row justify-center items-center rounded-2xl h-12 w-60 bg-green active:bg-green2'>
-                    <PlusSmallIcon className='h-6 w-6 mr-1 text-white'/>
-                    <p className='text-white'>Tambah Peminjaman</p>
-                  </button>
-                </div>
-            </div>
-
             <div className='flex justify-end items-center mt-6'>
               <div className='relative'>
                 <input

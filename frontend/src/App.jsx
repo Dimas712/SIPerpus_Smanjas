@@ -27,6 +27,8 @@ import DataKategoriBuku from './Components/DataKategoriBuku'
 import Buku from './Components/Buku'
 import Halbuku from './Components/halbuku'
 import EditDataPengguna from './Components/editdatapengguna'
+import Detailbook from './Components/detailbook'
+import Privateroute from './Components/privateroute'
 
 
 function App () {
@@ -38,29 +40,95 @@ function App () {
         <Route path='/' element={<Homepage/>}/>
         <Route path='/admin' element={<LoginAdmin/>}/>
         <Route path='/siswa' element={<LoginSiswa/>}/>
-        <Route path='/profil' element={<ProfilSiswa/>}/>
-        <Route path='/editsiswa' element={<EditProfilSiswa/>}/>
-        <Route path='/profiladmin' element={<ProfilAdmin/>}/>
-        <Route path='/editadmin' element={<EditAdmin/>}/>
+        <Route path='/profil' element={
+        <Privateroute>
+          <ProfilSiswa/>
+        </Privateroute>
+        }/>
+
+        <Route path='/editsiswa' element={
+        <Privateroute>
+          <EditProfilSiswa/>
+        </Privateroute>
+        }/>
+
+        <Route path='/profiladmin' element={
+        <Privateroute>
+          <ProfilAdmin/>
+        </Privateroute>
+        }/>
+
+        <Route path='/editadmin' element={
+        <Privateroute>
+          <EditAdmin/>
+        </Privateroute>
+        }/>
         <Route path='/editdatapengguna/:id' element={<EditDataPengguna/>}/>
         <Route path='/caribuku' element={<CariBuku/>}/>
         <Route path='/buku' element={<Buku/>}/>
         <Route path='/formpinjambuku' element={<Form/>}/>
         <Route path='/carousel' element={<Carousel/>}/>
         <Route path='/cardbook' element={<CardBook/>}/>
-        <Route path='/pinjamsiswa' element={<PeminjamanSiswa/>}/>
-        <Route path='/kembalisiswa' element={<Pengembaliansiswa/>}/>
-        <Route path='/pinjamadmin' element={<PeminjamanAdmin/>}/>
-        <Route path='/kembaliadmin' element={<PengembalianAdmin/>}/>
+        <Route path='/pinjamsiswa' element={
+          <Privateroute>
+            <PeminjamanSiswa/>
+          </Privateroute>
+        }/>
+
+        <Route path='/kembalisiswa' element={
+        <Privateroute>
+          <Pengembaliansiswa/>
+        </Privateroute>
+        }/>
+
+        <Route path='/pinjamadmin' element={
+        <Privateroute>
+          <PeminjamanAdmin/>
+        </Privateroute>
+        }/>
+
+        <Route path='/kembaliadmin' element={
+        <Privateroute>
+          <PengembalianAdmin/>
+        </Privateroute>
+        }/>
+
         <Route path='/detailbuku' element={<Detailbuku/>}/>
-        <Route path='/dashboard' element={<DasboardAdmin/>}/>
-        <Route path='/databukuadmin' element={<DataBukuAdmin/>}/>
+        <Route path='/dashboard' element={
+          <Privateroute>
+            <DasboardAdmin/>
+          </Privateroute>
+        }/>
+
+        <Route path='/databukuadmin' element={
+        <Privateroute>
+          <DataBukuAdmin/>
+        </Privateroute>
+        }/>
+
         <Route path='/datapengguna' element={<DataPengguna/>}/>
-        <Route path='/datapenggunalist' element={<DataPenggunaList/>}/>3
+        <Route path='/datapenggunalist' element={
+          <Privateroute>
+            <DataPenggunaList/>
+          </Privateroute>
+        }/>
+
         <Route path='/tambahbuku' element={<Tambahbuku/>}/>
-        <Route path='/rakbuku' element={<RakBuku/>}/>
+        <Route path='/rakbuku' element={
+        <Privateroute>
+          <RakBuku/>
+        </Privateroute>
+        }/>
+
         <Route path='/halbuku' element={<Halbuku/>}/>
-        <Route path='/datakategoribuku' element={<DataKategoriBuku/>}/>
+        <Route path='/datakategoribuku' element={
+        <Privateroute>
+          <DataKategoriBuku/>
+        </Privateroute>
+        }/>
+
+        <Route path='/detailbook' element={<Detailbook/>}/>
+
       </Routes>
     </Router>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LogoSMA from '../assets/LogoSMA.svg'
+import axios from 'axios';
 
 const Navbar = ({isLoggedIn, activeMenuItem}) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -14,6 +15,18 @@ const Navbar = ({isLoggedIn, activeMenuItem}) => {
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+
+  const navigate = useNavigate()
+  axios.defaults.withCredentials = true
+  const handleLogout = () => {
+    axios.get('http://localhost:8800/auth/logout')
+    .then(result => {
+      if(result.data.Status) {
+        localStorage.removeItem("valid", true)
+        navigate('/')
+      }
+    })
+  }
 
   return (
     <div className={`flex flex-col lg:flex-row justify-between bg-green p-4 text-slate-50 font-medium items-center text-white`}>
@@ -33,7 +46,7 @@ const Navbar = ({isLoggedIn, activeMenuItem}) => {
         <div className={`flex items-center justify-center lg:justify-end relative mt-4 lg:mt-0 ${isMasukClicked ? 'bg-green2' : 'hover:bg-green2'} shadow-md rounded-lg mr-3`}>
           <div className='text-2xl w-32 rounded-md relative cursor-pointer font-poppins bg-green-200 flex items-center justify-center'>
             <div className="flex items-center">
-              <Link to="/">Keluar</Link>
+              <p onClick={handleLogout}>Keluar</p>
             </div>
           </div>
         </div>

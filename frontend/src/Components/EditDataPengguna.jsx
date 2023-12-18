@@ -1,11 +1,10 @@
     import axios from 'axios';
     import React, { useEffect, useState } from 'react'
-    import { useNavigate, useParams } from 'react-router-dom'
+    import { useNavigate, useParams, } from 'react-router-dom'
     import Navbar from './Navbar';
     import SidebarAdmin from './SidebarAdmin';
     import Footer from './Footer';
     import { BiEdit, BiSearch } from 'react-icons/bi';
-
 
     const editdatapengguna = () => {
         const [isLoggedIn, setLoggedIn] = useState(true);
@@ -27,7 +26,7 @@
         })
         
         useEffect(() => {
-            axios.get(`http://localhost:3000/auth/datapenggunalist/` + id)
+            axios.get(`http://localhost:8800/auth/datapenggunalist/` + id)
                 .then(result => {
                     const data = result.data.Result[0];
                     setForm({
@@ -41,7 +40,7 @@
                         jenis_kelamin: data.jenis_kelamin,
                         no_telepon: data.no_telepon,
                         email: data.email,
-                        image: data.image,
+                        image: data.image || '',
                         alamat: data.alamat,
                     });
                 })
@@ -57,25 +56,41 @@
             navigate('/datapenggunalist');
         };
 
-        // Inside the handleSubmit function in editdatapengguna component
-// Inside the handleSubmit function in editdatapengguna component
         const handleSubmit = (e) => {
             e.preventDefault();
-
-            axios.put(`http://localhost:3000/auth/edit_pengguna/${id}`, form)
+            const formData = new FormData();
+            formData.append('nama', form.nama);
+            formData.append('nisn', form.nisn);
+            formData.append('password', form.password);
+            formData.append('tempat_lahir', form.tempat_lahir);
+            formData.append('tanggal_lahir', form.tanggal_lahir);
+            formData.append('level', form.level);
+            formData.append('jenis_kelamin', form.jenis_kelamin);
+            formData.append('no_telepon', form.no_telepon);
+            formData.append('email', form.email);
+            formData.append('image', form.image[0] || form.image);
+            formData.append('alamat', form.alamat);
+        
+            axios.put(`http://localhost:8800/auth/edit_pengguna/${id}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            })
                 .then(result => {
+                    console.log("PUT Request Result:", result);
+        
                     if (result.data.Status) {
-                        // Check the response structure to get the updated filename
-                        const updatedImageFileName = result.data.updatedImageFileName; // Adjust this based on your server response
-                        setForm({ ...form, image: updatedImageFileName });
                         navigate('/datapenggunalist');
                     } else {
                         alert(result.data.Error);
                     }
                 })
-                .catch(err => console.log(err));
-
+                .catch(err => {
+                    console.error("PUT Request Error:", err);
+                    // Handle the error (e.g., display an error message)
+                });
         };
+        
 
 
         
@@ -228,13 +243,13 @@
                             <div>
                                 <label htmlFor="image">Profile Image</label>
                                 <input
-                                    className='text-base mt-1 cursor-pointer'
-                                    type="file"
-                                    id="image"
-                                    name='image'
-                                    files={form.image}
-                                    onChange={(e) => setForm({ ...form, image: e.target.files[0] })}
-                                />
+                                className='text-base mt-1 cursor-pointer'
+                                type="file"
+                                id="image"
+                                name='image'
+                                files={form.image}
+                                onChange={(e) => setForm({ ...form, image: e.target.files })}
+                            />
                             </div>
 
 

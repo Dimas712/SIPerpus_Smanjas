@@ -1,133 +1,135 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar";
-import SidebarAdmin from "./SidebarAdmin";
-import Footer from "./Footer";
-import { MdDeleteForever } from "react-icons/md";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { GiBookshelf } from "react-icons/gi";
+import Navbar from './Navbar';
+import SidebarAdmin from './SidebarAdmin';
+import Footer from './Footer';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
+import axios from 'axios';
 
+const RakBuku = () => {
+  const navigate = useNavigate();
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  const [rak, setRak] = useState([]);
+  const [newCategory, setNewCategory] = useState('');
 
-// Data Dummy untuk halaman rak buku
-const DataRak =[
-    {
-        id: 1,
-        name: 'Rak 1'
-    },
-    {
-        id: 2,
-        name: 'Rak 2'
-    },
-    {
-        id: 3,
-        name: 'Rak 3'
-    }
-]
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:8800/auth/rak_kategori', { kategori: newCategory })
+      .then(result => {
+        console.log(result.data);
+    
+        fetchCategories();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
-function RakBuku (){
-    const [items, setItems] = useState(DataRak);
+  const fetchCategories = () => {
+    axios.get('http://localhost:8800/auth/rak')
+      .then(result => {
+        if (result.data.Status) {
+          setRak(result.data.Result);
+        } else {
+          alert(result.data.Error);
+        }
+      })
+      .catch(err => console.log(err));
+  };
 
-    function handleAddItem(item){
-        setItems([...items, item]);
-    }
+  useEffect(() => {
+    fetchCategories();
+  }, []);
 
+  const handleDelete = (id) => {
+    axios.delete('http://localhost:8800/auth/delete_rak/' +id)
+    .then(result => {
+      if(result.data.Status) {
+        setRak(prevData => prevData.filter(item => item.id !== id));
+      } else {
+        alert(result.data.Error)
+      }
+    })
+    .catch(err => {
+      console.error('API Error', err)
+    })
+  }
 
-    function handleDeleteItem(id){
-        setItems((items) => items.filter((item) => item.id !== id));
-    }
-
-    return(
-        <div>
+  return (
+    <div>
+      <Navbar isLoggedIn={isLoggedIn} />
+      <div className='flex justify-center'>
+        <SidebarAdmin />
+        <div className='w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
+          <div className='relative'>
+            <div className='bg-green3 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
+              <GiBookshelf className='h-10 w-8' color='white'/>
+              <p className='text-white font-noto font-semibold text-3xl'>Rak Buku</p>
+            </div>
             <div>
-            <Navbar />
-            </div>
-                <div className="flex flex-row">
-                    <SidebarAdmin />
-                    <div className="px-5 py-10 h-screen w-screen">
-                        <div className="bg-green3 rounded-xl px-5 py-3">
-                            <p className="text-white font-bold text-xl">Data Rak Buku</p>
-                        </div>
-                        {/* Form */}
-                        <TambahRak onAddItem={handleAddItem} />
-                        <form items={items} onDeleteItem={handleDeleteItem}>
-                            <div className="flex flex-col items-center justify-center py-10 ">
-                                <table className="w-10/12 md:w-8/12 shadow-md rounded-xl ">
-                                    <thead className="bg-blue-gray-100 h-5 md:h-10">
-                                        <tr className="text-sm md:text-base">
-                                            <th>Rak</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="py-5">
-                                        {items.map((item) =>(
-                                        <Item item={item} key={item.id} onDeleteItem={handleDeleteItem}/>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                        </form>
-                    </div>
-                </div>
-            <Footer />
-        </div>
-    )
-}
+              <div>
+                <form className="py-3" onSubmit={handleSubmit} >
 
-function Item({item, onDeleteItem}){
-    return(
-        <tr key={item.id} >
-            <td className="flex items-center justify-center">{item.name}</td>
-                <td>
-                    <span className="flex flex-row items-center justify-center gap-1 cursor-pointer">
-                        <MdDeleteForever className="text-red-700 text-lg  hover:text-red-300" onClick={() => onDeleteItem(item.id)}/>
-                    </span>
-                </td>
-        </tr>
-    )
-}
-
-
-function TambahRak({onAddItem}){
-    const [name, setName] = useState ('');
-    function handleSubmit(e){
-        e.preventDefault();
-        // Guard Clause (untuk menghilangkan tambah item yang kosong)
-        if(!name) return;
-
-        //variabel untuk dijadikan objek 
-        const newItem ={name}
-        onAddItem(newItem);
-        console.log(newItem)
-        // untuk menghilangkan value ketika sudah di tambah 
-        setName('');
-
-
-    }
-    return(
-        <div>
-            <form className="flex flex-col items-center justify-center py-3" onSubmit={handleSubmit}>
-            <div className="flex flex-col justify-center items-start pl-2 py-5 w-5/12 md:w-8/12 ">
-                <label className="py-2 text-base font-bold">Tambah Rak Buku</label>
-                <input
-                type="text"
-                name="name_rak"
-                value={name} 
-                onChange={(e) => setName(e.target.value)}
-                className="flex flex-row border-solid border-2 border-blue-gray-100 bg-white h-8 px-2 py-2 justify-center items-center md:w-8/12 md:h-10 md:py-2"
-                />
-                <div  className="flex justify-end py-3">
-                    <button 
-                    type="submit"
-                    className="bg-green3 border-solid rounded-full text-sm px-7 py-1 font-bold text-white hover:bg-green md:mr-56">
+                  <div className=" flex flex-col justify-center items-start pl-2 py-5 w-5/12 md:w-8/12 mx-auto ">
+                    <label htmlFor='kategori' className="py-2 text-base font-bold">Tambah RaK</label>
+                    <input
+                      type="text"
+                      name="kategori"
+                      placeholder='Masukkan Rak'
+                      value={newCategory}
+                      onChange={(e) => setNewCategory(e.target.value)}
+                      className="flex flex-row border-solid border-2 border-blue-gray-100 bg-white h-8 px-2 py-2 justify-center items-center md:w-8/12 md:h-10 md:py-2"
+                    />
+                    <div className="flex justify-end py-3">
+                      <button
+                        type="submit"
+                        className="bg-green3 border-solid rounded-full text-sm px-7 py-1 font-bold text-white hover:bg-green md:mr-56">
                         Tambah
-                    </button>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div className=''>
+                <div className=''>
+                  <table className='w-8/12 mx-auto'>
+                    <thead>
+                      <tr className='bg-blue-gray-100 h-10'>
+                        <th>Rak</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+
+                    <tbody className='border-2 shadow-xl'>
+                      {rak.map((rack, index) => (
+                        <tr key={index} className='w-full'>
+                          <td className='flex justify-center'>{rack.nama}</td>
+                          <td>
+                            <div className='flex justify-center'>
+                              <RiDeleteBin2Fill className='h-5 w-5 fill-red-800 cursor-pointer'
+                                onClick={() => handleDelete(rack.id)}
+                              />
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-                
+              </div>
             </div>
-            
-        </form>
+          </div>
         </div>
-    )
-}
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
-
-export default RakBuku
+export default RakBuku;

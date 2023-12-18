@@ -10,6 +10,7 @@ import Bukumtk from '../assets/Bukumtk.svg'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 // Data Dummy untuk buku 
 const DataBuku =[
@@ -144,11 +145,11 @@ function CarouselBook (){
                             <img src={e.image} alt="Gambar Buku" className="h-[450px] " />
                         </div>
 
-                        <div className="flex flex-col justify-center items-center gap-1 mb-3">
+                        <Link to="/detailbook" className="flex flex-col justify-center items-center gap-1 mb-3">
                             <p>{e.title}</p>
                             <p>{e.kategori}</p>
                             <button className="border border-gray-600 rounded-md hover:bg-green md:w-36">Selengkapnya</button>
-                        </div>
+                        </Link>
                     </div>
                 ))}
             </Slider>

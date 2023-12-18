@@ -14,14 +14,11 @@ import { RiDeleteBin2Fill } from 'react-icons/ri';
 const DataBukuAdmin = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setLoggedIn] = useState(true);
-  
-
   const handleLogin = ( ) => {
     setLoggedIn(true);
   };
 
   const handleTambahBukuClick = () => {
-    // Navigate to the desired page when "Tambah Buku" button is clicked
     navigate('/tambahbuku');
   };
 

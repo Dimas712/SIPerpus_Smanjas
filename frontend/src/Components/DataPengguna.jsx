@@ -5,7 +5,9 @@
     import SidebarAdmin from './SidebarAdmin';
     import Footer from './Footer';
     import axios from 'axios';
+    
 
+    
     const DataPengguna = () => {
         const navigate = useNavigate();
         const [isLoggedIn, setLoggedIn] = useState(true);
@@ -39,7 +41,7 @@
         formData.append('image', form.image);
         formData.append('alamat', form.alamat);
 
-        axios.post('http://localhost:3000/auth/add_pengguna', formData)
+        axios.post('http://localhost:8800/auth/add_pengguna', formData)
       .then((result) => {
         console.log(result.data);
         navigate('/datapenggunalist');
@@ -50,13 +52,12 @@
             });
         };
 
-
-
     return (
-        <div>
-        <Navbar isLoggedIn={isLoggedIn} />
+    
     <div>
-
+        <Navbar isLoggedIn={isLoggedIn} />
+    
+    <div>
     <div className='flex '>
         <SidebarAdmin activeMenuItem={activeMenuItem} />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>

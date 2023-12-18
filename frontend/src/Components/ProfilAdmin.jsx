@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 import SidebarAdmin from './SidebarAdmin';
 import {IdentificationIcon} from '@heroicons/react/24/outline'
 import Admin from '../assets/admin.jpg'
 import Footer from './Footer';
+import axios from 'axios';
  
 
 const ProfilAdmin = () => {
@@ -23,6 +24,21 @@ const ProfilAdmin = () => {
     setActiveMenuItem('profil');
   };
 
+  const[datapenggunalist, setDatapenggunalist] = useState([])
+    useEffect(() => {
+    axios.get('http://localhost:8800/auth/datapenggunalist')
+      .then(result => {
+        console.log('API Response:', result.data); // Log the response data
+        if(result.data.Status) {
+          setDatapenggunalist(result.data.Result);      
+        } else {
+          alert(result.data.Error)
+        }
+      })
+      .catch(err => {
+        console.error('API Error:', err); // Log any errors
+      });
+  }, []);
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
@@ -41,27 +57,28 @@ const ProfilAdmin = () => {
                 alt="foto siswa" 
                 />
                 <div className='md:pl-20 font-semibold'>
-                    <ul>
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Nama</span>
-                            <span>:</span>
-                            <span className='ml-4'>Admin</span>
-                        </li>
-                        
-                        <li className='mb-1.5'>
-                            <span style={{ minWidth: '120px', display: 'inline-block' }}>Password</span>
-                            <span>:</span>
-                            <span className='ml-4'>infinitelearning</span>
-                        </li>
-                           
-                    </ul>
+                {datapenggunalist.map((e, index) => (
+                  <ul key={index}>
+                    <li></li>
+                    <li className='mb-1.5'>
+                      <span style={{ minWidth: '120px', display: 'inline-block' }}>Nama</span>
+                      <span>:</span>
+                      <span className='ml-4'>{e.nama}</span>
+                    </li>
+                    <li className='mb-1.5'>
+                      <span style={{ minWidth: '120px', display: 'inline-block' }}>NISN</span>
+                      <span>:</span>
+                      <span className='ml-4'>{e.nisn}</span>
+                    </li>
+                  </ul>
+                ))}
                 </div>
             </div>
 
             <div className='absolute bottom-0 right-0 mb-4 mr-4'>
               <button
               type='button'
-              onClick={handleLogin}
+              
               className='bg-green hover:bg-green2 text-white px-4 py-2 rounded-md'>Edit</button>
             </div>
 
