@@ -225,34 +225,6 @@ router.post('/add_pengguna', upload.single('image'), (req, res) => {
     })
 
     //
-    // Add this route in your Express backend
-    router.get('/user_profile', (req, res) => {
-        console.log('Request received at /user_profile');
-        const token = req.cookies.token;
-        console.log('Token:', token);
     
-        try {
-            // Decode the token to get user information
-            const decoded = jwt.verify(token, "jwt_secret_key");
-            console.log('Decoded:', decoded);
-    
-            const nisn = decoded.nisn;
-    
-            const sql = "SELECT nama, nisn FROM data_pengguna WHERE nisn = ?";
-            con.query(sql, [nisn], (err, result) => {
-                if (err) {
-                    console.error('Query Error:', err);
-                    return res.status(500).json({ Status: false, Error: "Query Error" });
-                }
-                return res.json({ Status: true, Result: result });
-            });
-        } catch (error) {
-            console.error('JWT Verification Error:', error);
-            return res.status(500).json({ Status: false, Error: "JWT Verification Error" });
-        }
-    });
-    
-    
-
     
 export { router as adminRouter };
