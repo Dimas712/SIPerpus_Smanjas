@@ -40,7 +40,7 @@
 
     return (
       <div className='flex'>
-        <div className={`bg-green2 text-white ${open ? "w-72" : "w-16"} duration-300 relative p-4`}>
+        <div className={`bg-green2 text-white ${open ? "w-72" : "w-16"} h-screen duration-300 relative p-4 rounded-r-2xl`}>
           <div>
             <ArrowLeftCircleIcon className={`h-10 w-10 -right-5 absolute cursor-pointer ${!open && "rotate-180"}`} stroke='#657864' fill='white' onClick={() => setOpen (!open)} />
           </div>
@@ -67,7 +67,7 @@
               
               <Link to="/datapenggunalist" className={`flex items-center cursor-pointer py-2 mb-4 hover:bg-green active:bg-green3 ${open ? "px-6" : "px-3"} ${activeMenuItem === 'datapenggunalist' ? 'bg-green' : '' }`}>
                 <PiStudent className={`mr-2 h-8 ${open ? "w-8" : "w-8"}`}/>
-                <p className={`static ${open ? "" : "hidden"}`}>Data Pengguna</p>
+                <p className={`static ${open ? "" : "hidden"}`}>Data Siswa</p>
               </Link>
               
 
@@ -131,8 +131,6 @@
                 <UserIcon className={`mr-2 h-8 ${open ? "w-8" : "w-8"}`}/>
                 <p className={`static ${open ? "" : "hidden"}`}>Profil</p>
               </Link>   
-
-
             </ul>
           </div>
         </div>   
