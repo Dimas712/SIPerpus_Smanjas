@@ -11,16 +11,11 @@ app.use(cors({
     credentials: true
 }));
 
-
 app.use(express.json());
 app.use(express.static('Public'));
 
-
 app.use('/auth', adminRouter);
 app.use('/auth', siswaRouter);
-
-
-
 
 app.listen(8800, () => {
     console.log("Server is running");
