@@ -42,13 +42,35 @@ const DasboardAdmin = () => {
     })
   }
 
+  const [userProfileData, setUserProfileData] = useState([]);
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await axios.get('http://localhost:8800/auth/profiladmin', { withCredentials: true });
+        console.log('API Response:', response.data);
+        if (response.data.Status) {
+          setUserProfileData(response.data.Result);
+        } else {
+          alert(response.data.Error);
+        }
+      } catch (error) {
+        console.error('API Error:', error);
+      }
+    };
+
+    fetchUserProfile();
+  }, []);
 
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
         <div>
           <div className='flex'>
-              <SidebarAdmin activeMenuItem={activeMenuItem} />
+          <SidebarAdmin
+          activeMenuItem={activeMenuItem}
+          profileImage={`http://localhost:8800/Images/${userProfileData[0]?.image}`}
+          userName={userProfileData[0]?.nama}
+        />
             <div className=' md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
               <div className=" flex justify-center items-center h-full ">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-16 ">
@@ -79,7 +101,7 @@ const DasboardAdmin = () => {
 
                   <div className="max-w-md bg-bgds shadow-2xl rounded-lg overflow-hidden mx-auto w-96 h-56">
                     <div className="pt-10 pl-10">
-                      <h2 className="text-4xl font-semibold text-gray-800 mb-2">50</h2>
+                      <h2 className="text-4xl font-semibold text-gray-800 mb-2">3</h2>
                       <h2 className="text-3xl font-semibold text-gray-800 mb-2">Di Kembalikan</h2>
                       <Link to='/kembaliadmin'>
                       <button className="bg-green mt-4 text-white px-24 py-2.5 rounded-lg hover:bg-green4">
@@ -91,7 +113,7 @@ const DasboardAdmin = () => {
 
                   <div className="max-w-md bg-bgds shadow-2xl rounded-lg overflow-hidden mx-auto w-96 h-56">
                     <div className="pt-10 pl-10">
-                      <h2 className="text-4xl font-semibold text-gray-800 mb-2">20</h2>
+                      <h2 className="text-4xl font-semibold text-gray-800 mb-2">2</h2>
                       <h2 className="text-3xl font-semibold text-gray-800 mb-2">Di Pinjam</h2>
                       <Link to='/pinjamadmin'>
                       <button className="bg-green mt-4 text-white px-24 py-2.5 rounded-lg hover:bg-green4">

@@ -52,14 +52,35 @@
             });
         };
 
+        const [userProfileData, setUserProfileData] = useState([]);
+            useEffect(() => {
+            const fetchUserProfile = async () => {
+                try {
+                const response = await axios.get('http://localhost:8800/auth/profiladmin', { withCredentials: true });
+                console.log('API Response:', response.data);
+                if (response.data.Status) {
+                    setUserProfileData(response.data.Result);
+                } else {
+                    alert(response.data.Error);
+                }
+                } catch (error) {
+                console.error('API Error:', error);
+                }
+            };
+
+            fetchUserProfile();
+            }, []);
     return (
-    
     <div>
         <Navbar isLoggedIn={isLoggedIn} />
     
     <div>
     <div className='flex '>
-        <SidebarAdmin activeMenuItem={activeMenuItem} />
+    <SidebarAdmin
+          activeMenuItem={activeMenuItem}
+          profileImage={`http://localhost:8800/Images/${userProfileData[0]?.image}`}
+          userName={userProfileData[0]?.nama}
+        />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
         <div className='relative h-full'>
             <div className='relative flex mt-5 bg-gray-500  bg-opacity-20 rounded-2xl'>
@@ -206,7 +227,7 @@
 
                         <div className='flex flex-col pb-14'>
                             <label htmlFor="alamat">Alamat</label>
-                            <input
+                            <textarea
                             className='flex rounded-lg  h-36 px-3 text-lg pb-24' 
                             id='alamat'
                             type="text"

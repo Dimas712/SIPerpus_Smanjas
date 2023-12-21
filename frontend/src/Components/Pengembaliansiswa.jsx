@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import {ArrowUpTrayIcon} from '@heroicons/react/24/outline'
 import Footer from './Footer';
 import Pancasila from '../assets/pancasila.jpg'
 import Matematika from '../assets/matematika.png'
+import axios from 'axios';
+
 
 const Pengembaliansiswa = () => {
   const [isLoggedIn, setLoggedIn] = useState(true);
@@ -18,14 +20,35 @@ const Pengembaliansiswa = () => {
     setLoggedIn(true);
   };
 
+  const [datapenggunalist, setDatapenggunalist] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8800/auth/profilsiswa', { withCredentials: true });
+        console.log('API Response:', response.data);
+        if (response.data.Status) {
+          setDatapenggunalist(response.data.Result);
+        } else {
+          alert(response.data.Error);
+        }
+      } catch (error) {
+        console.error('API Error:', error);
+      }
+    };
+    fetchData();
+}, []);
 
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex'>
-        <Sidebar activeMenuItem={activeMenuItem} onOpen={handleOpen} />
+      <Sidebar
+          activeMenuItem={activeMenuItem}
+          profileImage={`http://localhost:8800/Images/${datapenggunalist[0]?.image}`}
+          userName={datapenggunalist[0]?.nama}
+          onOpen={handleOpen} />
         <div className='md:w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
-          <div className='relative h-full'>
+          <div className='relative h-screen'>
             <div className='bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
               <ArrowUpTrayIcon className='h-10 w-10' color='white'/>
               <p className='text-white font-noto font-semibold text-3xl '>Data Pengembalian Buku</p>
@@ -66,12 +89,7 @@ const Pengembaliansiswa = () => {
                               <span className='ml-4'>20 November 2023</span>
                           </li>
                           <li className='mb-0.5'>
-                              <span style={{ minWidth: '180px', display: 'inline-block' }}>Status</span>
-                              <span>:</span>
-                              <span className='ml-4'>Dikembalikan</span>
-                          </li>
-                          <li className='mb-0.5'>
-                              <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Kembali</span>
+                              <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal kembali</span>
                               <span>:</span>
                               <span className='ml-4'>20 November 2023</span>
                           </li>
@@ -109,11 +127,6 @@ const Pengembaliansiswa = () => {
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Peminjaman</span>
                               <span>:</span>
                               <span className='ml-4'>20 November 2023</span>
-                          </li>
-                          <li className='mb-0.5'>
-                              <span style={{ minWidth: '180px', display: 'inline-block' }}>Status</span>
-                              <span>:</span>
-                              <span className='ml-4'>Dikembalikan</span>
                           </li>
                           <li className='mb-0.5'>
                               <span style={{ minWidth: '180px', display: 'inline-block' }}>Tanggal Kembali</span>

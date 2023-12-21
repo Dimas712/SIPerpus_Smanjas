@@ -13,6 +13,8 @@
     "@material-tailwind/react": "^2.1.4",
     "axios": "^1.6.2",
     "body-parser": "^1.20.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

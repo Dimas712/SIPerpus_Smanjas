@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import {PlusSmallIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
@@ -9,7 +9,9 @@ import Footer from './Footer';
 import { Checkbox } from '@material-tailwind/react';
 import { BiEdit, BiSearch } from 'react-icons/bi';
 import { RiDeleteBin2Fill } from 'react-icons/ri';
- 
+import axios from 'axios';
+import { FaUserCheck } from "react-icons/fa6";
+
 
 const PeminjamanAdmin = () => {
   const navigate = useNavigate();
@@ -20,12 +22,33 @@ const PeminjamanAdmin = () => {
     setLoggedIn(true);
   };
 
+  const [userProfileData, setUserProfileData] = useState([]);
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await axios.get('http://localhost:8800/auth/profiladmin', { withCredentials: true });
+        console.log('API Response:', response.data);
+        if (response.data.Status) {
+          setUserProfileData(response.data.Result);
+        } else {
+          alert(response.data.Error);
+        }
+      } catch (error) {
+        console.error('API Error:', error);
+      }
+    };
+
+    fetchUserProfile();
+  }, []);
 
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex'>
-        <SidebarAdmin />
+      <SidebarAdmin
+          profileImage={`http://localhost:8800/Images/${userProfileData[0]?.image}`}
+          userName={userProfileData[0]?.nama}
+        />
         <div className=' w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative'>
             <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>
@@ -47,28 +70,24 @@ const PeminjamanAdmin = () => {
                 <table className='w-full'>
                   <thead>
                     <tr className='bg-gray-200 text-left '>
-                      <th><Checkbox/></th>
-                      <th className=''>No Peminjaman</th>
+                      <th>No</th>
                       <th className='pr-20'>Nama</th>
-                      <th className=''>Kelas</th>
+                      <th className='pr-20'>Judul Buku</th>
                       <th>Pinjam</th>
                       <th>Kembali</th>
-                      <th>Status</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>12</td>
-                      <td className='pr-20'>Rani</td>
-                      <td className='pr-10'>10</td>
+                    <tr className='border-b'>
+                      <td className='pl-1'>1</td>
+                      <td className=''>Zahra</td>
+                      <td>Dilan 1990</td>
                       <td className=''>12-09-2023</td>
                       <td className=''>15-09-2023</td>
-                      <td>Dipinjam</td>
                       <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
+                      <div>
+                          <FaUserCheck className='h-6 w-6 fill-light-green-800 cursor-pointer'/>
                           </div>
                         <div>
                           <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
@@ -76,17 +95,15 @@ const PeminjamanAdmin = () => {
                         </td>
                     </tr>
 
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>45</td>
-                      <td className='pr-20'>Ahmad</td>
-                      <td className='pr-10'>12</td>
+                    <tr className='border-b'>
+                      <td className='pl-1'>2</td>
+                      <td className=''>Dimas</td>
+                      <td className='pr-20'>Naruto Vol.1</td>
+                      <td className='pr-10'>3-09-2023</td>
                       <td className=''>12-09-2023</td>
-                      <td className=''>28-09-2023</td>
-                      <td>Dipinjam</td>
                       <td className='flex h-12 w-22 justify-evenly  items-center'>
                         <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
+                          <FaUserCheck className='h-6 w-6 fill-light-green-800 cursor-pointer'/>
                           </div>
                         <div>
                           <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
@@ -94,17 +111,15 @@ const PeminjamanAdmin = () => {
                         </td>
                     </tr>
 
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>67</td>
-                      <td className='pr-20'>Iqbal</td>
-                      <td className='pr-10'>10</td>
+                    <tr className='border-b'>
+                      <td className='pl-1'>3</td>
+                      <td className=''>Reza</td>
+                      <td >Bahasa Inggris Kelas XII</td>
+                      <td className='pr-10'>10-09-2023</td>
                       <td className=''>20-09-2023</td>
-                      <td className=''>29-09-2023</td>
-                      <td>Dipinjam</td>
                       <td className='flex h-12 w-22 justify-evenly  items-center'>
                         <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
+                          <FaUserCheck className='h-6 w-6 fill-light-green-800 cursor-pointer'/>
                           </div>
                         <div>
                           <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
@@ -112,23 +127,6 @@ const PeminjamanAdmin = () => {
                         </td>
                     </tr>
 
-                    <tr>
-                      <td><Checkbox/></td>
-                      <td className=''>89</td>
-                      <td className='pr-20'>Reina</td>
-                      <td className='pr-10'>11</td>
-                      <td className=''>21-09-2023</td>
-                      <td className=''>23-09-2023</td>
-                      <td>Dipinjam</td>
-                      <td className='flex h-12 w-22 justify-evenly  items-center'>
-                        <div>
-                          <BiEdit className='h-6 w-6 fill-blue-800 cursor-pointer'/>
-                          </div>
-                        <div>
-                          <RiDeleteBin2Fill className='h-6 w-6 fill-red-800 cursor-pointer'/>
-                          </div>
-                        </td>
-                    </tr>
 
                     
                   </tbody>  
