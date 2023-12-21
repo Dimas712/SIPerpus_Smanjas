@@ -6,19 +6,18 @@ import LoginAdmin from './Components/LoginAdmin'
 import LoginSiswa from './Components/LoginSiswa'
 import ProfilSiswa from './Components/ProfilSiswa'
 import EditProfilSiswa from './Components/EditProfilSiswa'
-import CariBuku from './Components/CariBuku'
+import CariBuku from './Components/Caribuku'
 import Form from './Components/Form'
 import Carousel from './Components/Carousel'
 import CardBook from './Components/CardBook'
 import PeminjamanSiswa from './Components/peminjamansiswa'
 import Pengembaliansiswa from './Components/Pengembaliansiswa'
-import Detailbuku from './Components/Detailbuku'
 import ProfilAdmin from './Components/ProfilAdmin'
 import DasboardAdmin from './Components/DasboardAdmin'
 import EditAdmin from './Components/EditAdmin'
 import PeminjamanAdmin from './Components/PeminjamanAdmin'
 import PengembalianAdmin from './Components/PengembalianAdmin'
-import DataBukuAdmin from './Components/DataBukuAdmin'
+import DataBukuList from './Components/DataBukuList'
 import DataPengguna from './Components/DataPengguna'
 import DataPenggunaList from './Components/DataPenggunaList'
 import Tambahbuku from './Components/Tambahbuku'
@@ -29,7 +28,8 @@ import Halbuku from './Components/halbuku'
 import EditDataPengguna from './Components/editdatapengguna'
 import Detailbook from './Components/detailbook'
 import Privateroute from './Components/privateroute'
-
+import DataBukuEdit from './Components/DataBukuEdit'
+import DetailBuku from './Components/DetailBuku'
 
 function App () {
   
@@ -64,6 +64,8 @@ function App () {
         </Privateroute>
         }/>
         <Route path='/editdatapengguna/:id' element={<EditDataPengguna/>}/>
+        <Route path='/detailbuku/:id' element={<DetailBuku/>}/>
+        <Route path='/databukuedit/:id' element={<DataBukuEdit/>}/>
         <Route path='/caribuku' element={<CariBuku/>}/>
         <Route path='/buku' element={<Buku/>}/>
         <Route path='/formpinjambuku' element={<Form/>}/>
@@ -93,16 +95,15 @@ function App () {
         </Privateroute>
         }/>
 
-        <Route path='/detailbuku' element={<Detailbuku/>}/>
         <Route path='/dashboard' element={
           <Privateroute>
             <DasboardAdmin/>
           </Privateroute>
         }/>
 
-        <Route path='/databukuadmin' element={
+        <Route path='/databukulist' element={
         <Privateroute>
-          <DataBukuAdmin/>
+          <DataBukuList/>
         </Privateroute>
         }/>
 

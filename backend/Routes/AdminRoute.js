@@ -224,7 +224,27 @@ router.post('/add_pengguna', upload.single('image'), (req, res) => {
         })
     })
 
-    //
+    // Menampilkan Profil Admin
+    router.get('/profiladmin', (req, res) => {
+        const token = req.cookies.token; // Assuming you're using cookies to store the token
+    
+        if (!token) {
+            return res.status(401).json({ Status: false, Error: "Unauthorized" });
+        }
+    
+        try {
+            const decoded = jwt.verify(token, "jwt_secret_key");
+            const userId = decoded.nisn;
+    
+            const sql = "SELECT * FROM data_pengguna WHERE nisn = ?";
+            con.query(sql, [userId], (err, result) => {
+                if (err) return res.json({ Status: false, Error: "Query Error" });
+                return res.json({ Status: true, Result: result });
+            });
+        } catch (error) {
+            return res.status(401).json({ Status: false, Error: "Invalid token" });
+        }
+    });
     
     
 export { router as adminRouter };

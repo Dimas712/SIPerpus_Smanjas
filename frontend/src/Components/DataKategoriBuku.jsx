@@ -60,11 +60,33 @@ const DataKategoriBuku = () => {
     })
   }
 
+  const [userProfileData, setUserProfileData] = useState([]);
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await axios.get('http://localhost:8800/auth/profiladmin', { withCredentials: true });
+        console.log('API Response:', response.data);
+        if (response.data.Status) {
+          setUserProfileData(response.data.Result);
+        } else {
+          alert(response.data.Error);
+        }
+      } catch (error) {
+        console.error('API Error:', error);
+      }
+    };
+
+    fetchUserProfile();
+  }, []);
+
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} />
       <div className='flex justify-center'>
-        <SidebarAdmin />
+      <SidebarAdmin
+          profileImage={`http://localhost:8800/Images/${userProfileData[0]?.image}`}
+          userName={userProfileData[0]?.nama}
+        />
         <div className='w-full p-10 pl-5 md:pl-32 pr-5 md:pr-20'>
           <div className='relative'>
             <div className='bg-green3 h-16 rounded-3xl flex items-center space-x-10 md:pl-6'>

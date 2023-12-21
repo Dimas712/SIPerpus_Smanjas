@@ -1,161 +1,232 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { UserCircleIcon } from '@heroicons/react/24/outline';
-import Footer from './Footer';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
+import { PiBookOpenTextLight } from 'react-icons/pi';
+import axios from 'axios';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Detailbuku = () => {
+
+const DetailBuku = ({ match }) => {
+    const [isLoggedIn, setLoggedIn] = useState(true);
+    const [bookDetails, setBookDetails] = useState({});
+    const [activeMenuItem, setActiveMenuItem] = useState('caribuku');
+    const [isBorrowModalOpen, setBorrowModalOpen] = useState(false);
+    const navigate = useNavigate();
+    const { id } = useParams();
+
+    const handleOpen = () => {
+        setActiveMenuItem('caribuku');
+    };
+
+    const handleLogin = () => {
+        setLoggedIn(true);
+    };
+
+    const handleBorrowClick = () => {
+        setBorrowModalOpen(true);
+    };
+
+    const handleBorrowConfirm = () => {
+        // Implement the logic to handle the borrow confirmation here
+        // You can make an API call to update the borrow status or perform any other actions
+        setBorrowModalOpen(false);
+        navigate('/pinjamsiswa')
+    };
+
+    const handleBorrowCancel = () => {
+        setBorrowModalOpen(false);
+    };
+
+    useEffect(() => {
+        const fetchBookDetails = async () => {
+            try {
+                const response = await axios.get(`http://localhost:8800/auth/detailbuku/${id}`);
+                console.log('API Response:', response.data);
+                if (response.data.status) {
+                    setBookDetails(response.data.result);
+                } else {
+                    alert(response.data.error);
+                }
+            } catch (error) {
+                console.error('API Error:', error);
+            }
+        };
+
+        fetchBookDetails();
+    }, [id]);
+
+
+    
+// Helper function to get the current date in the format YYYY-MM-DD
+// Helper function to get the current date in the format DD-MM-YYYY
+const getCurrentDate = () => {
+    const currentDate = new Date();
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const formattedDate = currentDate.toLocaleDateString(undefined, options);
+    return formattedDate;
+};
+
+// Helper function to get the return date (current date + 7 days) in the format DD-MM-YYYY
+const getReturnDate = () => {
+    const currentDate = new Date();
+    const returnDate = new Date(currentDate);
+    returnDate.setDate(returnDate.getDate() + 7);
+
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const formattedDate = returnDate.toLocaleDateString(undefined, options);
+    
+    return formattedDate;
+};
+
+const [datapenggunalist, setDatapenggunalist] = useState([]);
+  useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:8800/auth/profilsiswa', { withCredentials: true });
+      console.log('API Response:', response.data);
+      if (response.data.Status) {
+        setDatapenggunalist(response.data.Result);
+      } else {
+        alert(response.data.Error);
+      }
+    } catch (error) {
+      console.error('API Error:', error);
+    }
+  };
+
+  fetchData();
+}, []);
+
   return (
     <div>
-      <Navbar />
-      <div className='flex flex-col md:flex-row min-h-screen'>
-        <Sidebar />
-        <div className='flex justify-center w-full h-screen p-10 pl-5 md:pl-35 pr-5 md:pr-30'>
-          <div className='relative'>
-            <div className='bg-green2 h-12 rounded-3xl flex items-center space-x-10 md:pl-4'>
-              <UserCircleIcon className='h-10 w-10 text-white' />
+      <Navbar isLoggedIn={isLoggedIn} />
+      <div className='flex'>
+      <Sidebar
+          activeMenuItem={activeMenuItem}
+          profileImage={`http://localhost:8800/Images/${datapenggunalist[0]?.image}`}
+          userName={datapenggunalist[0]?.nama}
+        />
+        <div className=' w-full h-screen p-10 pl-5 md:pl-32 pr-5 md:pr-20 '>
+          <div className='relative h-full '>
+            <div className=' bg-green2 h-16 rounded-3xl flex items-center space-x-10 md:pl-6 '>
+              <PiBookOpenTextLight className='h-10 w-8' color='white' />
               <p className='text-white font-noto font-semibold text-3xl'>Detail Buku</p>
             </div>
+            <div className='mt-10 rounded-2xl overflow-hidden border shadow-xl'>
+                <div className='flex flex-row space-x-2  '>
+                    <div className=' w-48'>
+                        <img
+                            src={`http://localhost:8800/Images/${bookDetails.sampul}`}
+                            alt={`Cover of ${bookDetails.judul_buku}`}
+                          className="h-72 w-48 "
+                        />
+                    </div>
+                    <div className='md:w-4/5'>
+                    <p className='uppercase tracking-wide text-xl font-semibold italic'>{bookDetails && bookDetails.judul_buku}</p>
 
-            <div className='-mt-20 flex flex-col md:flex-row'>
-              <div className='flex justify-center items-center h-screen drop-shadow-md mt-10'>
-                <div className='max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-5xl my-4'>
-                  <div className='md:flex'>
-                    <div className='md:flex-shrink-0'>
-                      <img
-                        className='h-full w-full md:w-48 object-cover'
-                        src='https://ebooks.gramedia.com/ebook-covers/31754/big_covers/ID_MIZ2016MTH03DDADT_B.jpg'
-                        alt='Book Cover'
-                      />
-                    </div>
-                    <div className='p-4'>
-                      <div className='uppercase tracking-wide text-xl font-semibold italic'>Novel Dilan 1990</div>
-                      <p className='block mt-1 text-lg leading-tight font-semibold text-black'>Pidi Baiq</p>
-                      <p className='mt-2 text-gray-600 text-justify text-sm'>
-                        Novel berjudul Dia Adalah Dilanku Tahun 1990 merupakan karya dari Pidi Baiq. Dilan Dia Adalan Dilanku menceritakan percintaan anak SMA yang cukup unik. Novel dengan tebal 348 halaman ini diterbitkan pada tahun 2014. 
-                        Ada beberapa penerbit yang telah menerbitkan novel Dilan 1990, yakni penerbit Pastel Books pada 2014 dan penerbit Mizan Pustaka pada 2015. 
-                        Baca selengkapnya di artikel Sinopsis Novel 'Dilan' Dia Adalah Dilanku Tahun 1990 - Pidi Baiq.
-                        </p>
-                      <p className='mt-4 font-semibold'>Jumlah Buku: 30</p>
-                      <Popup/>
-                    </div>
-                  </div>
-                  <Keterangan />
+                        <p className='block mt-1 text-lg leading-tight font-semibold text-black'>{bookDetails && bookDetails.pengarang}</p>
+                        <p className='mt-2 text-gray-600 text-justify text-sm  h-36'>{bookDetails && bookDetails.deskripsi}</p>
+                        <div className='mt-3 font-semibold'>
+                            <span  style={{ minWidth: '90px', display: 'inline-block' }}>Stok Buku</span>
+                            <span>:</span>
+                            <span className='ml-4'>{bookDetails && bookDetails.stok_buku}</span>
+                        </div>
+                        <button
+                                onClick={handleBorrowClick}
+                                className='mt-2 bg-green5 hover:bg-green2 text-white font-bold py-2 px-4 rounded-lg'>
+                                Pinjam
+                            </button>
+                    </div>  
                 </div>
-              </div>
+                <div className='mt-4'>
+                    <ul className='md:pl-10 font-semibold flex-start flex-col md:flex-coloumn'>
+                        <li className='mb-1.5'>
+                            <span style={{ minWidth: '160px', display: 'inline-block' }}>ISSBN</span>
+                            <span>:</span>
+                            <span className='ml-4'>{bookDetails && bookDetails.isbn}</span>
+                        </li>
+                        <li className='mb-1.5'>
+                            <span style={{ minWidth: '160px', display: 'inline-block' }}>Judul Buku</span>
+                            <span>:</span>
+                            <span className='ml-4'>{bookDetails && bookDetails.judul_buku}</span>
+                        </li>
+                        <li className='mb-1.5'>
+                            <span style={{ minWidth: '155px', display: 'inline-block' }}>Nama Pengarang</span>
+                            <span> :</span>
+                            <span className='ml-4'>{bookDetails && bookDetails.pengarang}</span>
+                        </li>
+                        <li className='mb-1.5'>
+                            <span style={{ minWidth: '160px', display: 'inline-block' }}>Penerbit</span>
+                            <span>:</span>
+                            <span className='ml-4'>{bookDetails && bookDetails.nama_penerbit}</span>
+                        </li>
+                        <li className='mb-1.5'>
+                            <span style={{ minWidth: '160px', display: 'inline-block' }}>Tahun Buku</span>
+                            <span>:</span>
+                            <span className='ml-4'>{bookDetails && bookDetails.tahun_buku}</span>
+                        </li>
+                    </ul>
+                </div>
+                
             </div>
           </div>
         </div>
       </div>
       <Footer />
-    </div>
-  );
+      {/* Borrow Confirmation Modal */}
+      {isBorrowModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+                    <div className="relative w-auto max-w-3xl mx-auto my-6">
+                        {/* Modal content */}
+                        <div className="relative flex flex-col w-full bg-white opacity-95 border-0 rounded-lg shadow-lg outline-none focus:outline-none">
+                            {/* Header */}
+                            <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
+                                <h3 className="text-2xl font-semibold">
+                                    Anda ingin pinjam "{bookDetails.judul_buku}"?
+                                </h3>
+                                <button
+                                    className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                    onClick={handleBorrowCancel}
+                                >
+                                    <span className="text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                        ×
+                                    </span>
+                                </button>
+                            </div>
+                            {/* Body */}
+                            <div className="relative p-6 flex-auto">
+                                <p className="my-4 text-gray-600 text-lg leading-relaxed">
+                                    Tanggal Pinjam: {getCurrentDate()}
+                                    <br />
+                                    Tanggal Kembali: {getReturnDate()}
+                                </p>
+                            </div>
+                            {/* Footer */}
+                            <div className="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
+                                <button
+                                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                                    type="button"
+                                    onClick={handleBorrowCancel}
+                                >
+                                    Tidak
+                                </button>
+                                <button
+      className="bg-green text-white active:bg-green2 font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+      type="button"
+      onClick={handleBorrowConfirm}
+    >
+      Iya
+    </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
 };
 
+export default DetailBuku;
 
-function Keterangan() {
-  return(
-    <ul className='md:pl-10 font-semibold flex-start flex-col md:flex-coloumn'>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '160px', display: 'inline-block' }}>ISSBN</span>
-            <span>:</span>
-            <span className='ml-4'>20056</span>
-          </li>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '160px', display: 'inline-block' }}>Judul Buku</span>
-            <span>:</span>
-            <span className='ml-4'>Dilan 1990</span>
-          </li>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '155px', display: 'inline-block' }}>Nama Pengarang</span>
-            <span> :</span>
-            <span className='ml-4'>Pidi Baiq</span>
-          </li>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '160px', display: 'inline-block' }}>Penerbit</span>
-            <span>:</span>
-            <span className='ml-4'>Pastel Books (Mizan Group)</span>
-          </li>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '160px', display: 'inline-block' }}>Tahun Buku</span>
-            <span>:</span>
-            <span className='ml-4'>2015</span>
-          </li>
-        </ul>
-  )
-}
-
-function Popup() {
-  const [showDialog, setShowDialog] = useState(false);
-
-  const handleButtonClick = () => {
-    setShowDialog(true);
-  };
-
-  const handleCloseDialog = () => {
-    setShowDialog(false);
-  };
-  return(
-    <div>
-    <button
-    onClick={handleButtonClick}
-    className='mt-4 bg-green5 hover:bg-green2 text-white font-bold py-2 px-4 rounded-lg'
-  >
-    Pinjam
-  </button>
-  
-
-    {/*--------------------------Pop Up--------------------------*/}
-    {showDialog && (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-10 rounded-xl">
-        <h2 className="text-2xl font-bold mb-4 text-center">DETAIL PEMINJAMAN</h2>
-        <br></br>
-        {/* Gantilah dengan data peminjaman yang sesuai */}
-        <ul>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '140px', display: 'inline-block' }}>Nama Peminjam</span>
-            <span>:</span>
-            <span className='ml-4'>Rani</span>
-          </li>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '140px', display: 'inline-block' }}>Nama Buku</span>
-            <span>:</span>
-            <span className='ml-4'>Dilan 1990</span>
-          </li>
-          <li className='mb-1.5'>
-            <span style={{ minWidth: '140px', display: 'inline-block' }}>Tanggal Dipinjam</span>
-            <span>:</span>
-            <span className='ml-4'>11 November 2023</span>
-          </li>
-            <li className='mb-1.5'>
-              <span style={{ minWidth: '140px', display: 'inline-block' }}>Tanggal Kembali</span>
-              <span>:</span>
-              <span className='ml-4'>18 Oktober 2023</span>
-            </li>
-        </ul>
-        <br></br>
-        <div className="mt-4 flex justify-center gap-5">
-          <button
-            onClick={handleCloseDialog}
-            className="bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-6 mr-2 rounded-full h-10 w-28"
-          >
-            Kembali
-          </button>
-          <button
-            className="bg-green2 hover:bg-green5 text-white font-bold py-2 px-6 rounded-full h-10 w-28"
-            // Tambahkan logika untuk aksi 'Pinjam' di sini
-          >
-            Pinjam
-          </button>
-        </div>
-      </div>
-    </div>
-  )}
-  </div>
-  )
-  
-}
-
-export default Detailbuku;

@@ -62,7 +62,7 @@ function LoginSiswa() {
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="nisn" className="block text-sm font-medium leading-6 text-white">
-              Nama Pengguna
+              NISN Pengguna
             </label>
             <input
               id="nisn"
@@ -72,7 +72,7 @@ function LoginSiswa() {
               value={nisn}
               onChange={(e) => setNisn(e.target.value)}
               required
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
 
@@ -95,7 +95,7 @@ function LoginSiswa() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
 
